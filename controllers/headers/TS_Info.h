@@ -1,10 +1,10 @@
-#ifndef TS_TIMETRACKER_TS_BASE_H
-#define TS_TIMETRACKER_TS_BASE_H
+#ifndef TS_TIMETRACKER_TS_INFO_H
+#define TS_TIMETRACKER_TS_INFO_H
 
 /**
- * TS-TimeTracker
+ * TS-Info
  *
- * Base class for whole application.
+ * Displays informations
  *
  * @package     TS-TimeTracker
  * @author      Thomas Schwarz
@@ -15,11 +15,14 @@
  */
 
 #include <stdio.h>
+#include "TS_Base.h"
 
-class TS_Base
+class TS_Info : public TS_Base
 {
 public:
-    TS_Base();
+    TS_Info();
+    void welcome();
+    void showInfo();
 };
 
-#endif //TS_TIMETRACKER_TS_BASE_H
+#endif //TS_TIMETRACKER_TS_INFO_H

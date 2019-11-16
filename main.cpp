@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include "./controllers/headers/TS_Base.h"
+#include "./controllers/headers/TS_Info.h"
 
 /* Declare a buffer for user input of size 2048 */
 static char input[2048];
 
 int main(int argc, char **argv)
 {
-    /* Print Version and Exit Information */
-    puts("Lispy Version 0.0.0.0.1");
-    puts("Press Ctrl+c to Exit\n");
+    TS_Info info;
+    info.welcome();
+    info.showInfo();
 
     /* In a never ending loop */
     while (1)
     {
-
         /* Output our prompt */
         fputs("ts-timetracker> ", stdout);
 
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
         fgets(input, 2048, stdin);
 
         /* Echo input back to user */
-        printf("No you're a %s", input);
+        printf("You entered: %s", input);
     }
 
     return 0;
