@@ -38,6 +38,6 @@ void TS_Info::welcome()
  */
 void TS_Info::showInfo()
 {
-    puts("Version 0.1.0");
+    puts("Version pre-alpha-0.1.0");
     puts("Press Ctrl+c to Exit\n");
 }
