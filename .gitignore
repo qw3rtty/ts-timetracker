@@ -2,4 +2,5 @@
 .idea
 
 # excluded files
+ts-test
 ts-timetracker

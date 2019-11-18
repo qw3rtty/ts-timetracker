@@ -27,5 +27,12 @@ CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_Base.cpp \
     $(CONTROLLERSPATH)/TS_CommandDelegator.cpp
 
+# TESTS
+TESTFILENAME = ts-test
+TESTFILES = ./tests/TS_UnitTest.cpp
+
 build:
 	$(CC) -o $(NAME) $(MAIN) $(HELPERS) $(HELPERHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
+
+test:
+	$(CC) -o $(TESTFILENAME) $(TESTFILES)
