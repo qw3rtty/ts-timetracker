@@ -28,6 +28,7 @@ public:
     static TS_CommandDelegator *getInstance();
     void setCommand(char * command);
     bool isCommandValid();
+    bool unitTest();
 };
 
 #define commandDelegator TS_CommandDelegator::getInstance()

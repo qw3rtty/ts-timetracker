@@ -11,11 +11,18 @@
  * @filesource
  */
 
+#include <stdio.h>
 #include <iostream>
+#include <cstring>
 #include <cassert>
+
+#include "../application/controllers/headers/TS_Base.h"
+#include "../application/controllers/headers/TS_CommandDelegator.h"
 
 int main()
 {
+    assert(commandDelegator->unitTest());
+
     std::cout << "All tests passed" << " \u2713" << std::endl;
     return 0;
 }

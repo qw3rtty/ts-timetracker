@@ -35,7 +35,7 @@ TS_CommandDelegator *TS_CommandDelegator::getInstance()
  * Set entered command of user
  * @param command
  */
-void TS_CommandDelegator::setCommand(char * command)
+void TS_CommandDelegator::setCommand(char *command)
 {
     this->command = command;
 }
@@ -58,4 +58,18 @@ bool TS_CommandDelegator::isCommandValid()
     }
 
     return correctCommand;
+}
+
+/**
+ * Unit test
+ * @return bool
+ */
+bool TS_CommandDelegator::unitTest()
+{
+    char command[100] = "help";
+    TS_CommandDelegator *delegator;
+    delegator = this->getInstance();
+
+    delegator->setCommand(command);
+    return delegator->isCommandValid();
 }
