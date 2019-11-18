@@ -4,7 +4,7 @@ NAME = ts-timetracker
 MAIN = main.cpp
 
 # PATHS
-CONTROLLERSPATH = ./controllers
+CONTROLLERSPATH = ./application/controllers
 CONTROLLERSHEADERPATH = $(CONTROLLERSPATH)/headers
 
 # FILES

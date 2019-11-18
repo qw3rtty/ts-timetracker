@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <iostream>
-#include "./controllers/headers/TS_Base.h"
-#include "./controllers/headers/TS_Info.h"
-#include "./controllers/headers/TS_CommandDelegator.h"
+#include "./application/controllers/headers/TS_Base.h"
+#include "./application/controllers/headers/TS_Info.h"
+#include "./application/controllers/headers/TS_CommandDelegator.h"
 
 /* Declare a buffer for user input of size 2048 */
 static char input[2048];
