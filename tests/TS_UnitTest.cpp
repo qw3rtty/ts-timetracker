@@ -21,7 +21,10 @@
 
 int main()
 {
+    std::cout << "Unit tests starting..." << std::endl;
+
     assert(commandDelegator->unitTest());
+    std::cout << "TS_CommandDelegator passed " << " \u2713" << std::endl;
 
     std::cout << "All tests passed" << " \u2713" << std::endl;
     return 0;
