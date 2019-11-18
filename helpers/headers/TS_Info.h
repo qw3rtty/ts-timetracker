@@ -15,9 +15,8 @@
  */
 
 #include <stdio.h>
-#include "TS_Base.h"
 
-class TS_Info : public TS_Base
+class TS_Info
 {
 public:
     TS_Info();
