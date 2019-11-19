@@ -46,5 +46,4 @@ void TS_Info::showInfo()
 {
     std::cout << "Version pre-alpha-0.1.0 \n";
     std::cout << "Press Ctrl+c to Exit \n";
-    std::cout << "No commands implemented yet :( \n";
 }
