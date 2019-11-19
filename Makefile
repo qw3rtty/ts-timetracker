@@ -21,11 +21,15 @@ HELPERS = \
 
 CONTROLLERHEADERS = \
     $(CONTROLLERSHEADERPATH)/TS_Base.h \
-    $(CONTROLLERSHEADERPATH)/TS_CommandDelegator.h
+    $(CONTROLLERSHEADERPATH)/TS_CommandDelegator.h \
+    $(CONTROLLERSHEADERPATH)/TS_Command.h \
+    $(CONTROLLERSHEADERPATH)/TS_CommandHelp.h \
 
 CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_Base.cpp \
-    $(CONTROLLERSPATH)/TS_CommandDelegator.cpp
+    $(CONTROLLERSPATH)/TS_CommandDelegator.cpp \
+    $(CONTROLLERSPATH)/TS_Command.cpp \
+    $(CONTROLLERSPATH)/TS_CommandHelp.cpp \
 
 # TESTS
 TESTFILENAME = ts-test
