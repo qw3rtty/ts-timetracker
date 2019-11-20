@@ -12,8 +12,12 @@
  */
 
 #include <stdio.h>
+#include <iostream>
+#include <cstdlib>
 #include <cstring>
 #include "./headers/TS_CommandDelegator.h"
+#include "./headers/TS_Command.h"
+#include "./headers/TS_CommandHelp.h"
 
 /**
  * Constructor
@@ -32,12 +36,23 @@ TS_CommandDelegator *TS_CommandDelegator::getInstance()
 }
 
 /**
- * Set entered command of user
+ * Set entered command with attributes of user
  * @param command
  */
-void TS_CommandDelegator::setCommand(char *command)
+void TS_CommandDelegator::setCommandWithAttributes(char *command)
 {
-    this->command = command;
+    char *pointerToken = strtok(command, " ");
+
+    this->command = (char *)malloc(strlen(pointerToken) + 1);
+    strcpy(this->command, pointerToken);
+    pointerToken = strtok(NULL, " ");
+
+    while(pointerToken != NULL)
+    {
+        this->arguments = (char *)malloc(strlen(pointerToken) + 1);
+        strcpy(this->arguments, pointerToken);
+        pointerToken = strtok(NULL, " ");
+    }
 }
 
 /**
@@ -61,6 +76,18 @@ bool TS_CommandDelegator::isCommandValid()
 }
 
 /**
+ * Execute correct command
+ */
+void TS_CommandDelegator::runCommand()
+{
+    if (strcmp(this->command, "help") == 0)
+    {
+        TS_CommandHelp cmdHelp;
+        cmdHelp.execute();
+    }
+}
+
+/**
  * Unit test
  * @return bool
  */
@@ -70,6 +97,6 @@ bool TS_CommandDelegator::unitTest()
     TS_CommandDelegator *delegator;
     delegator = this->getInstance();
 
-    delegator->setCommand(command);
+    delegator->setCommandWithAttributes(command);
     return delegator->isCommandValid();
 }

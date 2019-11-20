@@ -16,18 +16,22 @@
 
 #include <stdio.h>
 #include "TS_Base.h"
+#include "TS_Command.h"
 
 class TS_CommandDelegator : public TS_Base
 {
 private:
     TS_CommandDelegator();
     const char commandList[1][10] = {"help"};
+    char *arguments;
     char *command;
 
 public:
     static TS_CommandDelegator *getInstance();
-    void setCommand(char * command);
+    void setCommandWithAttributes(char * command);
     bool isCommandValid();
+    void runCommand();
+
     bool unitTest();
 };
 

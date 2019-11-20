@@ -29,15 +29,10 @@ int main(int argc, char **argv)
         /* Read a line of user input of maximum size 2048 */
         std::cin >> input;
 
-        commandDelegator->setCommand(input);
+        commandDelegator->setCommandWithAttributes(input);
         if (commandDelegator->isCommandValid())
         {
-            // TODO: create a better way to get the right command class
-            if (strcmp(input, "help") == 0)
-            {
-                TS_CommandHelp cmdHelp;
-                cmdHelp.execute();
-            }
+            commandDelegator->runCommand();
         }
         else
         {
