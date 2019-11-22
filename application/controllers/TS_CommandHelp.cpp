@@ -29,8 +29,8 @@ bool TS_CommandHelp::execute()
 {
     this->prepare();
 
-    std::cout << "HELP IS COMING" << std::endl;
-    std::cout << "Please hang on a while..." << std::endl;
+    std::cout << "Options and commands:" << std::endl;
+    std::cout << "- help: show's the help menu" << std::endl;
 
     return true;
 }
