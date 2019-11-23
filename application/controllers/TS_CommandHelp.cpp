@@ -20,7 +20,9 @@
  * @inherit
  */
 TS_CommandHelp::TS_CommandHelp()
-{}
+{
+    this->isTestMode = false;
+}
 
 /**
  * @inherit
@@ -29,8 +31,15 @@ bool TS_CommandHelp::execute()
 {
     this->prepare();
 
+    if (this->isTestMode)
+    {
+        return true;
+    }
+
     std::cout << "Options and commands:" << std::endl;
-    std::cout << "- help: show's the help menu" << std::endl;
+    std::cout << "- help: Show's the help menu" << std::endl;
+    std::cout << "- start: Start's timetracking" << std::endl;
+    std::cout << "- stop: Stop's timetracking" << std::endl;
 
     return true;
 }
@@ -41,4 +50,9 @@ bool TS_CommandHelp::execute()
 bool TS_CommandHelp::prepare()
 {
     return true;
+}
+
+void TS_CommandHelp::setTestMode(bool testMode)
+{
+    this->isTestMode = testMode;
 }

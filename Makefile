@@ -24,12 +24,14 @@ CONTROLLERHEADERS = \
     $(CONTROLLERSHEADERPATH)/TS_CommandDelegator.h \
     $(CONTROLLERSHEADERPATH)/TS_Command.h \
     $(CONTROLLERSHEADERPATH)/TS_CommandHelp.h \
+    $(CONTROLLERSHEADERPATH)/TS_CommandTimestamp.h
 
 CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_Base.cpp \
     $(CONTROLLERSPATH)/TS_CommandDelegator.cpp \
     $(CONTROLLERSPATH)/TS_Command.cpp \
     $(CONTROLLERSPATH)/TS_CommandHelp.cpp \
+    $(CONTROLLERSPATH)/TS_CommandTimestamp.cpp
 
 # TESTS
 TESTFILENAME = ts-test

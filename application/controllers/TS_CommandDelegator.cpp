@@ -15,9 +15,12 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <ctime>
+
 #include "./headers/TS_CommandDelegator.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandHelp.h"
+#include "./headers/TS_CommandTimestamp.h"
 
 /**
  * Constructor
@@ -84,6 +87,26 @@ void TS_CommandDelegator::runCommand()
     {
         TS_CommandHelp cmdHelp;
         cmdHelp.execute();
+    }
+
+    if (strcmp(this->command, "start") == 0)
+    {
+        TS_CommandTimestamp cmdTimestamp;
+        cmdTimestamp.execute();
+
+        this->startTimestamp = cmdTimestamp.getTimestamp();
+        std::cout << "Time tracking has started." << std::endl;
+        std::cout << "Starting time: " << std::asctime(std::localtime(&this->startTimestamp));
+    }
+
+    if (strcmp(this->command, "stop") == 0)
+    {
+        TS_CommandTimestamp cmdTimestamp;
+        cmdTimestamp.execute();
+
+        this->endTimestamp = cmdTimestamp.getTimestamp();
+        std::cout << "Time tracking finished." << std::endl;
+        std::cout << "Finished time: " << std::asctime(std::localtime(&this->endTimestamp));
     }
 }
 

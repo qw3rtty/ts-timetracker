@@ -15,6 +15,8 @@
  */
 
 #include <stdio.h>
+#include <ctime>
+
 #include "TS_Base.h"
 #include "TS_Command.h"
 
@@ -22,9 +24,11 @@ class TS_CommandDelegator : public TS_Base
 {
 private:
     TS_CommandDelegator();
-    const char commandList[1][10] = {"help"};
+    const char commandList[3][10] = {"help", "start", "stop"};
     char *arguments;
     char *command;
+    std::time_t startTimestamp;
+    std::time_t endTimestamp;
 
 public:
     static TS_CommandDelegator *getInstance();

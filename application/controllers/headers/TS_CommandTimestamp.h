@@ -1,7 +1,7 @@
 /**
- * TS-CommandHelp
+ * TS-CommandTimestamp
  *
- * Help command
+ * Creates current timestamp
  *
  * @package     TS-TimeTracker
  * @author      Thomas Schwarz
@@ -11,24 +11,25 @@
  * @filesource
  */
 
-#ifndef TS_TIMETRACKER_TS_COMMANDHELP_H
-#define TS_TIMETRACKER_TS_COMMANDHELP_H
+#ifndef TS_TIMETRACKER_TS_COMMANDTIMESTAMP_H
+#define TS_TIMETRACKER_TS_COMMANDTIMESTAMP_H
 
+#include <ctime>
 #include "TS_Command.h"
 
-class TS_CommandHelp : public TS_Command
+class TS_CommandTimestamp : public TS_Command
 {
 public:
-    TS_CommandHelp();
-    void setTestMode(bool testMode);
+    TS_CommandTimestamp();
     bool execute();
+    std::time_t getTimestamp();
 
 protected:
     bool prepare();
 
 private:
-    bool isTestMode;
+    std::time_t timestamp;
 };
 
 
-#endif //TS_TIMETRACKER_TS_COMMANDHELP_H
+#endif //TS_TIMETRACKER_TS_COMMANDTIMESTAMP_H
