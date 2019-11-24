@@ -16,6 +16,7 @@
 #include <cstring>
 #include <cassert>
 
+#include "../config/TS_ConfigReader.h"
 #include "../helpers/headers/TS_Helper.h"
 #include "../helpers/headers/TS_Info.h"
 #include "../application/controllers/headers/TS_Base.h"
@@ -33,6 +34,10 @@ int main()
 
     std::cout << helper.color << "Unit tests starting..." << helper.noColor << std::endl;
     std::cout << std::endl;
+
+    TS_ConfigReader config;
+    assert(config.configLoaded);
+    std::cout << "TS_ConfigReader passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
     assert(commandDelegator->unitTest());
     std::cout << "TS_CommandDelegator passed " << helper.color << " \u2713" << helper.noColor << std::endl;

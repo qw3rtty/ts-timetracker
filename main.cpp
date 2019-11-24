@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstring>
 
+#include "./config/TS_ConfigReader.h"
 #include "./helpers/headers/TS_Helper.h"
 #include "./helpers/headers/TS_Info.h"
 
@@ -13,9 +14,18 @@ static char input[2048];
 
 int main(int argc, char **argv)
 {
+    TS_ConfigReader config;
     TS_Helper helper;
     TS_Info info;
+
     info.welcome();
+    if (!config.configLoaded)
+    {
+        std::cout << "No config file found!" << std::endl;
+        std::cout << "Please check out the documentation: " << std::endl;
+        std::cout << "https://raw.githubusercontent.com/thomasschwarz96/ts-timetracker/master/README.md" << std::endl;
+        return 0;
+    }
     info.showInfo();
 
     /* In a never ending loop */
