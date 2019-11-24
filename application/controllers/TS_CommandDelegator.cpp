@@ -96,7 +96,7 @@ void TS_CommandDelegator::runCommand()
 
         this->startTimestamp = cmdTimestamp.getTimestamp();
         std::cout << "Time tracking has started." << std::endl;
-        std::cout << "Starting time: " << std::asctime(std::localtime(&this->startTimestamp));
+        std::cout << "Starting time: " << cmdTimestamp.getFormattedDate() << std::endl;
     }
 
     if (strcmp(this->command, "stop") == 0)
@@ -106,7 +106,7 @@ void TS_CommandDelegator::runCommand()
 
         this->endTimestamp = cmdTimestamp.getTimestamp();
         std::cout << "Time tracking finished." << std::endl;
-        std::cout << "Finished time: " << std::asctime(std::localtime(&this->endTimestamp));
+        std::cout << "Finished time: " << cmdTimestamp.getFormattedDate() << std::endl;
     }
 }
 

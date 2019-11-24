@@ -48,6 +48,24 @@ void TS_ConfigReader::showConfig()
 }
 
 /**
+ * Return's value of given config entry
+ * @param entry
+ * @return std::string
+ */
+std::string TS_ConfigReader::getConfigEntry(std::string entry)
+{
+    for (auto it = this->entries.begin(); it != this->entries.end(); ++it)
+    {
+        if (it->first == entry)
+        {
+            return it->second;
+        }
+    }
+
+    return "";
+}
+
+/**
  * Load config file
  * @return  bool
  */
@@ -69,7 +87,7 @@ bool TS_ConfigReader::loadConfig()
 
     while (!file.eof())
     {
-        file >> line;
+        getline(file, line);
 
         key = line.substr(0, line.find(delimiter));
         value = line.substr(line.find(delimiter) + 1, line.length());

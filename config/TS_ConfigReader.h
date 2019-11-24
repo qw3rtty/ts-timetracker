@@ -24,6 +24,7 @@ public:
     TS_ConfigReader();
     bool configLoaded;
     void showConfig();
+    std::string getConfigEntry(std::string entry);
 
 private:
     std::string filename;

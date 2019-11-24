@@ -23,6 +23,7 @@ public:
     TS_CommandTimestamp();
     bool execute();
     std::time_t getTimestamp();
+    char *getFormattedDate();
 
 protected:
     bool prepare();
