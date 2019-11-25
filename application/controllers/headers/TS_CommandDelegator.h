@@ -32,7 +32,7 @@ private:
 
 public:
     static TS_CommandDelegator *getInstance();
-    void setCommandWithAttributes(char * command);
+    void setCommandWithAttributes(char *command);
     bool isCommandValid();
     void runCommand();
 

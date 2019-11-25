@@ -28,7 +28,7 @@ public:
 
 private:
     std::string filename;
-    std::map<std::string, std::string> entries;
+    std::map <std::string, std::string> entries;
     bool loadConfig();
 };
 

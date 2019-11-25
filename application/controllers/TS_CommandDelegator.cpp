@@ -47,13 +47,13 @@ void TS_CommandDelegator::setCommandWithAttributes(char *command)
 {
     char *pointerToken = strtok(command, " ");
 
-    this->command = (char *)malloc(strlen(pointerToken) + 1);
+    this->command = (char *) malloc(strlen(pointerToken) + 1);
     strcpy(this->command, pointerToken);
     pointerToken = strtok(NULL, " ");
 
-    while(pointerToken != NULL)
+    while (pointerToken != NULL)
     {
-        this->arguments = (char *)malloc(strlen(pointerToken) + 1);
+        this->arguments = (char *) malloc(strlen(pointerToken) + 1);
         strcpy(this->arguments, pointerToken);
         pointerToken = strtok(NULL, " ");
     }
