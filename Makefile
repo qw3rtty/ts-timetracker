@@ -43,7 +43,13 @@ TESTFILENAME = ts-test
 TESTFILES = ./tests/TS_UnitTest.cpp
 
 build:
-	$(CC) -o $(NAME) $(CONFIG) $(MAIN) $(HELPERS) $(HELPERHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
+	@echo Compiling ts-timetracker ...
+	@$(CC) -o $(NAME) $(CONFIG) $(MAIN) $(HELPERS) $(HELPERHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
+	@echo Successfully compiled
 
 test:
-	$(CC) -o $(TESTFILENAME) $(CONFIG) $(TESTFILES) $(HELPERS) $(HELPERHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
+	@echo Compiling unit test ...
+	@$(CC) -o $(TESTFILENAME) $(CONFIG) $(TESTFILES) $(HELPERS) $(HELPERHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
+	@echo Successfully compiled
+	@echo Run unit test:
+	@./ts-test
