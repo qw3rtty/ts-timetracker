@@ -27,6 +27,7 @@ CONTROLLERHEADERS = \
     $(CONTROLLERSHEADERPATH)/TS_CommandDelegator.h \
     $(CONTROLLERSHEADERPATH)/TS_Command.h \
     $(CONTROLLERSHEADERPATH)/TS_CommandHelp.h \
+    $(CONTROLLERSHEADERPATH)/TS_CommandList.h \
     $(CONTROLLERSHEADERPATH)/TS_CommandShowConfig.h \
     $(CONTROLLERSHEADERPATH)/TS_CommandTimestamp.h
 
@@ -35,6 +36,7 @@ CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_CommandDelegator.cpp \
     $(CONTROLLERSPATH)/TS_Command.cpp \
     $(CONTROLLERSPATH)/TS_CommandHelp.cpp \
+    $(CONTROLLERSPATH)/TS_CommandList.cpp \
     $(CONTROLLERSPATH)/TS_CommandShowConfig.cpp \
     $(CONTROLLERSPATH)/TS_CommandTimestamp.cpp
 

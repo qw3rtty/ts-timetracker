@@ -20,6 +20,7 @@
 #include "./headers/TS_CommandDelegator.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandHelp.h"
+#include "./headers/TS_CommandList.h"
 #include "./headers/TS_CommandShowConfig.h"
 #include "./headers/TS_CommandTimestamp.h"
 
@@ -94,6 +95,12 @@ void TS_CommandDelegator::runCommand()
     {
         TS_CommandShowConfig cmdConfig;
         cmdConfig.execute();
+    }
+
+    if (strcmp(this->command, "list") == 0)
+    {
+        TS_CommandList cmdList;
+        cmdList.execute();
     }
 
     if (strcmp(this->command, "start") == 0)
