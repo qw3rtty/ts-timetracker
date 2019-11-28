@@ -66,17 +66,19 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
  */
 bool TS_ModelFilesystem::save(std::string entry)
 {
-    this->getProjectList();
-
     // TODO: make project choose able
     std::string file = this->projectsPath;
     file.append(this->projectList.begin()->second);
 
     std::ofstream project(file, std::ios_base::app);
-    project << entry << std::endl;
-    project.close();
+    if (project.is_open())
+    {
+        project << entry << std::endl;
+        project.close();
+        return true;
+    }
 
-    return true;
+    return false;
 }
 
 /**

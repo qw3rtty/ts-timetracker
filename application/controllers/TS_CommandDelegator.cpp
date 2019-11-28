@@ -29,7 +29,9 @@
  * Constructor
  */
 TS_CommandDelegator::TS_CommandDelegator()
-{}
+{
+    this->model.getProjectList();
+}
 
 /**
  * Getter for instance
@@ -101,6 +103,7 @@ void TS_CommandDelegator::runCommand()
     if (strcmp(this->command, "list") == 0)
     {
         TS_CommandList cmdList;
+        cmdList.setProjectList(this->model.getProjectList());
         cmdList.execute();
     }
 
@@ -127,8 +130,17 @@ void TS_CommandDelegator::runCommand()
     if (strcmp(this->command, "save") == 0)
     {
         std::stringstream entryBuffer;
-        entryBuffer << "New timetrack: " << this->startTimestamp << " - " << this->endTimestamp;
-        this->model.save(entryBuffer.str());
+        entryBuffer << this->startTimestamp << ";" << this->endTimestamp;
+
+        bool successfullySaved = this->model.save(entryBuffer.str());
+        if (successfullySaved)
+        {
+            std::cout << "Successfully saved new time track!" << std::endl;
+        }
+        else
+        {
+            std::cout << "Error on saving new time track! Try again ..." << std::endl;
+        }
     }
 }
 

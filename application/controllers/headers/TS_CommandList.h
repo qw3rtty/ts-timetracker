@@ -15,7 +15,6 @@
 #define TS_TIMETRACKER_TS_COMMANDLIST_H
 
 #include "TS_Command.h"
-#include "../../models/headers/TS_ModelFilesystem.h"
 #include <string>
 #include <map>
 
@@ -24,13 +23,13 @@ class TS_CommandList : public TS_Command
 public:
     TS_CommandList();
     void setTestMode(bool testMode);
+    void setProjectList(std::map<int, std::string> list);
     bool execute();
 
 protected:
     bool prepare();
 
 private:
-    TS_ModelFilesystem model;
     bool isTestMode;
     std::map<int, std::string> list;
 };

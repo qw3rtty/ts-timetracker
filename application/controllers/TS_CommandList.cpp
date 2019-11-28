@@ -17,7 +17,6 @@
 #include <iterator>
 
 #include "../../config/TS_ConfigReader.h"
-#include "../models/headers/TS_ModelFilesystem.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandList.h"
 
@@ -56,8 +55,12 @@ bool TS_CommandList::execute()
  */
 bool TS_CommandList::prepare()
 {
-    this->list = this->model.getProjectList();
     return true;
+}
+
+void TS_CommandList::setProjectList(std::map<int, std::string> list)
+{
+    this->list = list;
 }
 
 /**
