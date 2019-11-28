@@ -122,8 +122,10 @@ void TS_CommandDelegator::runCommand()
         this->endTimestamp = cmdTimestamp.getTimestamp();
         std::cout << "Time tracking finished." << std::endl;
         std::cout << "Finished time: " << cmdTimestamp.getFormattedDate() << std::endl;
+    }
 
-        // TODO: create own command to save new timetrack & create better format for an entry
+    if (strcmp(this->command, "save") == 0)
+    {
         std::stringstream entryBuffer;
         entryBuffer << "New timetrack: " << this->startTimestamp << " - " << this->endTimestamp;
         this->model.save(entryBuffer.str());

@@ -25,7 +25,7 @@ class TS_CommandDelegator : public TS_Base
 {
 private:
     TS_CommandDelegator();
-    const char commandList[5][15] = {"help", "showConfig", "list", "start", "stop"};
+    const char commandList[6][15] = {"help", "showConfig", "list", "start", "stop", "save"};
     char *arguments;
     char *command;
     std::time_t startTimestamp;

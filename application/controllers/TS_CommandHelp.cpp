@@ -42,6 +42,7 @@ bool TS_CommandHelp::execute()
     std::cout << "- list: List all available projects" << std::endl;
     std::cout << "- start: Start's timetracking" << std::endl;
     std::cout << "- stop: Stop's timetracking" << std::endl;
+    std::cout << "- save: Save new timetrack depending on settings" << std::endl;
 
     return true;
 }
