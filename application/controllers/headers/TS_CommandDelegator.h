@@ -19,6 +19,7 @@
 
 #include "TS_Base.h"
 #include "TS_Command.h"
+#include "../../models/headers/TS_ModelFilesystem.h"
 
 class TS_CommandDelegator : public TS_Base
 {
@@ -29,6 +30,7 @@ private:
     char *command;
     std::time_t startTimestamp;
     std::time_t endTimestamp;
+    TS_ModelFilesystem model;
 
 public:
     static TS_CommandDelegator *getInstance();

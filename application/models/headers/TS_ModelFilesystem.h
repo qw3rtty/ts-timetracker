@@ -23,6 +23,7 @@ class TS_ModelFilesystem : public TS_Model
 public:
     TS_ModelFilesystem();
     std::map<int, std::string> getProjectList();
+    bool save(std::string entry);
 
 private:
     bool prepare();
