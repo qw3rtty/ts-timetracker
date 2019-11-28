@@ -15,11 +15,9 @@
 #include <string>
 #include <map>
 #include <iterator>
-#include <cstring>
-#include <sys/types.h>
-#include <dirent.h>
 
 #include "../../config/TS_ConfigReader.h"
+#include "../models/headers/TS_ModelFilesystem.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandList.h"
 
@@ -58,25 +56,7 @@ bool TS_CommandList::execute()
  */
 bool TS_CommandList::prepare()
 {
-    TS_ConfigReader config;
-    std::string projectsPath = config.getConfigEntry("projectsPath");
-
-    DIR *directory;
-    struct dirent *entry;
-    unsigned int counter = 0;
-    if (directory = opendir(projectsPath.c_str()))
-    {
-        while (entry = readdir(directory))
-        {
-            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0 )
-            {
-                continue;
-            }
-            this->list.insert(std::make_pair(counter++, entry->d_name));
-        }
-        closedir(directory);
-    }
-
+    this->list = this->model.getProjectList();
     return true;
 }
 

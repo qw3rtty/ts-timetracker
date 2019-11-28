@@ -12,3 +12,9 @@
  */
 
 #include "./headers/TS_Model.h"
+
+/**
+ * Constructor
+ */
+TS_Model::TS_Model()
+{}

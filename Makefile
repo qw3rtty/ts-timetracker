@@ -44,10 +44,12 @@ CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_CommandTimestamp.cpp
 
 MODELHEADERS = \
-    $(MODELSHEADERPATH)/TS_Model.h
+    $(MODELSHEADERPATH)/TS_Model.h \
+    $(MODELSHEADERPATH)/TS_ModelFilesystem.h
 
 MODELS = \
-    $(MODELSPATH)/TS_Model.cpp
+    $(MODELSPATH)/TS_Model.cpp \
+    $(MODELSPATH)/TS_ModelFilesystem.cpp
 
 # TESTS
 TESTFILENAME = ts-test

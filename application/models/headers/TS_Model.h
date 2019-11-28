@@ -17,7 +17,8 @@
 
 class TS_Model
 {
-
+public:
+    TS_Model();
 };
 
 
