@@ -13,6 +13,9 @@ HELPERSHEADERPATH = $(HELPERSPATH)/headers
 CONTROLLERSPATH = ./application/controllers
 CONTROLLERSHEADERPATH = $(CONTROLLERSPATH)/headers
 
+MODELSPATH = ./application/models
+MODELSHEADERPATH = $(MODELSPATH)/headers
+
 # FILES
 HELPERHEADERS = \
     $(HELPERSHEADERPATH)/TS_Helper.h \
@@ -40,18 +43,24 @@ CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_CommandShowConfig.cpp \
     $(CONTROLLERSPATH)/TS_CommandTimestamp.cpp
 
+MODELHEADERS = \
+    $(MODELSHEADERPATH)/TS_Model.h
+
+MODELS = \
+    $(MODELSPATH)/TS_Model.cpp
+
 # TESTS
 TESTFILENAME = ts-test
 TESTFILES = ./tests/TS_UnitTest.cpp
 
 build:
 	@echo Compiling ts-timetracker ...
-	@$(CC) -o $(NAME) $(CONFIG) $(MAIN) $(HELPERS) $(HELPERHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
+	@$(CC) -o $(NAME) $(CONFIG) $(MAIN) $(HELPERS) $(HELPERHEADERS) $(MODELS) $(MODELHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
 	@echo Successfully compiled
 
 test:
 	@echo Compiling unit test ...
-	@$(CC) -o $(TESTFILENAME) $(CONFIG) $(TESTFILES) $(HELPERS) $(HELPERHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
+	@$(CC) -o $(TESTFILENAME) $(CONFIG) $(TESTFILES) $(HELPERS) $(HELPERHEADERS) $(MODELS) $(MODELHEADERS) $(CONTROLLERS) $(CONTROLLERHEADERS)
 	@echo Successfully compiled
 	@echo Run unit test:
 	@./ts-test
