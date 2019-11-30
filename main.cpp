@@ -7,7 +7,7 @@
 #include "./helpers/headers/TS_Info.h"
 
 #include "./application/controllers/headers/TS_Base.h"
-#include "./application/controllers/headers/TS_CommandDelegator.h"
+#include "application/controllers/headers/TS_Application.h"
 
 /* Declare a buffer for user input of size 2048 */
 static char input[2048];
@@ -37,10 +37,10 @@ int main(int argc, char **argv)
         /* Read a line of user input of maximum size 2048 */
         std::cin >> input;
 
-        commandDelegator->setCommandWithAttributes(input);
-        if (commandDelegator->isCommandValid())
+        application->setCommandWithAttributes(input);
+        if (application->isCommandValid())
         {
-            commandDelegator->runCommand();
+            application->runCommand();
         }
         else
         {

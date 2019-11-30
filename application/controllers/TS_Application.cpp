@@ -1,7 +1,7 @@
 /**
- * TS-CommandDelegator
+ * TS-Application
  *
- * Singleton class for managing commands
+ * Singleton class for application managing.
  *
  * @package     TS-TimeTracker
  * @author      Thomas Schwarz
@@ -18,7 +18,7 @@
 #include <sstream>
 #include <ctime>
 
-#include "./headers/TS_CommandDelegator.h"
+#include "headers/TS_Application.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandHelp.h"
 #include "./headers/TS_CommandList.h"
@@ -28,18 +28,18 @@
 /**
  * Constructor
  */
-TS_CommandDelegator::TS_CommandDelegator()
+TS_Application::TS_Application()
 {
     this->model.getProjectList();
 }
 
 /**
  * Getter for instance
- * @return TS_CommandDelegator
+ * @return TS_Application
  */
-TS_CommandDelegator *TS_CommandDelegator::getInstance()
+TS_Application *TS_Application::getInstance()
 {
-    static TS_CommandDelegator *instance = new TS_CommandDelegator();
+    static TS_Application *instance = new TS_Application();
     return instance;
 }
 
@@ -47,7 +47,7 @@ TS_CommandDelegator *TS_CommandDelegator::getInstance()
  * Set entered command with attributes of user
  * @param command
  */
-void TS_CommandDelegator::setCommandWithAttributes(char *command)
+void TS_Application::setCommandWithAttributes(char *command)
 {
     char *pointerToken = strtok(command, " ");
 
@@ -67,7 +67,7 @@ void TS_CommandDelegator::setCommandWithAttributes(char *command)
  * Check if entered command is valid
  * @return bool
  */
-bool TS_CommandDelegator::isCommandValid()
+bool TS_Application::isCommandValid()
 {
     bool correctCommand = false;
     int size = sizeof(this->commandList) / sizeof(this->commandList[0]);
@@ -86,7 +86,7 @@ bool TS_CommandDelegator::isCommandValid()
 /**
  * Execute correct command
  */
-void TS_CommandDelegator::runCommand()
+void TS_Application::runCommand()
 {
     if (strcmp(this->command, "help") == 0)
     {
@@ -148,12 +148,12 @@ void TS_CommandDelegator::runCommand()
  * Unit test
  * @return bool
  */
-bool TS_CommandDelegator::unitTest()
+bool TS_Application::unitTest()
 {
     char command[100] = "help";
-    TS_CommandDelegator *delegator;
-    delegator = this->getInstance();
+    TS_Application *applicationTest;
+    applicationTest = this->getInstance();
 
-    delegator->setCommandWithAttributes(command);
-    return delegator->isCommandValid();
+    applicationTest->setCommandWithAttributes(command);
+    return applicationTest->isCommandValid();
 }

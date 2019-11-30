@@ -27,7 +27,7 @@ HELPERS = \
 
 CONTROLLERHEADERS = \
     $(CONTROLLERSHEADERPATH)/TS_Base.h \
-    $(CONTROLLERSHEADERPATH)/TS_CommandDelegator.h \
+    $(CONTROLLERSHEADERPATH)/TS_Application.h \
     $(CONTROLLERSHEADERPATH)/TS_Command.h \
     $(CONTROLLERSHEADERPATH)/TS_CommandHelp.h \
     $(CONTROLLERSHEADERPATH)/TS_CommandList.h \
@@ -36,7 +36,7 @@ CONTROLLERHEADERS = \
 
 CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_Base.cpp \
-    $(CONTROLLERSPATH)/TS_CommandDelegator.cpp \
+    $(CONTROLLERSPATH)/TS_Application.cpp \
     $(CONTROLLERSPATH)/TS_Command.cpp \
     $(CONTROLLERSPATH)/TS_CommandHelp.cpp \
     $(CONTROLLERSPATH)/TS_CommandList.cpp \

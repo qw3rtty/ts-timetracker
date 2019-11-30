@@ -20,7 +20,7 @@
 #include "../helpers/headers/TS_Helper.h"
 #include "../helpers/headers/TS_Info.h"
 #include "../application/controllers/headers/TS_Base.h"
-#include "../application/controllers/headers/TS_CommandDelegator.h"
+#include "../application/controllers/headers/TS_Application.h"
 #include "../application/controllers/headers/TS_Command.h"
 #include "../application/controllers/headers/TS_CommandHelp.h"
 #include "../application/controllers/headers/TS_CommandList.h"
@@ -41,8 +41,8 @@ int main()
     assert(config.configLoaded);
     std::cout << "TS_ConfigReader passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
-    assert(commandDelegator->unitTest());
-    std::cout << "TS_CommandDelegator passed " << helper.color << " \u2713" << helper.noColor << std::endl;
+    assert(application->unitTest());
+    std::cout << "TS_Application passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
     TS_Command cmd;
     assert(!cmd.execute());

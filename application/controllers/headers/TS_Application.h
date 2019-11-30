@@ -1,10 +1,10 @@
-#ifndef TS_TIMETRACKER_TS_COMMANDDELEGATOR_H
-#define TS_TIMETRACKER_TS_COMMANDDELEGATOR_H
+#ifndef TS_TIMETRACKER_TS_APPLICATION_H
+#define TS_TIMETRACKER_TS_APPLICATION_H
 
 /**
- * TS-CommandDelegator
+ * TS-Application
  *
- * Singleton class for managing commands
+ * Singleton class for application managing.
  *
  * @package     TS-TimeTracker
  * @author      Thomas Schwarz
@@ -21,10 +21,10 @@
 #include "TS_Command.h"
 #include "../../models/headers/TS_ModelFilesystem.h"
 
-class TS_CommandDelegator : public TS_Base
+class TS_Application : public TS_Base
 {
 private:
-    TS_CommandDelegator();
+    TS_Application();
     const char commandList[6][15] = {"help", "showConfig", "list", "start", "stop", "save"};
     char *arguments;
     char *command;
@@ -33,7 +33,7 @@ private:
     TS_ModelFilesystem model;
 
 public:
-    static TS_CommandDelegator *getInstance();
+    static TS_Application *getInstance();
     void setCommandWithAttributes(char *command);
     bool isCommandValid();
     void runCommand();
@@ -41,5 +41,5 @@ public:
     bool unitTest();
 };
 
-#define commandDelegator TS_CommandDelegator::getInstance()
-#endif //TS_TIMETRACKER_TS_COMMANDDELEGATOR_H
+#define application TS_Application::getInstance()
+#endif //TS_TIMETRACKER_TS_APPLICATION_H
