@@ -35,7 +35,7 @@ int main(int argc, char **argv)
         std::cout << helper.color << "ts-timetracker> " << helper.noColor;
 
         /* Read a line of user input of maximum size 2048 */
-        std::cin >> input;
+        std::cin.getline(input, sizeof(input));
 
         application->setCommandWithAttributes(input);
         if (application->isCommandValid())
