@@ -39,6 +39,7 @@ bool TS_CommandHelp::execute()
     std::cout << "Options and commands:" << std::endl;
     std::cout << "- help: Show's the help menu" << std::endl;
     std::cout << "- showConfig: Show's the loaded config values" << std::endl;
+    std::cout << "- showTimes: Show's times of selected project" << std::endl;
     std::cout << "- list: List all available projects" << std::endl;
     std::cout << "- set <number>: Set project to track time on, a number from 'list' command" << std::endl;
     std::cout << "- start: Start's timetracking" << std::endl;
