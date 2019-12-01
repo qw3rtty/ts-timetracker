@@ -114,7 +114,8 @@ void TS_Application::runCommand()
         this->choosedProject = atoi(this->arguments);
         if (this->choosedProject)
         {
-            std::cout << "You selected '" << this->model.getProjectName(this->choosedProject) << "'" << std::endl;
+            this->model.setSelectedProjectKey(this->choosedProject);
+            std::cout << "You selected '" << this->model.getProjectName() << "'" << std::endl;
         }
         else
         {
@@ -150,7 +151,7 @@ void TS_Application::runCommand()
             std::stringstream entryBuffer;
             entryBuffer << this->startTimestamp << ";" << this->endTimestamp;
 
-            bool successfullySaved = this->model.save(entryBuffer.str(), this->choosedProject);
+            bool successfullySaved = this->model.save(entryBuffer.str());
             if (successfullySaved)
             {
                 std::cout << "Successfully saved new time track!" << std::endl;

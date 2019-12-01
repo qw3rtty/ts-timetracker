@@ -26,7 +26,17 @@
  */
 TS_ModelFilesystem::TS_ModelFilesystem()
 {
+    this->selectedProjectKey = -1;
     this->prepare();
+}
+
+/**
+ * Set given project key
+ * @param key
+ */
+void TS_ModelFilesystem::setSelectedProjectKey(int key)
+{
+    this->selectedProjectKey = key;
 }
 
 /**
@@ -61,14 +71,13 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
 
 /**
  * Get project by given key
- * @param int key
  * @return std::string
  */
-std::string TS_ModelFilesystem::getProjectName(int key)
+std::string TS_ModelFilesystem::getProjectName()
 {
     for (auto it = this->projectList.begin(); it != this->projectList.end(); ++it)
     {
-        if (it->first == key)
+        if (it->first == this->selectedProjectKey)
         {
             return it->second;
         }
@@ -80,13 +89,12 @@ std::string TS_ModelFilesystem::getProjectName(int key)
 /**
  * Saves new entry to file
  * @param std::string entry
- * @param int projectKey
  * @return bool
  */
-bool TS_ModelFilesystem::save(std::string entry, int projectKey)
+bool TS_ModelFilesystem::save(std::string entry)
 {
     std::string file = this->projectsPath;
-    file.append(this->getProjectName(projectKey));
+    file.append(this->getProjectName());
 
     std::ofstream project(file, std::ios_base::app);
     if (project.is_open())

@@ -22,12 +22,14 @@ class TS_ModelFilesystem : public TS_Model
 {
 public:
     TS_ModelFilesystem();
+    void setSelectedProjectKey(int key);
     std::map<int, std::string> getProjectList();
-    std::string getProjectName(int key);
-    bool save(std::string entry, int projectKey);
+    std::string getProjectName();
+    bool save(std::string entry);
 
 private:
     bool prepare();
+    int selectedProjectKey;
     std::string projectsPath;
     std::map<int, std::string> projectList;
 };
