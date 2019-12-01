@@ -114,7 +114,7 @@ void TS_Application::runCommand()
         this->choosedProject = atoi(this->arguments);
         if (this->choosedProject)
         {
-            std::cout << "You choosed '" << this->model.getProjectName(this->choosedProject) << "'" << std::endl;
+            std::cout << "You selected '" << this->model.getProjectName(this->choosedProject) << "'" << std::endl;
         }
     }
 
