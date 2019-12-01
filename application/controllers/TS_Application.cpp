@@ -116,6 +116,11 @@ void TS_Application::runCommand()
         {
             std::cout << "You selected '" << this->model.getProjectName(this->choosedProject) << "'" << std::endl;
         }
+        else
+        {
+            this->choosedProject = -1;
+            std::cout << "You selected an non existing project!" << std::endl;
+        }
     }
 
     if (strcmp(this->command, "start") == 0)
@@ -140,17 +145,25 @@ void TS_Application::runCommand()
 
     if (strcmp(this->command, "save") == 0)
     {
-        std::stringstream entryBuffer;
-        entryBuffer << this->startTimestamp << ";" << this->endTimestamp;
-
-        bool successfullySaved = this->model.save(entryBuffer.str(), this->choosedProject);
-        if (successfullySaved)
+        if (this->choosedProject >= 0)
         {
-            std::cout << "Successfully saved new time track!" << std::endl;
+            std::stringstream entryBuffer;
+            entryBuffer << this->startTimestamp << ";" << this->endTimestamp;
+
+            bool successfullySaved = this->model.save(entryBuffer.str(), this->choosedProject);
+            if (successfullySaved)
+            {
+                std::cout << "Successfully saved new time track!" << std::endl;
+            }
+            else
+            {
+                std::cout << "Error on saving new time track! Try again ..." << std::endl;
+            }
         }
         else
         {
-            std::cout << "Error on saving new time track! Try again ..." << std::endl;
+            std::cout << "You have to choose a project!" << std::endl;
+            std::cout << "Type 'help' to get more informations." << std::endl;
         }
     }
 }
