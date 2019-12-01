@@ -24,6 +24,7 @@ public:
     TS_CommandList();
     void setTestMode(bool testMode);
     void setProjectList(std::map<int, std::string> list);
+    void setProjectKey(int key);
     bool execute();
 
 protected:
@@ -31,6 +32,7 @@ protected:
 
 private:
     bool isTestMode;
+    int projectKey;
     std::map<int, std::string> list;
 };
 

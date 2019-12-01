@@ -25,9 +25,10 @@ class TS_Application : public TS_Base
 {
 private:
     TS_Application();
-    const char commandList[6][15] = {"help", "showConfig", "list", "start", "stop", "save"};
+    const char commandList[7][15] = {"help", "showConfig", "list", "set", "start", "stop", "save"};
     char *arguments;
     char *command;
+    int choosedProject;
     std::time_t startTimestamp;
     std::time_t endTimestamp;
     TS_ModelFilesystem model;

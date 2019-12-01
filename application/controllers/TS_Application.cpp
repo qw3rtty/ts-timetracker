@@ -30,6 +30,7 @@
  */
 TS_Application::TS_Application()
 {
+    this->choosedProject = -1;
     this->model.getProjectList();
 }
 
@@ -103,8 +104,18 @@ void TS_Application::runCommand()
     if (strcmp(this->command, "list") == 0)
     {
         TS_CommandList cmdList;
+        cmdList.setProjectKey(this->choosedProject);
         cmdList.setProjectList(this->model.getProjectList());
         cmdList.execute();
+    }
+
+    if (strcmp(this->command, "set") == 0)
+    {
+        this->choosedProject = atoi(this->arguments);
+        if (this->choosedProject)
+        {
+            std::cout << "You choosed '" << this->model.getProjectName(this->choosedProject) << "'" << std::endl;
+        }
     }
 
     if (strcmp(this->command, "start") == 0)
@@ -132,7 +143,7 @@ void TS_Application::runCommand()
         std::stringstream entryBuffer;
         entryBuffer << this->startTimestamp << ";" << this->endTimestamp;
 
-        bool successfullySaved = this->model.save(entryBuffer.str());
+        bool successfullySaved = this->model.save(entryBuffer.str(), this->choosedProject);
         if (successfullySaved)
         {
             std::cout << "Successfully saved new time track!" << std::endl;

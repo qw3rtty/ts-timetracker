@@ -60,15 +60,33 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
 }
 
 /**
+ * Get project by given key
+ * @param int key
+ * @return std::string
+ */
+std::string TS_ModelFilesystem::getProjectName(int key)
+{
+    for (auto it = this->projectList.begin(); it != this->projectList.end(); ++it)
+    {
+        if (it->first == key)
+        {
+            return it->second;
+        }
+    }
+
+    return "";
+}
+
+/**
  * Saves new entry to file
  * @param std::string entry
+ * @param int projectKey
  * @return bool
  */
-bool TS_ModelFilesystem::save(std::string entry)
+bool TS_ModelFilesystem::save(std::string entry, int projectKey)
 {
-    // TODO: make project choose able
     std::string file = this->projectsPath;
-    file.append(this->projectList.begin()->second);
+    file.append(this->getProjectName(projectKey));
 
     std::ofstream project(file, std::ios_base::app);
     if (project.is_open())
