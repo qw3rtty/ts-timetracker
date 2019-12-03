@@ -121,18 +121,6 @@ void TS_Application::runCommand()
         cmdConfig.execute();
     }
 
-    if (strcmp(this->command, "showTimes") == 0)
-    {
-        if (this->choosedProject)
-        {
-            std::cout << "Working on it ..." << std::endl;
-        }
-        else
-        {
-            std::cout << "No project selected!" << std::endl;
-        }
-    }
-
     if (strcmp(this->command, "ls") == 0)
     {
         TS_CommandList cmdList;
