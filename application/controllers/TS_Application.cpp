@@ -130,7 +130,7 @@ void TS_Application::runCommand()
     if (strcmp(this->command, "use") == 0)
     {
         this->choosedProject = atoi(this->arguments);
-        if (this->choosedProject)
+        if (this->choosedProject >= 0)
         {
             this->model.setSelectedProjectKey(this->choosedProject);
             std::cout << "You selected '" << this->model.getProjectName() << "'" << std::endl;
