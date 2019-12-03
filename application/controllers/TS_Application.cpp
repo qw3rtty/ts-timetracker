@@ -113,7 +113,7 @@ void TS_Application::runCommand()
         }
     }
 
-    if (strcmp(this->command, "list") == 0)
+    if (strcmp(this->command, "ls") == 0)
     {
         TS_CommandList cmdList;
         cmdList.setProjectKey(this->choosedProject);
@@ -121,7 +121,7 @@ void TS_Application::runCommand()
         cmdList.execute();
     }
 
-    if (strcmp(this->command, "set") == 0)
+    if (strcmp(this->command, "use") == 0)
     {
         this->choosedProject = atoi(this->arguments);
         if (this->choosedProject)

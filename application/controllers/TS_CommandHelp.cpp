@@ -13,6 +13,7 @@
 
 #include <iostream>
 
+#include "../../helpers/headers/TS_Helper.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandHelp.h"
 
@@ -36,15 +37,16 @@ bool TS_CommandHelp::execute()
         return true;
     }
 
-    std::cout << "Options and commands:" << std::endl;
-    std::cout << "- help: Show's the help menu" << std::endl;
-    std::cout << "- showConfig: Show's the loaded config values" << std::endl;
-    std::cout << "- showTimes: Show's times of selected project" << std::endl;
-    std::cout << "- list: List all available projects" << std::endl;
-    std::cout << "- set <number>: Set project to track time on, a number from 'list' command" << std::endl;
-    std::cout << "- start: Start's timetracking" << std::endl;
-    std::cout << "- stop: Stop's timetracking" << std::endl;
-    std::cout << "- save: Save new timetrack depending on settings" << std::endl;
+    TS_Helper helper;
+    std::cout << "Available commands:" << std::endl;
+    std::cout << "- help:" << helper.doubleTab << "Show's the help menu" << std::endl;
+    std::cout << "- showConfig:" << helper.tab << "Show's the loaded config values" << std::endl;
+    std::cout << "- showTimes:" << helper.tab << "Show's times of selected project" << std::endl;
+    std::cout << "- ls:" << helper.doubleTab << "List all available projects" << std::endl;
+    std::cout << "- use <n>:" << helper.tab << "Set project to track time on, a number from 'list' command" << std::endl;
+    std::cout << "- start:" << helper.tab << "Start's timetracking" << std::endl;
+    std::cout << "- stop:" << helper.doubleTab << "Stop's timetracking" << std::endl;
+    std::cout << "- save:" << helper.doubleTab << "Save new timetrack depending on settings" << std::endl;
 
     return true;
 }

@@ -22,6 +22,8 @@ public:
     TS_Helper();
     const char *color;
     const char *noColor;
+    const char *tab;
+    const char *doubleTab;
 };
 
 #endif //TS_TIMETRACKER_TS_HELPER_H

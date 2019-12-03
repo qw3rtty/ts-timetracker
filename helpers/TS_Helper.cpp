@@ -20,4 +20,6 @@ TS_Helper::TS_Helper()
 {
     this->color = "\033[0;33m";
     this->noColor = "\033[0m";
+    this->tab = "\t";
+    this->doubleTab = "\t\t";
 }
