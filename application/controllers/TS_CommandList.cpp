@@ -18,6 +18,7 @@
 
 #include "../../config/TS_ConfigReader.h"
 #include "../../helpers/headers/TS_Helper.h"
+#include "./headers/TS_Application.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandList.h"
 
@@ -65,6 +66,9 @@ bool TS_CommandList::execute()
  */
 bool TS_CommandList::prepare()
 {
+    this->setProjectKey(application->getChoosedProject());
+    this->setProjectList(application->getProjectList());
+
     return true;
 }
 

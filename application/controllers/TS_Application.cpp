@@ -17,6 +17,8 @@
 #include <cstring>
 #include <sstream>
 #include <ctime>
+#include <string>
+#include <map>
 
 #include "headers/TS_Application.h"
 #include "./headers/TS_Command.h"
@@ -85,6 +87,24 @@ bool TS_Application::isCommandValid()
 }
 
 /**
+ * Get choosed project by user
+ * @return int
+ */
+int TS_Application::getChoosedProject()
+{
+    return this->choosedProject;
+}
+
+/**
+ * Get list of all available projects
+ * @return std::map<int, std::string>
+ */
+std::map<int, std::string> TS_Application::getProjectList()
+{
+    return this->model.getProjectList();
+}
+
+/**
  * Execute correct command
  */
 void TS_Application::runCommand()
@@ -116,8 +136,6 @@ void TS_Application::runCommand()
     if (strcmp(this->command, "ls") == 0)
     {
         TS_CommandList cmdList;
-        cmdList.setProjectKey(this->choosedProject);
-        cmdList.setProjectList(this->model.getProjectList());
         cmdList.execute();
     }
 

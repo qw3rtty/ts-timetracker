@@ -16,6 +16,8 @@
 
 #include <stdio.h>
 #include <ctime>
+#include <string>
+#include <map>
 
 #include "TS_Base.h"
 #include "TS_Command.h"
@@ -38,6 +40,8 @@ public:
     void setCommandWithAttributes(char *command);
     bool isCommandValid();
     void runCommand();
+    int getChoosedProject();
+    std::map<int, std::string> getProjectList();
 
     bool unitTest();
 };

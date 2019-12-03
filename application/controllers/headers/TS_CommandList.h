@@ -23,8 +23,6 @@ class TS_CommandList : public TS_Command
 public:
     TS_CommandList();
     void setTestMode(bool testMode);
-    void setProjectList(std::map<int, std::string> list);
-    void setProjectKey(int key);
     bool execute();
 
 protected:
@@ -34,6 +32,9 @@ private:
     bool isTestMode;
     int projectKey;
     std::map<int, std::string> list;
+
+    void setProjectList(std::map<int, std::string> list);
+    void setProjectKey(int key);
 };
 
 
