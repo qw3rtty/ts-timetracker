@@ -33,6 +33,7 @@ TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
 
     if (arguments == nullptr)
     {
+        // TODO: fix compile warning !
         this->arguments = "projects";
     }
 }
