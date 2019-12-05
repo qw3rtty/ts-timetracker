@@ -22,8 +22,6 @@ public:
 
 protected:
     bool prepare();
-
-private:
     char *arguments;
 };
 

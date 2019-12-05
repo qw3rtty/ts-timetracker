@@ -24,7 +24,6 @@
 #include "../application/controllers/headers/TS_Command.h"
 #include "../application/controllers/headers/TS_CommandHelp.h"
 #include "../application/controllers/headers/TS_CommandList.h"
-#include "../application/controllers/headers/TS_CommandShowConfig.h"
 #include "../application/controllers/headers/TS_CommandTimestamp.h"
 
 int main()
@@ -58,11 +57,6 @@ int main()
     cmdList.setTestMode(true);
     assert(cmdList.execute());
     std::cout << "TS_CommandList passed " << helper.color << " \u2713" << helper.noColor << std::endl;
-
-    TS_CommandShowConfig cmdConfig(testArgument);
-    cmdConfig.setTestMode(true);
-    assert(cmdConfig.execute());
-    std::cout << "TS_CommandShowConfig passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
     TS_CommandTimestamp cmdTime(testArgument);
     assert(cmdTime.execute());

@@ -35,6 +35,8 @@ private:
 
     void setProjectList(std::map<int, std::string> list);
     void setProjectKey(int key);
+    void showProjects();
+    void showConfig();
 };
 
 

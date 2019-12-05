@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <map>
 #include <iterator>
 
@@ -29,6 +30,11 @@ TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
 {
     this->isTestMode = false;
     this->projectKey = -1;
+
+    if (arguments == nullptr)
+    {
+        this->arguments = "projects";
+    }
 }
 
 /**
@@ -43,19 +49,14 @@ bool TS_CommandList::execute()
         return true;
     }
 
-    TS_Helper helper;
-    std::map<int, std::string>::iterator listIterator = this->list.begin();
-    while (listIterator != this->list.end())
+    if (strcmp(this->arguments, "projects") == 0)
     {
-        std::cout << listIterator->first << " => " << listIterator->second;
+        this->showProjects();
+    }
 
-        if (listIterator->first == this->projectKey)
-        {
-            std::cout << helper.color << " [selected]" << helper.noColor;
-        }
-
-        std::cout << std::endl;
-        listIterator++;
+    if (strcmp(this->arguments, "config") == 0)
+    {
+        this->showConfig();
     }
 
     return true;
@@ -88,6 +89,44 @@ void TS_CommandList::setProjectList(std::map<int, std::string> list)
 void TS_CommandList::setProjectKey(int key)
 {
     this->projectKey = key;
+}
+
+/**
+ * Show all projects
+ */
+void TS_CommandList::showProjects()
+{
+    TS_Helper helper;
+    std::map<int, std::string>::iterator listIterator = this->list.begin();
+    while (listIterator != this->list.end())
+    {
+        std::cout << listIterator->first << " => " << listIterator->second;
+
+        if (listIterator->first == this->projectKey)
+        {
+            std::cout << helper.color << " [selected]" << helper.noColor;
+        }
+
+        std::cout << std::endl;
+        listIterator++;
+    }
+}
+
+/**
+ * Show all settings in config
+ */
+void TS_CommandList::showConfig()
+{
+    TS_ConfigReader config;
+    if (!config.configLoaded)
+    {
+        return;
+    }
+
+    if (!this->isTestMode)
+    {
+        config.showConfig();
+    }
 }
 
 /**

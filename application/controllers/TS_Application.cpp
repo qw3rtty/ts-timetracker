@@ -24,7 +24,6 @@
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandHelp.h"
 #include "./headers/TS_CommandList.h"
-#include "./headers/TS_CommandShowConfig.h"
 #include "./headers/TS_CommandTimestamp.h"
 
 /**
@@ -122,12 +121,6 @@ void TS_Application::runCommand()
     {
         TS_CommandHelp cmdHelp(application->getCommandAttributes());
         cmdHelp.execute();
-    }
-
-    if (strcmp(this->command, "showConfig") == 0)
-    {
-        TS_CommandShowConfig cmdConfig(application->getCommandAttributes());
-        cmdConfig.execute();
     }
 
     if (strcmp(this->command, "ls") == 0)
