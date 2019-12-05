@@ -21,7 +21,7 @@
 class TS_CommandList : public TS_Command
 {
 public:
-    TS_CommandList();
+    TS_CommandList(char *arguments);
     void setTestMode(bool testMode);
     bool execute();
 

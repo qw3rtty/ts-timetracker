@@ -41,6 +41,7 @@ public:
     bool isCommandValid();
     void runCommand();
     int getChoosedProject();
+    char *getCommandAttributes();
     std::map<int, std::string> getProjectList();
 
     bool unitTest();

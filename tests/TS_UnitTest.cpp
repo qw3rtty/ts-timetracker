@@ -29,6 +29,7 @@
 
 int main()
 {
+    char *testArgument;
     TS_Helper helper;
 
     TS_Info info;
@@ -44,26 +45,26 @@ int main()
     assert(application->unitTest());
     std::cout << "TS_Application passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
-    TS_Command cmd;
+    TS_Command cmd(testArgument);
     assert(!cmd.execute());
     std::cout << "TS_Command passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
-    TS_CommandHelp cmdHelp;
+    TS_CommandHelp cmdHelp(testArgument);
     cmdHelp.setTestMode(true);
     assert(cmdHelp.execute());
     std::cout << "TS_CommandHelp passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
-    TS_CommandList cmdList;
+    TS_CommandList cmdList(testArgument);
     cmdList.setTestMode(true);
     assert(cmdList.execute());
     std::cout << "TS_CommandList passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
-    TS_CommandShowConfig cmdConfig;
+    TS_CommandShowConfig cmdConfig(testArgument);
     cmdConfig.setTestMode(true);
     assert(cmdConfig.execute());
     std::cout << "TS_CommandShowConfig passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
-    TS_CommandTimestamp cmdTime;
+    TS_CommandTimestamp cmdTime(testArgument);
     assert(cmdTime.execute());
     assert(cmdTime.getTimestamp() != -1);
     std::cout << "TS_CommandTimestamp passed " << helper.color << " \u2713" << helper.noColor << std::endl;

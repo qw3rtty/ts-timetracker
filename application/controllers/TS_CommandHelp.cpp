@@ -20,7 +20,7 @@
 /**
  * @inherit
  */
-TS_CommandHelp::TS_CommandHelp()
+TS_CommandHelp::TS_CommandHelp(char *arguments) : TS_Command(arguments)
 {
     this->isTestMode = false;
 }

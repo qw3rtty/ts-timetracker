@@ -19,7 +19,7 @@
 class TS_CommandShowConfig : public TS_Command
 {
 public:
-    TS_CommandShowConfig();
+    TS_CommandShowConfig(char *arguments);
     bool execute();
     void setTestMode(bool testMode);
 

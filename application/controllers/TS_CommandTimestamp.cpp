@@ -23,7 +23,7 @@
 /**
  * @inherit
  */
-TS_CommandTimestamp::TS_CommandTimestamp()
+TS_CommandTimestamp::TS_CommandTimestamp(char *arguments) : TS_Command(arguments)
 {}
 
 /**

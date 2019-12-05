@@ -25,7 +25,7 @@
 /**
  * @inherit
  */
-TS_CommandList::TS_CommandList()
+TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
 {
     this->isTestMode = false;
     this->projectKey = -1;

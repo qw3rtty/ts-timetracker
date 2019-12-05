@@ -20,7 +20,7 @@
 /**
  * Constructor
  */
-TS_CommandShowConfig::TS_CommandShowConfig()
+TS_CommandShowConfig::TS_CommandShowConfig(char *arguments) : TS_Command(arguments)
 {
     this->isTestMode = false;
 }

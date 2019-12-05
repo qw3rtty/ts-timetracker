@@ -96,6 +96,15 @@ int TS_Application::getChoosedProject()
 }
 
 /**
+ * Get command attributes from input
+ * @return char *
+ */
+char* TS_Application::getCommandAttributes()
+{
+    return this->arguments;
+}
+
+/**
  * Get list of all available projects
  * @return std::map<int, std::string>
  */
@@ -111,19 +120,19 @@ void TS_Application::runCommand()
 {
     if (strcmp(this->command, "help") == 0)
     {
-        TS_CommandHelp cmdHelp;
+        TS_CommandHelp cmdHelp(application->getCommandAttributes());
         cmdHelp.execute();
     }
 
     if (strcmp(this->command, "showConfig") == 0)
     {
-        TS_CommandShowConfig cmdConfig;
+        TS_CommandShowConfig cmdConfig(application->getCommandAttributes());
         cmdConfig.execute();
     }
 
     if (strcmp(this->command, "ls") == 0)
     {
-        TS_CommandList cmdList;
+        TS_CommandList cmdList(application->getCommandAttributes());
         cmdList.execute();
     }
 
@@ -144,7 +153,7 @@ void TS_Application::runCommand()
 
     if (strcmp(this->command, "start") == 0)
     {
-        TS_CommandTimestamp cmdTimestamp;
+        TS_CommandTimestamp cmdTimestamp(application->getCommandAttributes());
         cmdTimestamp.execute();
 
         this->startTimestamp = cmdTimestamp.getTimestamp();
@@ -154,7 +163,7 @@ void TS_Application::runCommand()
 
     if (strcmp(this->command, "stop") == 0)
     {
-        TS_CommandTimestamp cmdTimestamp;
+        TS_CommandTimestamp cmdTimestamp(application->getCommandAttributes());
         cmdTimestamp.execute();
 
         this->endTimestamp = cmdTimestamp.getTimestamp();

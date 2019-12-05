@@ -15,9 +15,12 @@
 
 /**
  * Constructor
+ * @param char* arguments
  */
-TS_Command::TS_Command()
-{}
+TS_Command::TS_Command(char *arguments)
+{
+    this->arguments = arguments;
+}
 
 /**
  * Execute command

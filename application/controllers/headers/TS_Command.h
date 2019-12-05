@@ -17,11 +17,14 @@
 class TS_Command
 {
 public:
-    TS_Command();
+    TS_Command(char *arguments);
     bool execute();
 
 protected:
     bool prepare();
+
+private:
+    char *arguments;
 };
 
 
