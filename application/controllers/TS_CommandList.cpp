@@ -30,12 +30,6 @@ TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
 {
     this->isTestMode = false;
     this->projectKey = -1;
-
-    if (arguments == nullptr)
-    {
-        // TODO: fix compile warning !
-        this->arguments = "projects";
-    }
 }
 
 /**
@@ -48,6 +42,12 @@ bool TS_CommandList::execute()
     if (this->isTestMode)
     {
         return true;
+    }
+
+    if (this->arguments == nullptr)
+    {
+        std::cout << "You entered no argument!" << std::endl;
+        return false;
     }
 
     if (strcmp(this->arguments, "projects") == 0)
