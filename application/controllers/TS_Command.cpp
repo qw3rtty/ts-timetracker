@@ -20,6 +20,7 @@
 TS_Command::TS_Command(char *arguments)
 {
     this->arguments = arguments;
+    this->isTestMode = false;
 }
 
 /**
@@ -38,4 +39,13 @@ bool TS_Command::execute()
 bool TS_Command::prepare()
 {
     return false;
+}
+
+/**
+ * Set test mode
+ * @param testMode
+ */
+void TS_Command::setTestMode(bool testMode)
+{
+    this->isTestMode = testMode;
 }

@@ -28,7 +28,6 @@
  */
 TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
 {
-    this->isTestMode = false;
     this->projectKey = -1;
 }
 
@@ -128,13 +127,4 @@ void TS_CommandList::showConfig()
     {
         config.showConfig();
     }
-}
-
-/**
- * Set test mode
- * @param testMode
- */
-void TS_CommandList::setTestMode(bool testMode)
-{
-    this->isTestMode = testMode;
 }

@@ -22,14 +22,12 @@ class TS_CommandList : public TS_Command
 {
 public:
     TS_CommandList(char *arguments);
-    void setTestMode(bool testMode);
     bool execute();
 
 protected:
     bool prepare();
 
 private:
-    bool isTestMode;
     int projectKey;
     std::map<int, std::string> list;
 

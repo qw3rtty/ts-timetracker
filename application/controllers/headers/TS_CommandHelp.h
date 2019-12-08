@@ -20,14 +20,10 @@ class TS_CommandHelp : public TS_Command
 {
 public:
     TS_CommandHelp(char *arguments);
-    void setTestMode(bool testMode);
     bool execute();
 
 protected:
     bool prepare();
-
-private:
-    bool isTestMode;
 };
 
 

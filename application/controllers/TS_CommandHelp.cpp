@@ -21,9 +21,7 @@
  * @inherit
  */
 TS_CommandHelp::TS_CommandHelp(char *arguments) : TS_Command(arguments)
-{
-    this->isTestMode = false;
-}
+{}
 
 /**
  * @inherit
@@ -55,13 +53,4 @@ bool TS_CommandHelp::execute()
 bool TS_CommandHelp::prepare()
 {
     return true;
-}
-
-/**
- * Set test mode
- * @param testMode
- */
-void TS_CommandHelp::setTestMode(bool testMode)
-{
-    this->isTestMode = testMode;
 }
