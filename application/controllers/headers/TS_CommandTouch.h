@@ -14,6 +14,7 @@
 #ifndef TS_TIMETRACKER_TS_COMMANDTOUCH_H
 #define TS_TIMETRACKER_TS_COMMANDTOUCH_H
 
+#include <string>
 #include "TS_Command.h"
 
 class TS_CommandTouch : public TS_Command
@@ -24,6 +25,9 @@ public:
 
 protected:
     bool prepare();
+
+private:
+    std::string storePath;
 };
 
 

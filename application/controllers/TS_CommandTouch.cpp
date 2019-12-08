@@ -12,7 +12,11 @@
  */
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
+#include "../../config/TS_ConfigReader.h"
+#include "./headers/TS_Application.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandTouch.h"
 
@@ -34,7 +38,19 @@ bool TS_CommandTouch::execute()
         return true;
     }
 
+    if (this->arguments == nullptr)
+    {
+        std::cout << "No project name entered!" << std::endl;
+        return false;
+    }
 
+    std::stringstream newProjectPath;
+    newProjectPath << this->storePath << this->arguments;
+
+    std::ofstream newProject(newProjectPath.str());
+    newProject.close();
+
+    std::cout << "New project '" << this->arguments << "' successful created." << std::endl;
 
     return true;
 }
@@ -44,5 +60,8 @@ bool TS_CommandTouch::execute()
  */
 bool TS_CommandTouch::prepare()
 {
+    TS_ConfigReader config;
+    this->storePath = config.getConfigEntry("projectsPath");
+
     return true;
 }

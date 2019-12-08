@@ -65,6 +65,7 @@ int main()
     std::cout << "TS_CommandTimestamp passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
     TS_CommandTouch cmdTouch(testArgument);
+    cmdTouch.setTestMode(true);
     assert(cmdTouch.execute());
     std::cout << "TS_CommandTouch passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 

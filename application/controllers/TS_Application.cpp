@@ -25,6 +25,7 @@
 #include "./headers/TS_CommandHelp.h"
 #include "./headers/TS_CommandList.h"
 #include "./headers/TS_CommandTimestamp.h"
+#include "./headers/TS_CommandTouch.h"
 
 /**
  * Constructor
@@ -121,6 +122,12 @@ void TS_Application::runCommand()
     {
         TS_CommandHelp cmdHelp(application->getCommandAttributes());
         cmdHelp.execute();
+    }
+
+    if (strcmp(this->command, "touch") == 0)
+    {
+        TS_CommandTouch cmdTouch(application->getCommandAttributes());
+        cmdTouch.execute();
     }
 
     if (strcmp(this->command, "ls") == 0)

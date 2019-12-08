@@ -38,6 +38,7 @@ bool TS_CommandHelp::execute()
     TS_Helper helper;
     std::cout << "Available commands:" << std::endl;
     std::cout << "- help:" << helper.doubleTab << "Show's the help menu" << std::endl;
+    std::cout << "- touch: <name>" << helper.tab << "Create's a new project" << std::endl;
     std::cout << "- ls <item>:" << helper.tab << "List selected items (use 'projects' or 'config')" << std::endl;
     std::cout << "- use <n>:" << helper.tab << "Set project to track time on, a number from 'list' command" << std::endl;
     std::cout << "- start:" << helper.tab << "Start's timetracking" << std::endl;
