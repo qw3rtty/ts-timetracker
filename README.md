@@ -1,2 +1,2 @@
 # ts-timetracker
-Simple time tracker with an interactive command line interface. 
+Simple interactive command line timetracker.
