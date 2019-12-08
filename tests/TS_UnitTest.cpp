@@ -25,6 +25,7 @@
 #include "../application/controllers/headers/TS_CommandHelp.h"
 #include "../application/controllers/headers/TS_CommandList.h"
 #include "../application/controllers/headers/TS_CommandTimestamp.h"
+#include "../application/controllers/headers/TS_CommandTouch.h"
 
 int main()
 {
@@ -62,6 +63,10 @@ int main()
     assert(cmdTime.execute());
     assert(cmdTime.getTimestamp() != -1);
     std::cout << "TS_CommandTimestamp passed " << helper.color << " \u2713" << helper.noColor << std::endl;
+
+    TS_CommandTouch cmdTouch(testArgument);
+    assert(cmdTouch.execute());
+    std::cout << "TS_CommandTouch passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
     std::cout << std::endl;
     std::cout << helper.color << "All tests passed" << " \u2713" << helper.noColor << std::endl;
