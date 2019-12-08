@@ -24,7 +24,7 @@
  */
 TS_ConfigReader::TS_ConfigReader()
 {
-    this->filename = ".ts-timetracker.cfg";
+    this->filename = ".ts-timetracker.conf";
     this->configLoaded = this->loadConfig();
 }
 
