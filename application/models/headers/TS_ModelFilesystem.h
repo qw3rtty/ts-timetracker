@@ -26,6 +26,7 @@ public:
     std::map<int, std::string> getProjectList();
     std::string getProjectName();
     bool save(std::string entry);
+    void clearProjectListCache();
 
 private:
     bool prepare();

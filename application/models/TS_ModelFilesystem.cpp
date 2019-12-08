@@ -108,6 +108,14 @@ bool TS_ModelFilesystem::save(std::string entry)
 }
 
 /**
+ * Clear project list cache
+ */
+void TS_ModelFilesystem::clearProjectListCache()
+{
+    this->projectList.clear();
+}
+
+/**
  * Prepare model
  * @return
  */

@@ -16,6 +16,7 @@
 #include <sstream>
 
 #include "../../config/TS_ConfigReader.h"
+#include "./headers/TS_Application.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandRemove.h"
 
@@ -47,6 +48,7 @@ bool TS_CommandRemove::execute()
     deleteProjectPath << this->storePath << this->arguments;
 
     std::remove(deleteProjectPath.str().c_str());
+    application->clearProjectList();
     std::cout << "Project '" << this->arguments << "' successful deleted." << std::endl;
 
     return true;

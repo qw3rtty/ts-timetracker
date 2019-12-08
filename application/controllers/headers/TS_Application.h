@@ -40,6 +40,7 @@ public:
     void setCommandWithAttributes(char *command);
     bool isCommandValid();
     void runCommand();
+    void clearProjectList();
     int getChoosedProject();
     char *getCommandAttributes();
     std::map<int, std::string> getProjectList();

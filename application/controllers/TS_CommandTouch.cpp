@@ -16,6 +16,7 @@
 #include <sstream>
 
 #include "../../config/TS_ConfigReader.h"
+#include "./headers/TS_Application.h"
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandTouch.h"
 
@@ -49,6 +50,7 @@ bool TS_CommandTouch::execute()
     std::ofstream newProject(newProjectPath.str());
     newProject.close();
 
+    application->clearProjectList();
     std::cout << "New project '" << this->arguments << "' successful created." << std::endl;
 
     return true;

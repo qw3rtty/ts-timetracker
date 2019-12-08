@@ -204,6 +204,14 @@ void TS_Application::runCommand()
 }
 
 /**
+ * Clear project list cache
+ */
+void TS_Application::clearProjectList()
+{
+    this->model.clearProjectListCache();
+}
+
+/**
  * Unit test
  * @return bool
  */
