@@ -24,6 +24,7 @@
 #include "../application/controllers/headers/TS_Command.h"
 #include "../application/controllers/headers/TS_CommandHelp.h"
 #include "../application/controllers/headers/TS_CommandList.h"
+#include "../application/controllers/headers/TS_CommandRemove.h"
 #include "../application/controllers/headers/TS_CommandTimestamp.h"
 #include "../application/controllers/headers/TS_CommandTouch.h"
 
@@ -58,6 +59,11 @@ int main()
     cmdList.setTestMode(true);
     assert(cmdList.execute());
     std::cout << "TS_CommandList passed " << helper.color << " \u2713" << helper.noColor << std::endl;
+
+    TS_CommandRemove cmdRemove(testArgument);
+    cmdRemove.setTestMode(true);
+    assert(cmdRemove.execute());
+    std::cout << "TS_CommandRemove passed " << helper.color << " \u2713" << helper.noColor << std::endl;
 
     TS_CommandTimestamp cmdTime(testArgument);
     assert(cmdTime.execute());

@@ -24,6 +24,7 @@
 #include "./headers/TS_Command.h"
 #include "./headers/TS_CommandHelp.h"
 #include "./headers/TS_CommandList.h"
+#include "./headers/TS_CommandRemove.h"
 #include "./headers/TS_CommandTimestamp.h"
 #include "./headers/TS_CommandTouch.h"
 
@@ -128,6 +129,12 @@ void TS_Application::runCommand()
     {
         TS_CommandTouch cmdTouch(application->getCommandAttributes());
         cmdTouch.execute();
+    }
+
+    if (strcmp(this->command, "rm") == 0)
+    {
+        TS_CommandRemove cmdRemove(application->getCommandAttributes());
+        cmdRemove.execute();
     }
 
     if (strcmp(this->command, "ls") == 0)

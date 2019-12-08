@@ -27,7 +27,7 @@ class TS_Application : public TS_Base
 {
 private:
     TS_Application();
-    const char commandList[8][15] = {"help", "touch", "ls", "use", "start", "stop", "save"};
+    const char commandList[9][15] = {"help", "touch", "rm", "ls", "use", "start", "stop", "save"};
     char *arguments;
     char *command;
     int choosedProject;

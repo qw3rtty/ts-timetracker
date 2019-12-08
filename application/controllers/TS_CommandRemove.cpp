@@ -1,7 +1,7 @@
 /**
- * TS-CommandTouch
+ * TS-CommandRemove
  *
- * Create a new project
+ * Remove a existing project
  *
  * @package     TS-TimeTracker
  * @author      Thomas Schwarz
@@ -17,18 +17,18 @@
 
 #include "../../config/TS_ConfigReader.h"
 #include "./headers/TS_Command.h"
-#include "./headers/TS_CommandTouch.h"
+#include "./headers/TS_CommandRemove.h"
 
 /**
  * @inherit
  */
-TS_CommandTouch::TS_CommandTouch(char *arguments) : TS_Command(arguments)
+TS_CommandRemove::TS_CommandRemove(char *arguments) : TS_Command(arguments)
 {}
 
 /**
- * @inherit
+* @inherit
  */
-bool TS_CommandTouch::execute()
+bool TS_CommandRemove::execute()
 {
     this->prepare();
 
@@ -43,13 +43,11 @@ bool TS_CommandTouch::execute()
         return false;
     }
 
-    std::stringstream newProjectPath;
-    newProjectPath << this->storePath << this->arguments;
+    std::stringstream deleteProjectPath;
+    deleteProjectPath << this->storePath << this->arguments;
 
-    std::ofstream newProject(newProjectPath.str());
-    newProject.close();
-
-    std::cout << "New project '" << this->arguments << "' successful created." << std::endl;
+    std::remove(deleteProjectPath.str().c_str());
+    std::cout << "Project '" << this->arguments << "' successful deleted." << std::endl;
 
     return true;
 }
@@ -57,7 +55,7 @@ bool TS_CommandTouch::execute()
 /**
  * @inherit
  */
-bool TS_CommandTouch::prepare()
+bool TS_CommandRemove::prepare()
 {
     TS_ConfigReader config;
     this->storePath = config.getConfigEntry("projectsPath");

@@ -22,6 +22,7 @@ CONTROLLERS = \
     $(CONTROLLERSPATH)/TS_Command.cpp \
     $(CONTROLLERSPATH)/TS_CommandHelp.cpp \
     $(CONTROLLERSPATH)/TS_CommandList.cpp \
+    $(CONTROLLERSPATH)/TS_CommandRemove.cpp \
     $(CONTROLLERSPATH)/TS_CommandTimestamp.cpp \
     $(CONTROLLERSPATH)/TS_CommandTouch.cpp
 
