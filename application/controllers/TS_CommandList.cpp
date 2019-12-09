@@ -98,9 +98,9 @@ void TS_CommandList::showProjects()
 {
     TS_Helper helper;
     std::map<int, std::string>::iterator listIterator = this->list.begin();
-    while (listIterator != this->list.end())
+    while ( (listIterator != this->list.end()) )
     {
-        std::cout << listIterator->first << " => " << listIterator->second;
+    std::cout << listIterator->first << " => " << listIterator->second;
 
         if (listIterator->first == this->projectKey)
         {

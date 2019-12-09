@@ -40,7 +40,7 @@ void TS_ConfigReader::showConfig()
     }
 
     std::map<std::string, std::string>::iterator configIterator = this->entries.begin();
-    while (configIterator != this->entries.end())
+    while ( (configIterator != this->entries.end()) )
     {
         std::cout << configIterator->first << " => " << configIterator->second << std::endl;
         configIterator++;

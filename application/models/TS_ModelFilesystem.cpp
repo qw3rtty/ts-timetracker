@@ -55,7 +55,7 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
     unsigned int counter = 0;
     if (directory = opendir(this->projectsPath.c_str()))
     {
-        while (entry = readdir(directory))
+        while ( (entry = readdir(directory)) )
         {
             if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0 )
             {

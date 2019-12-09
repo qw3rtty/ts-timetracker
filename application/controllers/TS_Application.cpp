@@ -59,7 +59,7 @@ void TS_Application::setCommandWithAttributes(char *command)
     strcpy(this->command, pointerToken);
     pointerToken = strtok(NULL, " ");
 
-    while (pointerToken != NULL)
+    while ( (pointerToken != NULL) )
     {
         this->arguments = (char *) malloc(strlen(pointerToken) + 1);
         strcpy(this->arguments, pointerToken);
