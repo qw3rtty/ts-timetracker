@@ -1,5 +1,6 @@
 # ts-timetracker
-Simple interactive command line timetracker.
+Simple interactive command line timetracker.  
+![TS-Timetracker Screenshot](timetracker.png)  
 
 ## Installation
 Clone the repo:  
