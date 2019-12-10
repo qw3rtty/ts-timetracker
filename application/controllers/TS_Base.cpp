@@ -11,11 +11,9 @@
  * @filesource
  */
 
-#include <stdio.h>
-#include "./headers/TS_Base.h"
+#include "TS_Base.h"
 
 /**
  * Constructor
  */
-TS_Base::TS_Base()
-{}
+TS_Base::TS_Base() = default;

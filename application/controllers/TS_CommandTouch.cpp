@@ -15,10 +15,9 @@
 #include <fstream>
 #include <sstream>
 
-#include "../../config/TS_ConfigReader.h"
-#include "./headers/TS_Application.h"
-#include "./headers/TS_Command.h"
-#include "./headers/TS_CommandTouch.h"
+#include "TS_ConfigReader.h"
+#include "TS_Application.h"
+#include "TS_CommandTouch.h"
 
 /**
  * @inherit

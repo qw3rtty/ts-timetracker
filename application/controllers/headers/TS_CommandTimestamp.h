@@ -20,7 +20,7 @@
 class TS_CommandTimestamp : public TS_Command
 {
 public:
-    TS_CommandTimestamp(char *arguments);
+    explicit TS_CommandTimestamp(char *arguments);
     bool execute();
     std::time_t getTimestamp();
     char *getFormattedDate();
@@ -29,7 +29,7 @@ protected:
     bool prepare();
 
 private:
-    std::time_t timestamp;
+    std::time_t timestamp{};
 };
 
 

@@ -11,17 +11,14 @@
  * @filesource
  */
 
-#include <stdio.h>
 #include <iostream>
-
-#include "./headers/TS_Helper.h"
-#include "./headers/TS_Info.h"
+#include "TS_Helper.h"
+#include "TS_Info.h"
 
 /**
  * Constructor
  */
-TS_Info::TS_Info()
-{}
+TS_Info::TS_Info() = default;
 
 /**
  * Show's welcome message

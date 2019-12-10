@@ -11,22 +11,19 @@
  * @filesource
  */
 
-#include <stdio.h>
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
 #include <sstream>
-#include <ctime>
 #include <string>
 #include <map>
 
-#include "headers/TS_Application.h"
-#include "./headers/TS_Command.h"
-#include "./headers/TS_CommandHelp.h"
-#include "./headers/TS_CommandList.h"
-#include "./headers/TS_CommandRemove.h"
-#include "./headers/TS_CommandTimestamp.h"
-#include "./headers/TS_CommandTouch.h"
+#include "TS_Application.h"
+#include "TS_CommandHelp.h"
+#include "TS_CommandList.h"
+#include "TS_CommandRemove.h"
+#include "TS_CommandTimestamp.h"
+#include "TS_CommandTouch.h"
 
 /**
  * Constructor
@@ -43,7 +40,7 @@ TS_Application::TS_Application()
  */
 TS_Application *TS_Application::getInstance()
 {
-    static TS_Application *instance = new TS_Application();
+    static auto *instance = new TS_Application();
     return instance;
 }
 
@@ -57,13 +54,13 @@ void TS_Application::setCommandWithAttributes(char *command)
 
     this->command = (char *) malloc(strlen(pointerToken) + 1);
     strcpy(this->command, pointerToken);
-    pointerToken = strtok(NULL, " ");
+    pointerToken = strtok(nullptr, " ");
 
-    while ( (pointerToken != NULL) )
+    while ( (pointerToken != nullptr) )
     {
         this->arguments = (char *) malloc(strlen(pointerToken) + 1);
         strcpy(this->arguments, pointerToken);
-        pointerToken = strtok(NULL, " ");
+        pointerToken = strtok(nullptr, " ");
     }
 }
 

@@ -14,7 +14,7 @@
  * @filesource
  */
 
-#include <stdio.h>
+#include <cstdio>
 
 class TS_Base
 {

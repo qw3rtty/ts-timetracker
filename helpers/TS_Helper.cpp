@@ -11,7 +11,7 @@
  * @filesource
  */
 
-#include "./headers/TS_Helper.h"
+#include "TS_Helper.h"
 
 /**
  * Constructor

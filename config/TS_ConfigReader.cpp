@@ -16,15 +16,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <map>
-#include <iterator>
 
 /**
  * Constructor
  */
 TS_ConfigReader::TS_ConfigReader()
 {
-    this->filename = ".ts-timetracker.conf";
+    this->filename = "/home/tom/development/ts-timetracker/.ts-timetracker.conf";
     this->configLoaded = this->loadConfig();
 }
 
@@ -39,7 +37,7 @@ void TS_ConfigReader::showConfig()
         return;
     }
 
-    std::map<std::string, std::string>::iterator configIterator = this->entries.begin();
+    auto configIterator = this->entries.begin();
     while ( (configIterator != this->entries.end()) )
     {
         std::cout << configIterator->first << " => " << configIterator->second << std::endl;
@@ -52,13 +50,13 @@ void TS_ConfigReader::showConfig()
  * @param entry
  * @return std::string
  */
-std::string TS_ConfigReader::getConfigEntry(std::string entry)
+std::string TS_ConfigReader::getConfigEntry(const std::string& entry)
 {
-    for (auto it = this->entries.begin(); it != this->entries.end(); ++it)
+    for (auto & entrie : this->entries)
     {
-        if (it->first == entry)
+        if (entrie.first == entry)
         {
-            return it->second;
+            return entrie.second;
         }
     }
 

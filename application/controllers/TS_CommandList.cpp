@@ -15,13 +15,11 @@
 #include <string>
 #include <cstring>
 #include <map>
-#include <iterator>
 
-#include "../../config/TS_ConfigReader.h"
-#include "../../helpers/headers/TS_Helper.h"
-#include "./headers/TS_Application.h"
-#include "./headers/TS_Command.h"
-#include "./headers/TS_CommandList.h"
+#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
+#include "TS_Application.h"
+#include "TS_CommandList.h"
 
 /**
  * @inherit
@@ -97,7 +95,7 @@ void TS_CommandList::setProjectKey(int key)
 void TS_CommandList::showProjects()
 {
     TS_Helper helper;
-    std::map<int, std::string>::iterator listIterator = this->list.begin();
+    auto listIterator = this->list.begin();
     while ( (listIterator != this->list.end()) )
     {
     std::cout << listIterator->first << " => " << listIterator->second;

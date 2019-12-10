@@ -25,7 +25,7 @@ public:
     void setSelectedProjectKey(int key);
     std::map<int, std::string> getProjectList();
     std::string getProjectName();
-    bool save(std::string entry);
+    bool save(const std::string& entry);
     void clearProjectListCache();
 
 private:

@@ -11,14 +11,14 @@
  * @filesource
  */
 
-#include "headers/TS_ModelFilesystem.h"
-#include "../../config/TS_ConfigReader.h"
+#include "TS_ModelFilesystem.h"
+#include "TS_ConfigReader.h"
+
 #include <string>
 #include <map>
 #include <iterator>
 #include <cstring>
 #include <fstream>
-#include <sys/types.h>
 #include <dirent.h>
 
 /**
@@ -45,7 +45,7 @@ void TS_ModelFilesystem::setSelectedProjectKey(int key)
  */
 std::map<int, std::string> TS_ModelFilesystem::getProjectList()
 {
-    if (this->projectList.size() > 0)
+    if (!this->projectList.empty())
     {
         return this->projectList;
     }
@@ -53,7 +53,9 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
     DIR *directory;
     struct dirent *entry;
     unsigned int counter = 0;
-    if (directory = opendir(this->projectsPath.c_str()))
+
+    directory = opendir(this->projectsPath.c_str());
+    if (directory)
     {
         while ( (entry = readdir(directory)) )
         {
@@ -75,11 +77,11 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
  */
 std::string TS_ModelFilesystem::getProjectName()
 {
-    for (auto it = this->projectList.begin(); it != this->projectList.end(); ++it)
+    for (auto & it : this->projectList)
     {
-        if (it->first == this->selectedProjectKey)
+        if (it.first == this->selectedProjectKey)
         {
-            return it->second;
+            return it.second;
         }
     }
 
@@ -91,7 +93,7 @@ std::string TS_ModelFilesystem::getProjectName()
  * @param std::string entry
  * @return bool
  */
-bool TS_ModelFilesystem::save(std::string entry)
+bool TS_ModelFilesystem::save(const std::string& entry)
 {
     std::string file = this->projectsPath;
     file.append(this->getProjectName());

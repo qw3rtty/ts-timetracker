@@ -13,9 +13,9 @@
 
 #include <iostream>
 
-#include "../../helpers/headers/TS_Helper.h"
-#include "./headers/TS_Command.h"
-#include "./headers/TS_CommandHelp.h"
+#include "TS_Helper.h"
+#include "TS_Command.h"
+#include "TS_CommandHelp.h"
 
 /**
  * @inherit

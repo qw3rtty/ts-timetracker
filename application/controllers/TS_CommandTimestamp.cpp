@@ -12,13 +12,12 @@
  */
 
 #include <iostream>
-#include <ctime>
 #include <string>
-#include <time.h>
+#include <ctime>
 
-#include "../../config/TS_ConfigReader.h"
-#include "./headers/TS_Command.h"
-#include "./headers/TS_CommandTimestamp.h"
+#include "TS_ConfigReader.h"
+#include "TS_Command.h"
+#include "TS_CommandTimestamp.h"
 
 /**
  * @inherit

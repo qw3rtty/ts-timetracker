@@ -20,7 +20,7 @@
 class TS_CommandRemove : public TS_Command
 {
 public:
-    TS_CommandRemove(char *arguments);
+    explicit TS_CommandRemove(char *arguments);
     bool execute();
 
 protected:

@@ -19,7 +19,7 @@
 class TS_CommandHelp : public TS_Command
 {
 public:
-    TS_CommandHelp(char *arguments);
+    explicit TS_CommandHelp(char *arguments);
     bool execute();
 
 protected:

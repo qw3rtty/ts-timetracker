@@ -14,14 +14,14 @@
  * @filesource
  */
 
-#include <stdio.h>
+#include <cstdio>
 
 class TS_Info
 {
 public:
     TS_Info();
-    void welcome();
-    void showInfo();
+    static void welcome();
+    static void showInfo();
 };
 
 #endif //TS_TIMETRACKER_TS_INFO_H

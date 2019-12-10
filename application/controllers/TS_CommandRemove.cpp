@@ -12,13 +12,11 @@
  */
 
 #include <iostream>
-#include <fstream>
 #include <sstream>
 
-#include "../../config/TS_ConfigReader.h"
-#include "./headers/TS_Application.h"
-#include "./headers/TS_Command.h"
-#include "./headers/TS_CommandRemove.h"
+#include "TS_ConfigReader.h"
+#include "TS_Application.h"
+#include "TS_CommandRemove.h"
 
 /**
  * @inherit

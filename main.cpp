@@ -1,13 +1,9 @@
-#include <stdio.h>
 #include <iostream>
-#include <cstring>
 
-#include "./config/TS_ConfigReader.h"
-#include "./helpers/headers/TS_Helper.h"
-#include "./helpers/headers/TS_Info.h"
-
-#include "./application/controllers/headers/TS_Base.h"
-#include "application/controllers/headers/TS_Application.h"
+#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
+#include "TS_Info.h"
+#include "TS_Application.h"
 
 /* Declare a buffer for user input of size 2048 */
 static char input[2048];
@@ -16,9 +12,8 @@ int main(int argc, char **argv)
 {
     TS_ConfigReader config;
     TS_Helper helper;
-    TS_Info info;
 
-    info.welcome();
+    TS_Info::welcome();
     if (!config.configLoaded)
     {
         std::cout << "No config file found!" << std::endl;
@@ -26,7 +21,7 @@ int main(int argc, char **argv)
         std::cout << "https://raw.githubusercontent.com/thomasschwarz96/ts-timetracker/master/README.md" << std::endl;
         return 0;
     }
-    info.showInfo();
+    TS_Info::showInfo();
 
     /* In a never ending loop */
     while (1)

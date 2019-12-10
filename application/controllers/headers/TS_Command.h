@@ -17,7 +17,7 @@
 class TS_Command
 {
 public:
-    TS_Command(char *arguments);
+    explicit TS_Command(char *arguments);
     void setTestMode(bool testMode);
     bool execute();
 

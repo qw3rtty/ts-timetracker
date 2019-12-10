@@ -14,7 +14,7 @@
 #ifndef TS_TIMETRACKER_TS_HELPER_H
 #define TS_TIMETRACKER_TS_HELPER_H
 
-#include <stdio.h>
+#include <cstdio>
 
 class TS_Helper
 {

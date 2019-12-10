@@ -20,7 +20,7 @@
 class TS_CommandTouch : public TS_Command
 {
 public:
-    TS_CommandTouch(char *arguments);
+    explicit TS_CommandTouch(char *arguments);
     bool execute();
 
 protected:

@@ -16,5 +16,4 @@
 /**
  * Constructor
  */
-TS_Model::TS_Model()
-{}
+TS_Model::TS_Model() = default;

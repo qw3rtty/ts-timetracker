@@ -21,7 +21,7 @@
 class TS_CommandList : public TS_Command
 {
 public:
-    TS_CommandList(char *arguments);
+    explicit TS_CommandList(char *arguments);
     bool execute();
 
 protected:
