@@ -8,5 +8,6 @@ CMakeFiles*
 **/Makefile
 **/CMakeCache.txt
 **/CMakeOutput.log
+**/ts-timetracker.cbp
 ts-test
 ts-timetracker
