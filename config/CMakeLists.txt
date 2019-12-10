@@ -1,1 +1,0 @@
-target_sources(ts-timetracker PRIVATE TS_ConfigReader.cpp)

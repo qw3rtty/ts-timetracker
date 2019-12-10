@@ -1,1 +1,0 @@
-target_sources(ts-timetracker PRIVATE TS_Model.cpp TS_ModelFilesystem.cpp)
