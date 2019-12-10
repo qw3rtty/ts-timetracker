@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(ts-timetracker main.cpp)
 
+set(TSConfigPath "/home/tom/development/ts-timetracker/.ts-timetracker.conf")
+add_compile_definitions(TS_CONFIG_PATH="${TSConfigPath}")
+
 add_subdirectory(application/controllers)
 add_subdirectory(application/models)
 add_subdirectory(config)
