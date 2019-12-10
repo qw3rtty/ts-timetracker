@@ -1,6 +1,7 @@
 # excluded folders
 .idea
-cmake-build-debug
+cmake*
+CMakeFiles*
 
 # excluded files
 ts-test
