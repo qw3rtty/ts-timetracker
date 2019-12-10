@@ -7,7 +7,6 @@ CMakeFiles*
 **/cmake_install.cmake
 **/Makefile
 **/CMakeCache.txt
-**/CMakeLists.txt
 **/CMakeOutput.log
 ts-test
 ts-timetracker
