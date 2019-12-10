@@ -22,7 +22,7 @@
  */
 TS_ConfigReader::TS_ConfigReader()
 {
-    this->filename = "/home/tom/development/ts-timetracker/.ts-timetracker.conf";
+    this->filename = "/home/tom/development/ts-timetracker/.ts-timetracker.conf"; // TODO: create dynamic path
     this->configLoaded = this->loadConfig();
 }
 
