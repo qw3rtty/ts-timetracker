@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     TS_Info::showInfo();
 
     /* In a never ending loop */
-    while (1)
+    while (true)
     {
         /* Output our prompt */
         std::cout << helper.color << "ts-timetracker> " << helper.noColor;

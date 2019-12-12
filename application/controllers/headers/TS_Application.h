@@ -14,7 +14,7 @@
  * @filesource
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include <ctime>
 #include <string>
 #include <map>

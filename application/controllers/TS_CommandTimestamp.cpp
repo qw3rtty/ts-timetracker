@@ -46,7 +46,7 @@ bool TS_CommandTimestamp::execute()
  */
 bool TS_CommandTimestamp::prepare()
 {
-    this->timestamp = std::time(0);
+    this->timestamp = std::time(nullptr);
     return true;
 }
 

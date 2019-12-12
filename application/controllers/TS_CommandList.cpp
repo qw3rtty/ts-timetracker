@@ -15,6 +15,7 @@
 #include <string>
 #include <cstring>
 #include <map>
+#include <utility>
 
 #include "TS_ConfigReader.h"
 #include "TS_Helper.h"
@@ -77,7 +78,7 @@ bool TS_CommandList::prepare()
  */
 void TS_CommandList::setProjectList(std::map<int, std::string> list)
 {
-    this->list = list;
+    this->list = std::move(list);
 }
 
 /**
