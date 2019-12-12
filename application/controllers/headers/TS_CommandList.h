@@ -22,10 +22,10 @@ class TS_CommandList : public TS_Command
 {
 public:
     explicit TS_CommandList(char *arguments);
-    bool execute();
+    bool execute() override;
 
 protected:
-    bool prepare();
+    bool prepare() override;
 
 private:
     int projectKey;

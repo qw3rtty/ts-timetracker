@@ -21,12 +21,12 @@ class TS_CommandTimestamp : public TS_Command
 {
 public:
     explicit TS_CommandTimestamp(char *arguments);
-    bool execute();
+    bool execute() override;
     std::time_t getTimestamp();
     char *getFormattedDate();
 
 protected:
-    bool prepare();
+    bool prepare() override;
 
 private:
     std::time_t timestamp{};

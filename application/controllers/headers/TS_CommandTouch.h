@@ -21,10 +21,10 @@ class TS_CommandTouch : public TS_Command
 {
 public:
     explicit TS_CommandTouch(char *arguments);
-    bool execute();
+    bool execute() override;
 
 protected:
-    bool prepare();
+    bool prepare() override;
 
 private:
     std::string storePath;

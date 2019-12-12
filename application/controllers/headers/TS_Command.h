@@ -19,10 +19,10 @@ class TS_Command
 public:
     explicit TS_Command(char *arguments);
     void setTestMode(bool testMode);
-    bool execute();
+    virtual bool execute();
 
 protected:
-    bool prepare();
+    virtual bool prepare();
     char *arguments;
     bool isTestMode;
 };

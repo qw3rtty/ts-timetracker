@@ -20,10 +20,10 @@ class TS_CommandHelp : public TS_Command
 {
 public:
     explicit TS_CommandHelp(char *arguments);
-    bool execute();
+    bool execute() override;
 
 protected:
-    bool prepare();
+    bool prepare() override;
 };
 
 
