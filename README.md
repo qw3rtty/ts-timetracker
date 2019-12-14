@@ -6,8 +6,7 @@ Simple interactive command line timetracker.
 Follow the steps below for installating:  
 `$ git clone https://github.com/thomasschwarz96/ts-timetracker.git`  
 `$ cd ts-timetracker`  
-`$ cmake .`  
-`$ make`  
+`$ ./build.sh`  
 
 ## Configuration
 Name of the config file: **.ts-timetracker.conf**  
