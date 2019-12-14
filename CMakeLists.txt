@@ -10,6 +10,7 @@ add_compile_definitions(TS_CONFIG_PATH="${TSConfigPath}")
 
 add_subdirectory(application/controllers)
 add_subdirectory(application/models)
+add_subdirectory(application/views)
 add_subdirectory(config)
 add_subdirectory(helpers)
 
