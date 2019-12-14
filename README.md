@@ -7,6 +7,8 @@ Follow the steps below for installating:
 `$ git clone https://github.com/thomasschwarz96/ts-timetracker.git`  
 `$ cd ts-timetracker`  
 `$ ./build.sh`  
+During the installing process you have to enter the location of your config file.  
+Possible configuration values see below.
 
 ## Configuration
 Name of the config file: **.ts-timetracker.conf**  
