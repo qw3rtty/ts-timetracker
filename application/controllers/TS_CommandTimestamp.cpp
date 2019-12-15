@@ -38,6 +38,8 @@ bool TS_CommandTimestamp::execute()
         return false;
     }
 
+    this->showTime();
+
     return true;
 }
 
@@ -78,4 +80,12 @@ char *TS_CommandTimestamp::getFormattedDate()
     std::strftime(date, 80, format.c_str(), std::localtime(&this->timestamp));
 
     return date;
+}
+
+/**
+ * Show's the time
+ */
+void TS_CommandTimestamp::showTime()
+{
+    std::cout << "Current time: " << this->getFormattedDate() << std::endl;
 }

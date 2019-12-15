@@ -23,13 +23,14 @@ public:
     explicit TS_CommandTimestamp(char *arguments);
     bool execute() override;
     std::time_t getTimestamp();
-    char *getFormattedDate();
 
 protected:
     bool prepare() override;
+    char *getFormattedDate();
 
 private:
     std::time_t timestamp{};
+    virtual void showTime();
 };
 
 

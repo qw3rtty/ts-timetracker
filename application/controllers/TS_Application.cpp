@@ -22,7 +22,8 @@
 #include "TS_CommandHelp.h"
 #include "TS_CommandList.h"
 #include "TS_CommandRemove.h"
-#include "TS_CommandTimestamp.h"
+#include "TS_CommandTimestampStart.h"
+#include "TS_CommandTimestampStop.h"
 #include "TS_CommandTouch.h"
 
 /**
@@ -157,22 +158,18 @@ void TS_Application::runCommand()
 
     if (strcmp(this->command, "start") == 0)
     {
-        TS_CommandTimestamp cmdTimestamp(application->getCommandAttributes());
-        cmdTimestamp.execute();
+        TS_CommandTimestampStart cmdTimestampStart(application->getCommandAttributes());
+        cmdTimestampStart.execute();
 
-        this->startTimestamp = cmdTimestamp.getTimestamp();
-        std::cout << "Time tracking has started." << std::endl;
-        std::cout << "Starting time: " << cmdTimestamp.getFormattedDate() << std::endl;
+        this->startTimestamp = cmdTimestampStart.getTimestamp();
     }
 
     if (strcmp(this->command, "stop") == 0)
     {
-        TS_CommandTimestamp cmdTimestamp(application->getCommandAttributes());
-        cmdTimestamp.execute();
+        TS_CommandTimestampStop cmdTimestampStop(application->getCommandAttributes());
+        cmdTimestampStop.execute();
 
-        this->endTimestamp = cmdTimestamp.getTimestamp();
-        std::cout << "Time tracking finished." << std::endl;
-        std::cout << "Finished time: " << cmdTimestamp.getFormattedDate() << std::endl;
+        this->endTimestamp = cmdTimestampStop.getTimestamp();
     }
 
     if (strcmp(this->command, "save") == 0)
