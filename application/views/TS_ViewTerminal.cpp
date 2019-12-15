@@ -15,6 +15,12 @@
 #include "TS_ViewTerminal.h"
 
 #include <iostream>
+#include <cstring>
+
+#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
+#include "TS_Info.h"
+#include "TS_Application.h"
 
 /**
  * @inherit
@@ -27,5 +33,44 @@ TS_ViewTerminal::TS_ViewTerminal() : TS_View()
  */
 void TS_ViewTerminal::render()
 {
-    std::cout << "VIEW TERMINAL" << std::endl;
+    static char input[2048];
+    TS_ConfigReader config;
+    TS_Helper helper;
+
+    TS_Info::welcome();
+    if (!config.configLoaded)
+    {
+        std::cout << "No config file found!" << std::endl;
+        std::cout << "Please check out the documentation: " << std::endl;
+        std::cout << "https://raw.githubusercontent.com/thomasschwarz96/ts-timetracker/master/README.md" << std::endl;
+        return;
+    }
+    TS_Info::showInfo();
+
+    /* In a never ending loop */
+    while (true)
+    {
+        /* Output our prompt */
+        std::cout << helper.color << "ts-timetracker> " << helper.noColor;
+
+        /* Read a line of user input of maximum size 2048 */
+        std::cin.getline(input, sizeof(input));
+
+        // Check if user want to exit
+        if (strcmp(input, "exit") == 0)
+        {
+            return;
+        }
+
+        application->setCommandWithAttributes(input);
+        if (application->isCommandValid())
+        {
+            application->runCommand();
+        }
+        else
+        {
+            std::cout << "You entered a wrong command! \n";
+            std::cout << "Type 'help' to get more informations. \n";
+        }
+    }
 }

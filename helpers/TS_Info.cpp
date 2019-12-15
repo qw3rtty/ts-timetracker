@@ -42,5 +42,5 @@ void TS_Info::welcome()
 void TS_Info::showInfo()
 {
     std::cout << "Version 0.1.0" << std::endl;
-    std::cout << "Press Ctrl+c to Exit" << std::endl;
+    std::cout << "Press 'Ctrl+c' or txpe 'exit' to Quit." << std::endl;
 }
