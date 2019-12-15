@@ -23,7 +23,7 @@ Available Models:
 - Filesystem: save's the data into files, location is configured by "projectsPath"
 
 ## ToDo
-- [ ] Implement views
+- [x] Implement views
 - [ ] Create export of projects
 - [ ] Add more models
 - [ ] Improve unit tests
