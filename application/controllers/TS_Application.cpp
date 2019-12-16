@@ -22,6 +22,7 @@
 #include "TS_CommandHelp.h"
 #include "TS_CommandList.h"
 #include "TS_CommandRemove.h"
+#include "TS_CommandSave.h"
 #include "TS_CommandTimestampStart.h"
 #include "TS_CommandTimestampStop.h"
 #include "TS_CommandTouch.h"
@@ -174,26 +175,8 @@ void TS_Application::runCommand()
 
     if (strcmp(this->command, "save") == 0)
     {
-        if (this->choosedProject >= 0)
-        {
-            std::stringstream entryBuffer;
-            entryBuffer << this->startTimestamp << ";" << this->endTimestamp;
-
-            bool successfullySaved = this->model.save(entryBuffer.str());
-            if (successfullySaved)
-            {
-                std::cout << "Successfully saved new time track!" << std::endl;
-            }
-            else
-            {
-                std::cout << "Error on saving new time track! Try again ..." << std::endl;
-            }
-        }
-        else
-        {
-            std::cout << "You have to choose a project!" << std::endl;
-            std::cout << "Type 'help' to get more informations." << std::endl;
-        }
+        TS_CommandSave cmdSave(application->getCommandAttributes());
+        cmdSave.execute();
     }
 }
 

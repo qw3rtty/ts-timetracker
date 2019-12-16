@@ -31,8 +31,6 @@ private:
     char *arguments{};
     char *command{};
     int choosedProject;
-    std::time_t startTimestamp{};
-    std::time_t endTimestamp{};
 
 public:
     static TS_Application *getInstance();
@@ -43,8 +41,11 @@ public:
     void setChoosedProject(int projectNumber);
     int getChoosedProject();
     char *getCommandAttributes();
+
     std::map<int, std::string> getProjectList();
     TS_ModelFilesystem model;
+    std::time_t startTimestamp{};
+    std::time_t endTimestamp{};
 
     bool unitTest();
 };
