@@ -25,6 +25,7 @@
 #include "TS_CommandTimestampStart.h"
 #include "TS_CommandTimestampStop.h"
 #include "TS_CommandTouch.h"
+#include "TS_CommandUse.h"
 
 /**
  * Constructor
@@ -86,6 +87,14 @@ bool TS_Application::isCommandValid()
 }
 
 /**
+ * Set choosed project
+ */
+void TS_Application::setChoosedProject(int projectNumber)
+{
+    this->choosedProject = projectNumber;
+}
+
+/**
  * Get choosed project by user
  * @return int
  */
@@ -143,17 +152,8 @@ void TS_Application::runCommand()
 
     if (strcmp(this->command, "use") == 0)
     {
-        this->choosedProject = std::stoi(this->arguments);
-        if (this->choosedProject >= 0)
-        {
-            this->model.setSelectedProjectKey(this->choosedProject);
-            std::cout << "You selected '" << this->model.getProjectName() << "'" << std::endl;
-        }
-        else
-        {
-            this->choosedProject = -1;
-            std::cout << "You selected an non existing project!" << std::endl;
-        }
+        TS_CommandUse cmdUse(application->getCommandAttributes());
+        cmdUse.execute();
     }
 
     if (strcmp(this->command, "start") == 0)

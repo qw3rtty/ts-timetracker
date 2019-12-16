@@ -33,7 +33,6 @@ private:
     int choosedProject;
     std::time_t startTimestamp{};
     std::time_t endTimestamp{};
-    TS_ModelFilesystem model;
 
 public:
     static TS_Application *getInstance();
@@ -41,9 +40,11 @@ public:
     bool isCommandValid();
     void runCommand();
     void clearProjectList();
+    void setChoosedProject(int projectNumber);
     int getChoosedProject();
     char *getCommandAttributes();
     std::map<int, std::string> getProjectList();
+    TS_ModelFilesystem model;
 
     bool unitTest();
 };
