@@ -47,11 +47,11 @@ TS_Application *TS_Application::getInstance()
 
 /**
  * Set entered command with attributes of user
- * @param command
+ * @param input
  */
-void TS_Application::setCommandWithAttributes(char *command)
+void TS_Application::setCommandWithAttributes(char *input)
 {
-    char *pointerToken = strtok(command, " ");
+    char *pointerToken = strtok(input, " ");
 
     this->command = (char *) malloc(strlen(pointerToken) + 1);
     strcpy(this->command, pointerToken);

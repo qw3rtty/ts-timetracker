@@ -37,7 +37,7 @@ private:
 
 public:
     static TS_Application *getInstance();
-    void setCommandWithAttributes(char *command);
+    void setCommandWithAttributes(char *input);
     bool isCommandValid();
     void runCommand();
     void clearProjectList();
