@@ -13,6 +13,7 @@
 
 #include <iostream>
 
+#include "TS_Application.h"
 #include "TS_CommandTimestamp.h"
 #include "TS_CommandTimestampStop.h"
 
@@ -29,4 +30,16 @@ void TS_CommandTimestampStop::showTime()
 {
     std::cout << "Time tracking finished." << std::endl;
     std::cout << "Finished time: " << this->getFormattedDate() << std::endl;
+}
+
+/**
+ * @inherit
+ */
+bool TS_CommandTimestampStop::execute()
+{
+    TS_CommandTimestamp::execute();
+
+    application->endTimestamp = this->getTimestamp();
+
+    return true;
 }

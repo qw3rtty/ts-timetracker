@@ -21,7 +21,7 @@
 
 #include "TS_Base.h"
 #include "TS_Command.h"
-#include "../../models/headers/TS_ModelFilesystem.h"
+#include "TS_ModelFilesystem.h"
 
 class TS_Application : public TS_Base
 {
@@ -36,10 +36,10 @@ public:
     static TS_Application *getInstance();
     void setCommandWithAttributes(char *input);
     bool isCommandValid();
-    void runCommand();
     void clearProjectList();
     void setChoosedProject(int projectNumber);
     int getChoosedProject();
+    char *getCommand();
     char *getCommandAttributes();
 
     std::map<int, std::string> getProjectList();

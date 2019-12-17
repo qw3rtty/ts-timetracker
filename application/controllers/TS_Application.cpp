@@ -11,22 +11,12 @@
  * @filesource
  */
 
-#include <iostream>
 #include <cstdlib>
 #include <cstring>
-#include <sstream>
 #include <string>
 #include <map>
 
 #include "TS_Application.h"
-#include "TS_CommandHelp.h"
-#include "TS_CommandList.h"
-#include "TS_CommandRemove.h"
-#include "TS_CommandSave.h"
-#include "TS_CommandTimestampStart.h"
-#include "TS_CommandTimestampStop.h"
-#include "TS_CommandTouch.h"
-#include "TS_CommandUse.h"
 
 /**
  * Constructor
@@ -105,6 +95,15 @@ int TS_Application::getChoosedProject()
 }
 
 /**
+ * Get entered command
+ * @return char *
+ */
+char* TS_Application::getCommand()
+{
+    return this->command;
+}
+
+/**
  * Get command attributes from input
  * @return char *
  */
@@ -120,64 +119,6 @@ char* TS_Application::getCommandAttributes()
 std::map<int, std::string> TS_Application::getProjectList()
 {
     return this->model.getProjectList();
-}
-
-/**
- * Execute correct command
- */
-void TS_Application::runCommand()
-{
-    if (strcmp(this->command, "help") == 0)
-    {
-        TS_CommandHelp cmdHelp(application->getCommandAttributes());
-        cmdHelp.execute();
-    }
-
-    if (strcmp(this->command, "touch") == 0)
-    {
-        TS_CommandTouch cmdTouch(application->getCommandAttributes());
-        cmdTouch.execute();
-    }
-
-    if (strcmp(this->command, "rm") == 0)
-    {
-        TS_CommandRemove cmdRemove(application->getCommandAttributes());
-        cmdRemove.execute();
-    }
-
-    if (strcmp(this->command, "ls") == 0)
-    {
-        TS_CommandList cmdList(application->getCommandAttributes());
-        cmdList.execute();
-    }
-
-    if (strcmp(this->command, "use") == 0)
-    {
-        TS_CommandUse cmdUse(application->getCommandAttributes());
-        cmdUse.execute();
-    }
-
-    if (strcmp(this->command, "start") == 0)
-    {
-        TS_CommandTimestampStart cmdTimestampStart(application->getCommandAttributes());
-        cmdTimestampStart.execute();
-
-        this->startTimestamp = cmdTimestampStart.getTimestamp();
-    }
-
-    if (strcmp(this->command, "stop") == 0)
-    {
-        TS_CommandTimestampStop cmdTimestampStop(application->getCommandAttributes());
-        cmdTimestampStop.execute();
-
-        this->endTimestamp = cmdTimestampStop.getTimestamp();
-    }
-
-    if (strcmp(this->command, "save") == 0)
-    {
-        TS_CommandSave cmdSave(application->getCommandAttributes());
-        cmdSave.execute();
-    }
 }
 
 /**

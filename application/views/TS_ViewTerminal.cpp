@@ -20,6 +20,8 @@
 #include "TS_ConfigReader.h"
 #include "TS_Helper.h"
 #include "TS_Info.h"
+#include "TS_Command.h"
+#include "TS_FactoryCommand.h"
 #include "TS_Application.h"
 
 /**
@@ -59,13 +61,22 @@ void TS_ViewTerminal::render()
         // Check if user want to exit
         if (strcmp(input, "exit") == 0)
         {
+            std::cout << "Goodbye!" << std::endl;
             return;
         }
 
         application->setCommandWithAttributes(input);
         if (application->isCommandValid())
         {
-            application->runCommand();
+            TS_Command *command = TS_FactoryCommand::build(
+                application->getCommand(),
+                application->getCommandAttributes()
+            );
+
+            if (command != nullptr)
+            {
+                command->execute();
+            }
         }
         else
         {
