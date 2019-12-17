@@ -58,6 +58,11 @@ bool TS_CommandList::execute()
         this->showConfig();
     }
 
+    if (strcmp(this->arguments, "times") == 0)
+    {
+        this->showTimes();
+    }
+
     return true;
 }
 
@@ -125,5 +130,21 @@ void TS_CommandList::showConfig()
     if (!this->isTestMode)
     {
         config.showConfig();
+    }
+}
+
+/**
+ * Show all tracked times
+ */
+void TS_CommandList::showTimes()
+{
+    if (this->projectKey >= 0)
+    {
+        std::cout << "Time table comes here ..." << std::endl;
+    }
+    else
+    {
+        std::cout << "You have to choose a project!" << std::endl;
+        std::cout << "Type 'help' to get more informations." << std::endl;
     }
 }

@@ -35,6 +35,7 @@ private:
     void setProjectKey(int key);
     void showProjects();
     void showConfig();
+    void showTimes();
 };
 
 
