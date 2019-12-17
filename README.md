@@ -22,6 +22,9 @@ Possible config values:
 Available Models:
 - Filesystem: save's the data into files, location is configured by "projectsPath"
 
+## Libaries in usage
+- For printing the table: https://github.com/friedmud/variadic_table
+
 ## ToDo
 - [x] Implement views
 - [ ] Create export of projects
