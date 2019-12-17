@@ -14,6 +14,8 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <vector>
+#include <vector>
 #include <map>
 #include <utility>
 
@@ -21,6 +23,7 @@
 #include "TS_Helper.h"
 #include "TS_Application.h"
 #include "TS_CommandList.h"
+#include "VariadicTable.h"
 
 /**
  * @inherit
@@ -140,11 +143,44 @@ void TS_CommandList::showTimes()
 {
     if (this->projectKey >= 0)
     {
-        std::cout << "Time table comes here ..." << std::endl;
+        this->printTimeTable(application->model.getProjectTimes());
     }
     else
     {
         std::cout << "You have to choose a project!" << std::endl;
         std::cout << "Type 'help' to get more informations." << std::endl;
     }
+}
+
+/**
+ * Prints the time table
+ * @param std::vector<std::string>  times
+ */
+void TS_CommandList::printTimeTable(std::vector<std::string> times)
+{
+    VariadicTable<std::string, std::string, std::string> table({
+        "Start time", "End time", "Comment"
+    });
+
+    for (auto const& entry: times)
+    {
+        std::vector<std::string> row;
+        std::string token;
+        std::stringstream stream(entry);
+        char delimeter = ';';
+
+        while (std::getline(stream, token, delimeter))
+        {
+            row.push_back(token);
+        }
+
+        // TODO: find a better way here!!
+        //  Format dates to format of config
+        std::string test[3] = {row.at(2), row.at(1), row.at(0)};
+        table.addRow(
+            reinterpret_cast<const std::tuple<std::basic_string<char>, std::basic_string<char>, std::basic_string<char>> &>(test)
+        );
+    }
+
+    table.print(std::cout);
 }

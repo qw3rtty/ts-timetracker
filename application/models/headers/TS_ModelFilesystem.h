@@ -17,6 +17,7 @@
 #include "TS_Model.h"
 #include <string>
 #include <map>
+#include <vector>
 
 class TS_ModelFilesystem : public TS_Model
 {
@@ -27,6 +28,7 @@ public:
     std::string getProjectName();
     bool save(const std::string& entry);
     void clearProjectListCache();
+    std::vector<std::string> getProjectTimes();
 
 private:
     bool prepare();

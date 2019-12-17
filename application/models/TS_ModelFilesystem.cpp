@@ -20,6 +20,7 @@
 #include <cstring>
 #include <fstream>
 #include <dirent.h>
+#include <sstream>
 
 /**
  * Constructor
@@ -127,4 +128,30 @@ bool TS_ModelFilesystem::prepare()
     this->projectsPath = configReader.getConfigEntry("projectsPath");
 
     return true;
+}
+
+/**
+ * Get all entries of current project
+ * @return std::vector<std::string>
+ */
+std::vector<std::string> TS_ModelFilesystem::getProjectTimes()
+{
+    std::vector<std::string> entries;
+    std::string line;
+    std::string projectName = this->getProjectName();
+    std::stringstream pathToProjectFile;
+
+    pathToProjectFile << this->projectsPath << projectName;
+    std::ifstream projectFile(pathToProjectFile.str());
+
+    while (std::getline(projectFile, line))
+    {
+        if (!line.empty())
+        {
+            entries.push_back(line);
+        }
+    }
+    projectFile.close();
+
+    return entries;
 }

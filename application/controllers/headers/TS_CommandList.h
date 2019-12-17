@@ -17,6 +17,7 @@
 #include "TS_Command.h"
 #include <string>
 #include <map>
+#include <vector>
 
 class TS_CommandList : public TS_Command
 {
@@ -36,6 +37,7 @@ private:
     void showProjects();
     void showConfig();
     void showTimes();
+    void printTimeTable(std::vector<std::string> times);
 };
 
 
