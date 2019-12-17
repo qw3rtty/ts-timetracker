@@ -15,7 +15,6 @@
 #include <string>
 #include <cstring>
 #include <vector>
-#include <vector>
 #include <map>
 #include <utility>
 
@@ -23,7 +22,7 @@
 #include "TS_Helper.h"
 #include "TS_Application.h"
 #include "TS_CommandList.h"
-#include "VariadicTable.h"
+#include "../../libaries/VariadicTable.h"
 
 /**
  * @inherit

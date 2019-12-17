@@ -3,7 +3,7 @@ project(ts-timetracker)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ts-timetracker main.cpp helpers/headers/VariadicTable.h)
+add_executable(ts-timetracker main.cpp libaries/VariadicTable.h)
 
 set(TSConfigPath) #/home/tom/development/ts-timetracker/.ts-timetracker.conf
 add_compile_definitions(TS_CONFIG_PATH="${TSConfigPath}")
