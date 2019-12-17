@@ -40,7 +40,9 @@ bool TS_CommandSave::execute()
     if (project >= 0)
     {
         std::stringstream entryBuffer;
-        entryBuffer << application->startTimestamp << ";" << application->endTimestamp;
+        entryBuffer << application->startTimestamp
+            << ";" << application->endTimestamp
+            << ";" << this->arguments;
 
         bool successfullySaved = application->model.save(entryBuffer.str());
         if (successfullySaved)
