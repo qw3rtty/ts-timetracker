@@ -166,9 +166,9 @@ void TS_CommandList::printTimeTable(std::vector<std::string> times)
         std::vector<std::string> row;
         std::string token;
         std::stringstream stream(entry);
-        char delimeter = ';';
+        char delimiter = ';';
 
-        while (std::getline(stream, token, delimeter))
+        while (std::getline(stream, token, delimiter))
         {
             row.push_back(token);
         }
