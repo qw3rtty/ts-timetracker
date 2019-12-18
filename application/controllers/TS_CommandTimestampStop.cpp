@@ -24,7 +24,7 @@ TS_CommandTimestampStop::TS_CommandTimestampStop(char *arguments) : TS_CommandTi
 {}
 
 /**
- * Show's the time
+ * @inherit
  */
 void TS_CommandTimestampStop::showTime()
 {

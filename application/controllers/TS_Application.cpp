@@ -39,7 +39,7 @@ TS_Application *TS_Application::getInstance()
 
 /**
  * Set entered command with attributes of user
- * @param input
+ * @param   input   - User input
  */
 void TS_Application::setCommandWithAttributes(char *input)
 {
@@ -59,7 +59,7 @@ void TS_Application::setCommandWithAttributes(char *input)
 
 /**
  * Check if entered command is valid
- * @return bool
+ * @return      bool    - true if command is valid, false else
  */
 bool TS_Application::isCommandValid()
 {
@@ -87,7 +87,7 @@ void TS_Application::setChoosedProject(int projectNumber)
 
 /**
  * Get choosed project by user
- * @return int
+ * @return  int - Choosed project number
  */
 int TS_Application::getChoosedProject()
 {
@@ -96,7 +96,7 @@ int TS_Application::getChoosedProject()
 
 /**
  * Get entered command
- * @return char *
+ * @return  char *  - Entered command string of user
  */
 char* TS_Application::getCommand()
 {
@@ -105,7 +105,7 @@ char* TS_Application::getCommand()
 
 /**
  * Get command attributes from input
- * @return char *
+ * @return  char *  - Entered command arguments of user
  */
 char* TS_Application::getCommandAttributes()
 {
@@ -114,7 +114,7 @@ char* TS_Application::getCommandAttributes()
 
 /**
  * Get list of all available projects
- * @return std::map<int, std::string>
+ * @return  std::map<int, std::string>  - Project list
  */
 std::map<int, std::string> TS_Application::getProjectList()
 {
@@ -131,7 +131,7 @@ void TS_Application::clearProjectList()
 
 /**
  * Unit test
- * @return bool
+ * @return  bool    - true is test was successful, false else
  */
 bool TS_Application::unitTest()
 {

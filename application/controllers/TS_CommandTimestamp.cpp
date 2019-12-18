@@ -54,7 +54,7 @@ bool TS_CommandTimestamp::prepare()
 
 /**
  * Get started timestamp
- * @return std::time_t
+ * @return  std::time_t  - Current timestamp
  */
 std::time_t TS_CommandTimestamp::getTimestamp()
 {
@@ -65,7 +65,7 @@ std::time_t TS_CommandTimestamp::getTimestamp()
  * Get formatted date
  * > format is configured in config file
  * > if no format is set, we use the default format
- * @return char*
+ * @return  char*   - Formatted time string
  */
 char *TS_CommandTimestamp::getFormattedDate()
 {

@@ -47,8 +47,8 @@ void TS_ConfigReader::showConfig()
 
 /**
  * Return's value of given config entry
- * @param entry
- * @return std::string
+ * @param   entry           - Config entry name
+ * @return  std::string     - Value of given config entry
  */
 std::string TS_ConfigReader::getConfigEntry(const std::string& entry)
 {
@@ -65,7 +65,7 @@ std::string TS_ConfigReader::getConfigEntry(const std::string& entry)
 
 /**
  * Load config file
- * @return  bool
+ * @return      bool    - true if config was loaded properly, false else
  */
 bool TS_ConfigReader::loadConfig()
 {

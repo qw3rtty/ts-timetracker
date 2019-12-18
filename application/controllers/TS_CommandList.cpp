@@ -81,7 +81,7 @@ bool TS_CommandList::prepare()
 
 /**
  * Set given project list
- * @param std::map<int, std::string> list
+ * @param   list    - Project list to set
  */
 void TS_CommandList::setProjectList(std::map<int, std::string> list)
 {
@@ -90,7 +90,7 @@ void TS_CommandList::setProjectList(std::map<int, std::string> list)
 
 /**
  * Set given project key
- * @param int key
+ * @param   int     - Project key to set
  */
 void TS_CommandList::setProjectKey(int key)
 {
@@ -153,7 +153,7 @@ void TS_CommandList::showTimes()
 
 /**
  * Prints the time table
- * @param std::vector<std::string>  times
+ * @param   times   - Time list for printing table
  */
 void TS_CommandList::printTimeTable(std::vector<std::string> times)
 {

@@ -33,7 +33,7 @@ TS_ModelFilesystem::TS_ModelFilesystem()
 
 /**
  * Set given project key
- * @param key
+ * @param   key     - Project key of selected one to set
  */
 void TS_ModelFilesystem::setSelectedProjectKey(int key)
 {
@@ -42,7 +42,7 @@ void TS_ModelFilesystem::setSelectedProjectKey(int key)
 
 /**
  * Get projects list
- * @return std::map<int, std::string>
+ * @return  std::map<int, std::string>  - List of all available projects
  */
 std::map<int, std::string> TS_ModelFilesystem::getProjectList()
 {
@@ -74,7 +74,7 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
 
 /**
  * Get project by given key
- * @return std::string
+ * @return  std::string     - Project name of selected one
  */
 std::string TS_ModelFilesystem::getProjectName()
 {
@@ -91,8 +91,8 @@ std::string TS_ModelFilesystem::getProjectName()
 
 /**
  * Saves new entry to file
- * @param std::string entry
- * @return bool
+ * @param   entry   - Entry to save
+ * @return  bool    - true if saving was successful, false else
  */
 bool TS_ModelFilesystem::save(const std::string& entry)
 {
@@ -120,7 +120,7 @@ void TS_ModelFilesystem::clearProjectListCache()
 
 /**
  * Prepare model
- * @return
+ * @return  bool
  */
 bool TS_ModelFilesystem::prepare()
 {
@@ -132,7 +132,7 @@ bool TS_ModelFilesystem::prepare()
 
 /**
  * Get all entries of current project
- * @return std::vector<std::string>
+ * @return  std::vector<std::string>     - All tracked times of selected project
  */
 std::vector<std::string> TS_ModelFilesystem::getProjectTimes()
 {

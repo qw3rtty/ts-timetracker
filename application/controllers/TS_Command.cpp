@@ -15,7 +15,7 @@
 
 /**
  * Constructor
- * @param char* arguments
+ * @param   char*   - Arguments entered by user
  */
 TS_Command::TS_Command(char *arguments)
 {
@@ -25,7 +25,7 @@ TS_Command::TS_Command(char *arguments)
 
 /**
  * Execute command
- * @return bool
+ * @return  bool
  */
 bool TS_Command::execute()
 {
@@ -34,7 +34,7 @@ bool TS_Command::execute()
 
 /**
  * Prepares everything for correct execution
- * @return bool
+ * @return  bool
  */
 bool TS_Command::prepare()
 {
@@ -43,7 +43,7 @@ bool TS_Command::prepare()
 
 /**
  * Set test mode
- * @param testMode
+ * @param   testMode    - Determine test mode state
  */
 void TS_Command::setTestMode(bool testMode)
 {

@@ -28,6 +28,12 @@
  */
 TS_FactoryCommand::TS_FactoryCommand() = default;
 
+/**
+ * Factory for commands
+ * @param   command     - Entered command by user
+ * @param   arguments   - Entered arguments by user
+ * @return  TS_Command  - Command instance of needed command
+ */
 TS_Command* TS_FactoryCommand::build(char *command, char *arguments)
 {
     TS_Command *cmd;
