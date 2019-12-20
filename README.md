@@ -30,3 +30,7 @@ Available Models:
 - [ ] Create export of projects
 - [ ] Add more models
 - [ ] Improve unit tests
+
+## Other
+If you got some problems, improvements or changes let me know.  
+I appreciate every single help!
