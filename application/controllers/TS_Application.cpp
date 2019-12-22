@@ -17,6 +17,7 @@
 #include <map>
 
 #include "TS_Application.h"
+#include "TS_FactoryCommand.h"
 
 /**
  * Constructor
@@ -35,6 +36,15 @@ TS_Application *TS_Application::getInstance()
 {
     static auto *instance = new TS_Application();
     return instance;
+}
+
+/**
+ * Build's the necessary command
+ * @return  TS_Command      - Needed command for execution
+ */
+TS_Command* TS_Application::buildCommand()
+{
+    return TS_FactoryCommand::build(this->command, this->arguments);
 }
 
 /**
@@ -92,24 +102,6 @@ void TS_Application::setChoosedProject(int projectNumber)
 int TS_Application::getChoosedProject()
 {
     return this->choosedProject;
-}
-
-/**
- * Get entered command
- * @return  char *  - Entered command string of user
- */
-char* TS_Application::getCommand()
-{
-    return this->command;
-}
-
-/**
- * Get command attributes from input
- * @return  char *  - Entered command arguments of user
- */
-char* TS_Application::getCommandAttributes()
-{
-    return this->arguments;
 }
 
 /**

@@ -34,13 +34,12 @@ private:
 
 public:
     static TS_Application *getInstance();
+    TS_Command *buildCommand();
     void setCommandWithAttributes(char *input);
     bool isCommandValid();
     void clearProjectList();
     void setChoosedProject(int projectNumber);
     int getChoosedProject();
-    char *getCommand();
-    char *getCommandAttributes();
 
     std::map<int, std::string> getProjectList();
     TS_ModelFilesystem model;
