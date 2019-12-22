@@ -28,8 +28,6 @@ Available Models:
 ## ToDo
 - [x] Implement views
 - [ ] Create export of projects
-- [ ] Add more models
-- [ ] Improve unit tests
 
 ## Other
 If you got some problems, improvements or changes let me know.  
