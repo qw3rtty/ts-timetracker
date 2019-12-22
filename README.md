@@ -16,11 +16,15 @@ Possible config values:
 - `timeFormat=%d.%m.%Y %T` format is used for displaying time
 - `projectsPath=/home/.ts-timetracker/` path is used for creating, saving and deleting projects
 - `storage=filesystem` indicates which model should used
+- `view=terminal` indicates which view should used
 
 -- --
 
 Available Models:
-- Filesystem: save's the data into files, location is configured by "projectsPath"
+- filesystem: save's the data into files, location is configured by "projectsPath"
+
+Available Views:
+- terminal: run's in the terminal, with and simple interactive command line interface
 
 ## Libaries in usage
 - For printing the table: https://github.com/friedmud/variadic_table
