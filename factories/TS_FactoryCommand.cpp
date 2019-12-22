@@ -13,7 +13,7 @@
 
 #include <cstring>
 
-#include "TS_FactoryCommand.h"
+#include "headers/TS_FactoryCommand.h"
 #include "TS_CommandHelp.h"
 #include "TS_CommandList.h"
 #include "TS_CommandRemove.h"
