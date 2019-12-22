@@ -1,1 +1,1 @@
-target_sources(ts-timetracker PRIVATE TS_FactoryCommand.cpp)
+target_sources(ts-timetracker PRIVATE TS_FactoryCommand.cpp TS_FactoryView.cpp)

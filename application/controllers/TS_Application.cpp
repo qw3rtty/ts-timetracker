@@ -18,6 +18,7 @@
 
 #include "TS_Application.h"
 #include "TS_FactoryCommand.h"
+#include "TS_FactoryView.h"
 
 /**
  * Constructor
@@ -45,6 +46,15 @@ TS_Application *TS_Application::getInstance()
 TS_Command* TS_Application::buildCommand()
 {
     return TS_FactoryCommand::build(this->command, this->arguments);
+}
+
+/**
+ * Build's the necessary view
+ * @return  TS_View      - Needed view for execution
+ */
+TS_View* TS_Application::buildView()
+{
+    return TS_FactoryView::build();
 }
 
 /**
