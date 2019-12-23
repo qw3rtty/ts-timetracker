@@ -20,10 +20,12 @@ Possible config values:
 
 -- --
 
-Available Models:
+##### Available Models:
 - filesystem: save's the data into files, location is configured by "projectsPath"
 
-Available Views:
+-- -- 
+
+##### Available Views:
 - terminal: run's in the terminal, with and simple interactive command line interface
 
 ## Libaries in usage
