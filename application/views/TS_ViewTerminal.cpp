@@ -21,7 +21,6 @@
 #include "TS_Helper.h"
 #include "TS_Info.h"
 #include "TS_Command.h"
-#include "TS_FactoryCommand.h"
 #include "TS_Application.h"
 
 /**
