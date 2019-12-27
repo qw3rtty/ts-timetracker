@@ -26,10 +26,9 @@ public:
 
 protected:
     bool prepare() override;
-    char *getFormattedDate();
+    std::time_t timestamp{};
 
 private:
-    std::time_t timestamp{};
     virtual void showTime();
 };
 

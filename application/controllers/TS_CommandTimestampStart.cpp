@@ -13,6 +13,7 @@
 
 #include <iostream>
 
+#include "TS_Helper.h"
 #include "TS_Application.h"
 #include "TS_CommandTimestamp.h"
 #include "TS_CommandTimestampStart.h"
@@ -29,7 +30,7 @@ TS_CommandTimestampStart::TS_CommandTimestampStart(char *arguments) : TS_Command
 void TS_CommandTimestampStart::showTime()
 {
     std::cout << "Time tracking has started." << std::endl;
-    std::cout << "Starting time: " << this->getFormattedDate() << std::endl;
+    std::cout << "Starting time: " << TS_Helper::formatTimestamp(this->timestamp) << std::endl;
 }
 
 /**

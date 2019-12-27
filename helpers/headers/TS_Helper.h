@@ -15,6 +15,8 @@
 #define TS_TIMETRACKER_TS_HELPER_H
 
 #include <cstdio>
+#include <ctime>
+#include <string>
 
 class TS_Helper
 {
@@ -24,6 +26,7 @@ public:
     const char *noColor;
     const char *tab;
     const char *doubleTab;
+    static std::string formatTimestamp(std::time_t timestamp);
 };
 
 #endif //TS_TIMETRACKER_TS_HELPER_H

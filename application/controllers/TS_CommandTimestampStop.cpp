@@ -13,6 +13,7 @@
 
 #include <iostream>
 
+#include "TS_Helper.h"
 #include "TS_Application.h"
 #include "TS_CommandTimestamp.h"
 #include "TS_CommandTimestampStop.h"
@@ -29,7 +30,7 @@ TS_CommandTimestampStop::TS_CommandTimestampStop(char *arguments) : TS_CommandTi
 void TS_CommandTimestampStop::showTime()
 {
     std::cout << "Time tracking finished." << std::endl;
-    std::cout << "Finished time: " << this->getFormattedDate() << std::endl;
+    std::cout << "Finished time: " << TS_Helper::formatTimestamp(this->timestamp) << std::endl;
 }
 
 /**

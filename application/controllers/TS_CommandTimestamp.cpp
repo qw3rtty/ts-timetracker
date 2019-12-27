@@ -15,7 +15,7 @@
 #include <string>
 #include <ctime>
 
-#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
 #include "TS_Command.h"
 #include "TS_CommandTimestamp.h"
 
@@ -62,30 +62,9 @@ std::time_t TS_CommandTimestamp::getTimestamp()
 }
 
 /**
- * Get formatted date
- * > format is configured in config file
- * > if no format is set, we use the default format
- * @return  char*   - Formatted time string
- */
-char *TS_CommandTimestamp::getFormattedDate()
-{
-    TS_ConfigReader config;
-    if (!config.configLoaded)
-    {
-        return std::asctime(std::localtime(&this->timestamp));
-    }
-
-    char *date = new char[80];
-    std::string format = config.getConfigEntry("timeFormat");
-    std::strftime(date, 80, format.c_str(), std::localtime(&this->timestamp));
-
-    return date;
-}
-
-/**
  * Show's the time
  */
 void TS_CommandTimestamp::showTime()
 {
-    std::cout << "Current time: " << this->getFormattedDate() << std::endl;
+    std::cout << "Current time: " << TS_Helper::formatTimestamp(this->timestamp) << std::endl;
 }

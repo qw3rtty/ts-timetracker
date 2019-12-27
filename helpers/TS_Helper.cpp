@@ -11,7 +11,11 @@
  * @filesource
  */
 
+#include <ctime>
+#include <string>
+
 #include "TS_Helper.h"
+#include "TS_ConfigReader.h"
 
 /**
  * Constructor
@@ -22,4 +26,26 @@ TS_Helper::TS_Helper()
     this->noColor = "\033[0m";
     this->tab = "\t";
     this->doubleTab = "\t\t";
+}
+
+/**
+ * Format given timestamp
+ * > format is configured in config file
+ * > if no format is set, we use the default format
+ * @param   std::time_t     timestamp       - Timestamp which should be formatted
+ * @return  std::string     Formatted time string
+ */
+std::string TS_Helper::formatTimestamp(std::time_t timestamp)
+{
+    TS_ConfigReader config;
+    if (!config.configLoaded)
+    {
+        return std::asctime(std::localtime(&timestamp));
+    }
+
+    char *date = new char[80];
+    std::string format = config.getConfigEntry("timeFormat");
+    std::strftime(date, 80, format.c_str(), std::localtime(&timestamp));
+
+    return date;
 }
