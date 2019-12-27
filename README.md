@@ -18,12 +18,8 @@ Possible config values:
 - `storage=filesystem` indicates which model should used
 - `view=terminal` indicates which view should used
 
--- --
-
 ##### Available Models:
 - filesystem: save's the data into files, location is configured by "projectsPath"
-
--- -- 
 
 ##### Available Views:
 - terminal: run's in the terminal, with and simple interactive command line interface
