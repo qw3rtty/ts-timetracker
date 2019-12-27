@@ -173,9 +173,16 @@ void TS_CommandList::printTimeTable(std::vector<std::string> times)
             row.push_back(token);
         }
 
+        std::time_t startTime = std::stoi(row.at(1));
+        std::time_t stopTime = std::stoi(row.at(0));
+
         // TODO: find a better way here!!
         //  Format dates to format of config
-        std::string test[3] = {row.at(2), row.at(1), row.at(0)};
+        std::string test[3] = {
+            row.at(2),
+            TS_Helper::formatTimestamp(startTime),
+            TS_Helper::formatTimestamp(stopTime),
+        };
         table.addRow(
             reinterpret_cast<const std::tuple<std::basic_string<char>, std::basic_string<char>, std::basic_string<char>> &>(test)
         );
