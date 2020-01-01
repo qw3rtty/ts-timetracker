@@ -10,6 +10,8 @@ Follow the steps below for installating:
 During the installing process you have to enter the location of your config file.  
 Possible configuration values see below.
 
+Installation for windows is coming soon.
+
 ## Configuration
 Name of the config file: **.ts-timetracker.conf**  
 Possible config values:  
