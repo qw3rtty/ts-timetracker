@@ -49,20 +49,22 @@ bool TS_CommandList::execute()
         std::cout << "You entered no argument!" << std::endl;
         return false;
     }
-
-    if (strcmp(this->arguments, "projects") == 0)
+    else if (strcmp(this->arguments, "projects") == 0)
     {
         this->showProjects();
     }
-
-    if (strcmp(this->arguments, "config") == 0)
+    else if (strcmp(this->arguments, "config") == 0)
     {
         this->showConfig();
     }
-
-    if (strcmp(this->arguments, "times") == 0)
+    else if (strcmp(this->arguments, "times") == 0)
     {
         this->showTimes();
+    }
+    else
+    {
+        std::cout << "You entered an invalid argument!" << std::endl;
+        return false;
     }
 
     return true;
