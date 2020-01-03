@@ -67,13 +67,13 @@ void TS_Application::setCommandWithAttributes(char *input)
 
     this->command = new char(strlen(pointerToken) + 1);
     strcpy(this->command, pointerToken);
-    pointerToken = strtok(nullptr, " ");
+    pointerToken = strtok(nullptr, "");
 
     while ( (pointerToken != nullptr) )
     {
         this->arguments = new char(strlen(pointerToken) + 1);
         strcpy(this->arguments, pointerToken);
-        pointerToken = strtok(nullptr, " ");
+        pointerToken = strtok(nullptr, "");
     }
 }
 
