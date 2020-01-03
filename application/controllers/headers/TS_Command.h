@@ -14,12 +14,15 @@
 #ifndef TS_TIMETRACKER_TS_COMMAND_H
 #define TS_TIMETRACKER_TS_COMMAND_H
 
+#include <sstream>
+
 class TS_Command
 {
 public:
     explicit TS_Command(char *arguments);
     void setTestMode(bool testMode);
     virtual bool execute();
+    virtual std::ostringstream getMessage();
 
 protected:
     virtual bool prepare();

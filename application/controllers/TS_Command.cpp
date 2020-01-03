@@ -11,7 +11,8 @@
  * @filesource
  */
 
-#include "./headers/TS_Command.h"
+#include <sstream>
+#include "TS_Command.h"
 
 /**
  * Constructor
@@ -48,4 +49,13 @@ bool TS_Command::prepare()
 void TS_Command::setTestMode(bool testMode)
 {
     this->isTestMode = testMode;
+}
+
+/**
+ * Get message of executed command
+ * @return  std::ostringstream
+ */
+std::ostringstream TS_Command::getMessage()
+{
+    return std::ostringstream();
 }

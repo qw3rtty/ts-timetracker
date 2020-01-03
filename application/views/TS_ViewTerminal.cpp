@@ -15,6 +15,7 @@
 #include "TS_ViewTerminal.h"
 
 #include <iostream>
+#include <sstream>
 #include <cstring>
 
 #include "TS_ConfigReader.h"
@@ -71,6 +72,9 @@ void TS_ViewTerminal::render()
             if (command != nullptr)
             {
                 command->execute();
+
+                // TODO: Implement .getMessage() on all commands!!
+                std::cout << command->getMessage().str() << std::endl;
             }
         }
         else

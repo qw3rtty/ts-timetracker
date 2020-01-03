@@ -14,6 +14,7 @@
 #ifndef TS_TIMETRACKER_TS_COMMANDHELP_H
 #define TS_TIMETRACKER_TS_COMMANDHELP_H
 
+#include <sstream>
 #include "TS_Command.h"
 
 class TS_CommandHelp : public TS_Command
@@ -21,6 +22,7 @@ class TS_CommandHelp : public TS_Command
 public:
     explicit TS_CommandHelp(char *arguments);
     bool execute() override;
+    std::ostringstream getMessage() override;
 
 protected:
     bool prepare() override;

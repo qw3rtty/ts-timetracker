@@ -12,6 +12,7 @@
  */
 
 #include <iostream>
+#include <sstream>
 
 #include "TS_Helper.h"
 #include "TS_Command.h"
@@ -29,23 +30,6 @@ TS_CommandHelp::TS_CommandHelp(char *arguments) : TS_Command(arguments)
 bool TS_CommandHelp::execute()
 {
     this->prepare();
-
-    if (this->isTestMode)
-    {
-        return true;
-    }
-
-    TS_Helper helper;
-    std::cout << "Available commands:" << std::endl;
-    std::cout << "- help:" << helper.doubleTab << "Show's the help menu" << std::endl;
-    std::cout << "- touch: <name>" << helper.tab << "Create's a new project" << std::endl;
-    std::cout << "- rm <name>:" << helper.tab << "Delete's entered project" << std::endl;
-    std::cout << "- ls <item>:" << helper.tab << "List selected items (use 'projects', 'config' or 'times')" << std::endl;
-    std::cout << "- use <n>:" << helper.tab << "Set project to track time on, a number from 'list' command" << std::endl;
-    std::cout << "- start:" << helper.tab << "Start's timetracking" << std::endl;
-    std::cout << "- stop:" << helper.doubleTab << "Stop's timetracking" << std::endl;
-    std::cout << "- save:" << helper.doubleTab << "Save new timetrack depending on settings" << std::endl;
-
     return true;
 }
 
@@ -55,4 +39,25 @@ bool TS_CommandHelp::execute()
 bool TS_CommandHelp::prepare()
 {
     return true;
+}
+
+/**
+ * @inherit
+ */
+std::ostringstream TS_CommandHelp::getMessage()
+{
+    std::ostringstream message;
+
+    TS_Helper helper;
+    message << "Available commands:" << std::endl;
+    message << "- help:" << helper.doubleTab << "Show's the help menu" << std::endl;
+    message << "- touch: <name>" << helper.tab << "Create's a new project" << std::endl;
+    message << "- rm <name>:" << helper.tab << "Delete's entered project" << std::endl;
+    message << "- ls <item>:" << helper.tab << "List selected items (use 'projects', 'config' or 'times')" << std::endl;
+    message << "- use <n>:" << helper.tab << "Set project to track time on, a number from 'list' command" << std::endl;
+    message << "- start:" << helper.tab << "Start's timetracking" << std::endl;
+    message << "- stop:" << helper.doubleTab << "Stop's timetracking" << std::endl;
+    message << "- save:" << helper.doubleTab << "Save new timetrack depending on settings";
+
+    return message;
 }
