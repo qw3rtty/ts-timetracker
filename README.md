@@ -31,6 +31,7 @@ Possible config values:
 
 ## ToDo
 - [x] Implement views
+- [ ] Implement all .getMessage() methods of commands
 - [ ] Create export of projects
 
 ## Other
