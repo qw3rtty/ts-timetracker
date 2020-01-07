@@ -40,12 +40,10 @@ bool TS_CommandUse::execute()
     if (application->getChoosedProject() >= 0)
     {
         application->model.setSelectedProjectKey(application->getChoosedProject());
-        std::cout << "You selected '" << application->model.getProjectName() << "'" << std::endl;
     }
     else
     {
         application->setChoosedProject(-1);
-        std::cout << "You selected an non existing project!" << std::endl;
     }
 
     return true;
@@ -57,4 +55,23 @@ bool TS_CommandUse::execute()
 bool TS_CommandUse::prepare()
 {
     return true;
+}
+
+/**
+ * @inherit
+ */
+std::ostringstream TS_CommandUse::getMessage()
+{
+    std::ostringstream message;
+
+    if (application->getChoosedProject() >= 0)
+    {
+        message << "You selected '" << application->model.getProjectName() << "'";
+    }
+    else
+    {
+        message << "You selected an non existing project!";
+    }
+
+    return message;
 }
