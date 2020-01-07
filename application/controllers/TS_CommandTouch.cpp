@@ -23,7 +23,9 @@
  * @inherit
  */
 TS_CommandTouch::TS_CommandTouch(char *arguments) : TS_Command(arguments)
-{}
+{
+    this->touchedSuccessful = false;
+}
 
 /**
  * @inherit
@@ -39,7 +41,7 @@ bool TS_CommandTouch::execute()
 
     if (this->arguments == nullptr)
     {
-        std::cout << "No project name entered!" << std::endl;
+        this->touchedSuccessful = false;
         return false;
     }
 
@@ -50,7 +52,7 @@ bool TS_CommandTouch::execute()
     newProject.close();
 
     application->clearProjectList();
-    std::cout << "New project '" << this->arguments << "' successful created." << std::endl;
+    this->touchedSuccessful = true;
 
     return true;
 }
@@ -64,4 +66,21 @@ bool TS_CommandTouch::prepare()
     this->storePath = config.getConfigEntry("projectsPath");
 
     return true;
+}
+
+/**
+ * @inherit
+ */
+std::ostringstream TS_CommandTouch::getMessage()
+{
+    std::ostringstream message;
+
+    message << "No project name entered or something went wrong!";
+    if (this->touchedSuccessful)
+    {
+        message.str("");
+        message << "New project '" << this->arguments << "' successful created.";
+    }
+
+    return message;
 }
