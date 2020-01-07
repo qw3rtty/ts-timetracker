@@ -24,7 +24,7 @@ public:
     bool execute() override;
 
 private:
-    void showTime() override;
+    std::ostringstream showTime() override;
 };
 
 

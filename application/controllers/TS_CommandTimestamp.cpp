@@ -32,15 +32,7 @@ bool TS_CommandTimestamp::execute()
 {
     this->prepare();
 
-    if (this->timestamp == -1)
-    {
-        std::cout << "Error by getting current timestamp." << std::endl;
-        return false;
-    }
-
-    this->showTime();
-
-    return true;
+    return this->timestamp != -1;
 }
 
 /**
@@ -63,8 +55,28 @@ std::time_t TS_CommandTimestamp::getTimestamp()
 
 /**
  * Show's the time
+ * @return std::ostringstream
  */
-void TS_CommandTimestamp::showTime()
+std::ostringstream TS_CommandTimestamp::showTime()
 {
-    std::cout << "Current time: " << TS_Helper::formatTimestamp(this->timestamp) << std::endl;
+    std::ostringstream timeInfo;
+    timeInfo << "Current time: " << TS_Helper::formatTimestamp(this->timestamp);
+
+    return timeInfo;
+}
+
+/**
+ * @inherit
+ */
+std::ostringstream TS_CommandTimestamp::getMessage()
+{
+    std::ostringstream message = this->showTime();
+
+    if (this->timestamp == -1)
+    {
+        message.str("");
+        message << "Error by getting current timestamp.";
+    }
+
+    return message;
 }

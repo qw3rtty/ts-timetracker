@@ -27,10 +27,13 @@ TS_CommandTimestampStop::TS_CommandTimestampStop(char *arguments) : TS_CommandTi
 /**
  * @inherit
  */
-void TS_CommandTimestampStop::showTime()
+std::ostringstream TS_CommandTimestampStop::showTime()
 {
-    std::cout << "Time tracking finished." << std::endl;
-    std::cout << "Finished time: " << TS_Helper::formatTimestamp(this->timestamp) << std::endl;
+    std::ostringstream timeInfo;
+    timeInfo << "Time tracking finished." << std::endl;
+    timeInfo << "Finished time: " << TS_Helper::formatTimestamp(this->timestamp);
+
+    return timeInfo;
 }
 
 /**

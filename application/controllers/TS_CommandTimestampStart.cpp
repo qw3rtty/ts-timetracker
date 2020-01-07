@@ -27,10 +27,13 @@ TS_CommandTimestampStart::TS_CommandTimestampStart(char *arguments) : TS_Command
 /**
  * @inherit
  */
-void TS_CommandTimestampStart::showTime()
+std::ostringstream TS_CommandTimestampStart::showTime()
 {
-    std::cout << "Time tracking has started." << std::endl;
-    std::cout << "Starting time: " << TS_Helper::formatTimestamp(this->timestamp) << std::endl;
+    std::ostringstream timeInfo;
+    timeInfo << "Time tracking has started." << std::endl;
+    timeInfo << "Starting time: " << TS_Helper::formatTimestamp(this->timestamp);
+
+    return timeInfo;
 }
 
 /**
