@@ -22,7 +22,9 @@
  * @inherit
  */
 TS_CommandSave::TS_CommandSave(char *arguments) : TS_Command(arguments)
-{}
+{
+    this->successfullySaved = false;
+}
 
 /**
  * @inherit
@@ -36,28 +38,14 @@ bool TS_CommandSave::execute()
         return true;
     }
 
-    int project = application->getChoosedProject();
-    if (project >= 0)
+    if (application->getChoosedProject() >= 0)
     {
         std::stringstream entryBuffer;
         entryBuffer << application->startTimestamp
             << ";" << application->endTimestamp
             << ";" << this->arguments;
 
-        bool successfullySaved = application->model.save(entryBuffer.str());
-        if (successfullySaved)
-        {
-            std::cout << "Successfully saved new time track!" << std::endl;
-        }
-        else
-        {
-            std::cout << "Error on saving new time track! Try again ..." << std::endl;
-        }
-    }
-    else
-    {
-        std::cout << "You have to choose a project!" << std::endl;
-        std::cout << "Type 'help' to get more informations." << std::endl;
+        this->successfullySaved = application->model.save(entryBuffer.str());
     }
 
     return true;
@@ -69,4 +57,32 @@ bool TS_CommandSave::execute()
 bool TS_CommandSave::prepare()
 {
     return true;
+}
+
+
+/**
+ * @inherit
+ */
+std::ostringstream TS_CommandSave::getMessage()
+{
+    std::ostringstream message;
+
+    if (application->getChoosedProject() >= 0)
+    {
+        if (this->successfullySaved)
+        {
+            message << "Successfully saved new time track!";
+        }
+        else
+        {
+            message << "Error on saving new time track! Try again ...";
+        }
+    }
+    else
+    {
+        message << "You have to choose a project!" << std::endl;
+        message << "Type 'help' to get more informations.";
+    }
+
+    return message;
 }

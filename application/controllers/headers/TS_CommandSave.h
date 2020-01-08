@@ -14,6 +14,7 @@
 #ifndef TS_TIMETRACKER_TS_COMMANDSAVE_H
 #define TS_TIMETRACKER_TS_COMMANDSAVE_H
 
+#include <sstream>
 #include "TS_Command.h"
 
 class TS_CommandSave : public TS_Command
@@ -21,9 +22,13 @@ class TS_CommandSave : public TS_Command
 public:
     explicit TS_CommandSave(char *arguments);
     bool execute() override;
+    std::ostringstream getMessage() override;
 
 protected:
     bool prepare() override;
+
+private:
+    bool successfullySaved;
 };
 
 
