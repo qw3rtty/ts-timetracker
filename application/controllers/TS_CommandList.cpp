@@ -44,30 +44,7 @@ bool TS_CommandList::execute()
         return true;
     }
 
-    if (this->arguments == nullptr)
-    {
-        std::cout << "You entered no argument!" << std::endl;
-        return false;
-    }
-    else if (strcmp(this->arguments, "projects") == 0)
-    {
-        this->showProjects();
-    }
-    else if (strcmp(this->arguments, "config") == 0)
-    {
-        this->showConfig();
-    }
-    else if (strcmp(this->arguments, "times") == 0)
-    {
-        this->showTimes();
-    }
-    else
-    {
-        std::cout << "You entered an invalid argument!" << std::endl;
-        return false;
-    }
-
-    return true;
+    return this->arguments != nullptr;
 }
 
 /**
@@ -108,15 +85,17 @@ void TS_CommandList::showProjects()
     auto listIterator = this->list.begin();
     while ( (listIterator != this->list.end()) )
     {
-    std::cout << listIterator->first << " => " << listIterator->second;
-
+        std::cout << listIterator->first << " => " << listIterator->second;
         if (listIterator->first == this->projectKey)
         {
             std::cout << helper.color << " [selected]" << helper.noColor;
         }
 
-        std::cout << std::endl;
         listIterator++;
+        if (listIterator != this->list.end())
+        {
+            std::cout << std::endl;
+        }
     }
 }
 
@@ -149,7 +128,7 @@ void TS_CommandList::showTimes()
     else
     {
         std::cout << "You have to choose a project!" << std::endl;
-        std::cout << "Type 'help' to get more informations." << std::endl;
+        std::cout << "Type 'help' to get more informations.";
     }
 }
 
@@ -191,4 +170,35 @@ void TS_CommandList::printTimeTable(std::vector<std::string> times)
     }
 
     table.print(std::cout);
+}
+
+/**
+ * @inherit
+ */
+std::ostringstream TS_CommandList::getMessage()
+{
+    std::ostringstream message;
+
+    if (this->arguments == nullptr)
+    {
+        message << "You entered no argument!";
+    }
+    else if (strcmp(this->arguments, "projects") == 0)
+    {
+        this->showProjects();
+    }
+    else if (strcmp(this->arguments, "config") == 0)
+    {
+        this->showConfig();
+    }
+    else if (strcmp(this->arguments, "times") == 0)
+    {
+        this->showTimes();
+    }
+    else
+    {
+        message << "You entered an invalid argument!";
+    }
+
+    return message;
 }

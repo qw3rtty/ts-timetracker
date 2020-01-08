@@ -33,15 +33,20 @@ void TS_ConfigReader::showConfig()
 {
     if (!this->configLoaded)
     {
-        std::cout << "No config loaded yet!" << std::endl;
+        std::cout << "No config loaded yet!";
         return;
     }
 
     auto configIterator = this->entries.begin();
     while ( (configIterator != this->entries.end()) )
     {
-        std::cout << configIterator->first << " => " << configIterator->second << std::endl;
+        std::cout << configIterator->first << " => " << configIterator->second;
         configIterator++;
+
+        if (configIterator != this->entries.end())
+        {
+            std::cout << std::endl;
+        }
     }
 }
 

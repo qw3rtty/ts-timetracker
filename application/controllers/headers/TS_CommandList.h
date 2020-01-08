@@ -18,12 +18,14 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <sstream>
 
 class TS_CommandList : public TS_Command
 {
 public:
     explicit TS_CommandList(char *arguments);
     bool execute() override;
+    std::ostringstream getMessage() override;
 
 protected:
     bool prepare() override;
