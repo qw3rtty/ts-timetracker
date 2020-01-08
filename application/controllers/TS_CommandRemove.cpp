@@ -22,7 +22,9 @@
  * @inherit
  */
 TS_CommandRemove::TS_CommandRemove(char *arguments) : TS_Command(arguments)
-{}
+{
+    this->successfullyRemoved = -1;
+}
 
 /**
 * @inherit
@@ -38,16 +40,14 @@ bool TS_CommandRemove::execute()
 
     if (this->arguments == nullptr)
     {
-        std::cout << "No project name entered!" << std::endl;
         return false;
     }
 
     std::stringstream deleteProjectPath;
     deleteProjectPath << this->storePath << this->arguments;
 
-    std::remove(deleteProjectPath.str().c_str());
+    this->successfullyRemoved = std::remove(deleteProjectPath.str().c_str());
     application->clearProjectList();
-    std::cout << "Project '" << this->arguments << "' successful deleted." << std::endl;
 
     return true;
 }
@@ -61,4 +61,25 @@ bool TS_CommandRemove::prepare()
     this->storePath = config.getConfigEntry("projectsPath");
 
     return true;
+}
+
+/**
+ * @inherit
+ */
+std::ostringstream TS_CommandRemove::getMessage()
+{
+    std::ostringstream message;
+
+    if (this->arguments == nullptr)
+    {
+        message << "No project name entered!";
+    }
+
+    if (this->successfullyRemoved == 0)
+    {
+        message.str("");
+        message << "Project '" << this->arguments << "' successful deleted.";
+    }
+
+    return message;
 }

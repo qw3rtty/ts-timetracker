@@ -15,6 +15,7 @@
 #define TS_TIMETRACKER_TS_COMMANDREMOVE_H
 
 #include <string>
+#include <sstream>
 #include "TS_Command.h"
 
 class TS_CommandRemove : public TS_Command
@@ -22,12 +23,14 @@ class TS_CommandRemove : public TS_Command
 public:
     explicit TS_CommandRemove(char *arguments);
     bool execute() override;
+    std::ostringstream getMessage() override;
 
 protected:
     bool prepare() override;
 
 private:
     std::string storePath;
+    int successfullyRemoved;
 };
 
 
