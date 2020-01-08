@@ -73,7 +73,7 @@ void TS_ViewTerminal::render()
             {
                 command->execute();
 
-                // TODO: Implement .getMessage() on TS_CommandList, TS_CommandRemove
+                // TODO: Implement .getMessage() on TS_CommandList
                 std::cout << command->getMessage().str() << std::endl;
             }
         }
