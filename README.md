@@ -30,7 +30,6 @@ Possible config values:
 - For printing the table: https://github.com/friedmud/variadic_table
 
 ## ToDo
-- [ ] Implement all .getMessage() methods of commands
 - [ ] Create export of projects
 - [ ] Implement GUI view
 
