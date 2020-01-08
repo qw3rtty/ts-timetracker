@@ -72,8 +72,6 @@ void TS_ViewTerminal::render()
             if (command != nullptr)
             {
                 command->execute();
-
-                // TODO: Implement .getMessage() on TS_CommandList
                 std::cout << command->getMessage().str() << std::endl;
             }
         }
