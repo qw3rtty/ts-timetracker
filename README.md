@@ -30,7 +30,7 @@ Possible config values:
 - For printing the table: https://github.com/friedmud/variadic_table
 
 ## ToDo
-- [ ] Create export of projects
+- [x] Create export of projects
 - [ ] Implement GUI view
 
 ## Other
