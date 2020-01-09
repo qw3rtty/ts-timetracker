@@ -14,6 +14,7 @@
 #include <cstring>
 
 #include "headers/TS_FactoryCommand.h"
+#include "TS_CommandExport.h"
 #include "TS_CommandHelp.h"
 #include "TS_CommandList.h"
 #include "TS_CommandRemove.h"
@@ -68,6 +69,10 @@ TS_Command* TS_FactoryCommand::build(char *command, char *arguments)
     else if (strcmp(command, "save") == 0)
     {
         cmd = new TS_CommandSave(arguments);
+    }
+    else if (strcmp(command, "export") == 0)
+    {
+        cmd = new TS_CommandExport(arguments);
     }
     else
     {
