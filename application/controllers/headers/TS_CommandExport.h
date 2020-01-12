@@ -30,7 +30,11 @@ protected:
 
 private:
     std::string createCsvHeadline();
+    std::string getExportPath();
+    std::string getSelectedProjectPath();
+
     std::string exportPath;
+    std::string selectedProjectPath;
     bool successfulExport;
 };
 

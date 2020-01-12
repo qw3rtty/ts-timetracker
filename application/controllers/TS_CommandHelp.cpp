@@ -12,7 +12,6 @@
  */
 
 #include <iostream>
-#include <sstream>
 
 #include "TS_Helper.h"
 #include "TS_Command.h"
@@ -58,7 +57,7 @@ std::ostringstream TS_CommandHelp::getMessage()
     message << "- start:" << helper.tab << "Start's timetracking" << std::endl;
     message << "- stop:" << helper.doubleTab << "Stop's timetracking" << std::endl;
     message << "- save:" << helper.doubleTab << "Save new timetrack depending on settings" << std::endl;
-    message << "- export:" << helper.tab << "Export selected project (selected by 'use' command)";
+    message << "- export <p>:" << helper.tab << "Export selected project to given path (selected by 'use' command)";
 
     return message;
 }

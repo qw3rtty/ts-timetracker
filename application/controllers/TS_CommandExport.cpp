@@ -15,8 +15,7 @@
 #include <string>
 #include <fstream>
 
-#include "TS_Application.h"
-#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
 #include "TS_Command.h"
 #include "TS_CommandExport.h"
 
@@ -26,6 +25,8 @@
 TS_CommandExport::TS_CommandExport(char *arguments) : TS_Command(arguments)
 {
     this->successfulExport = false;
+    this->exportPath = "";
+    this->selectedProjectPath = "";
 }
 
 /**
@@ -40,12 +41,8 @@ bool TS_CommandExport::execute()
         return false;
     }
 
-    // TODO: specify export path!
-    std::ostringstream fullExportPath;
-    fullExportPath << this->exportPath.c_str() << ".csv";
-
-    std::ifstream projectFile(this->exportPath.c_str(), std::ios::binary);
-    std::ofstream exportFile(fullExportPath.str(), std::ios::binary);
+    std::ifstream projectFile(this->selectedProjectPath, std::ios::binary);
+    std::ofstream exportFile(this->exportPath, std::ios::binary);
 
     exportFile << this->createCsvHeadline() << std::endl;
     exportFile << projectFile.rdbuf();
@@ -63,19 +60,8 @@ bool TS_CommandExport::execute()
  */
 bool TS_CommandExport::prepare()
 {
-    TS_ConfigReader config;
-    if (!config.configLoaded)
-    {
-        return false;
-    }
-
-    std::ostringstream path;
-    application->model.setSelectedProjectKey( application->getChoosedProject() );
-
-    path << config.getConfigEntry("projectsPath");
-    path << application->model.getProjectName();
-
-    this->exportPath = path.str();
+    this->exportPath = this->getExportPath();
+    this->selectedProjectPath = this->getSelectedProjectPath();
 
     return true;
 }
@@ -89,7 +75,7 @@ std::ostringstream TS_CommandExport::getMessage()
 
     if (this->successfulExport)
     {
-        message << "Export was successful.";
+        message << "Exported '" << TS_Helper::getSelectedProjectName() << "' successfully.";
     }
     else
     {
@@ -107,4 +93,35 @@ std::ostringstream TS_CommandExport::getMessage()
 std::string TS_CommandExport::createCsvHeadline()
 {
     return "Start time;End time; Comment";
+}
+
+/**
+ * Create export path
+ * @return  std::string
+ */
+std::string TS_CommandExport::getExportPath()
+{
+    std::ostringstream path;
+    path << this->arguments;
+
+    if (this->arguments == nullptr)
+    {
+        path << TS_Helper::getProjectsPath();
+    }
+    path << TS_Helper::getSelectedProjectName() << ".csv";
+
+    return path.str();
+}
+
+/**
+ * Get path of selected project path
+ * @return  std::string
+ */
+std::string TS_CommandExport::getSelectedProjectPath()
+{
+    std::ostringstream projectToExport;
+    projectToExport << TS_Helper::getProjectsPath();
+    projectToExport << TS_Helper::getSelectedProjectName();
+
+    return projectToExport.str();
 }

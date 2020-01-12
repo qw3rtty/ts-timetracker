@@ -13,7 +13,9 @@
 
 #include <ctime>
 #include <string>
+#include <ostream>
 
+#include "TS_Application.h"
 #include "TS_Helper.h"
 #include "TS_ConfigReader.h"
 
@@ -48,4 +50,29 @@ std::string TS_Helper::formatTimestamp(std::time_t timestamp)
     std::strftime(date, 80, format.c_str(), std::localtime(&timestamp));
 
     return date;
+}
+
+/**
+ * Get path to projects of configuration
+ * @return  std::string
+ */
+std::string TS_Helper::getProjectsPath()
+{
+    TS_ConfigReader config;
+    if (!config.configLoaded)
+    {
+        return std::string();
+    }
+
+    return config.getConfigEntry("projectsPath");
+}
+
+/**
+ * Get selected project name
+ * @return  std::string
+ */
+std::string TS_Helper::getSelectedProjectName()
+{
+    application->model.setSelectedProjectKey( application->getChoosedProject() );
+    return application->model.getProjectName();
 }

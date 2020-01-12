@@ -26,7 +26,10 @@ public:
     const char *noColor;
     const char *tab;
     const char *doubleTab;
+
     static std::string formatTimestamp(std::time_t timestamp);
+    static std::string getProjectsPath();
+    static std::string getSelectedProjectName();
 };
 
 #endif //TS_TIMETRACKER_TS_HELPER_H
