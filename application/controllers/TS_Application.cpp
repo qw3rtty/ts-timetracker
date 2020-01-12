@@ -62,10 +62,7 @@ TS_View* TS_Application::buildView()
  */
 void TS_Application::setCommandWithAttributes(char *input)
 {
-    // Reset command and arguments
-    this->command = nullptr;
-    this->arguments = nullptr;
-
+    this->resetPointers();
     char *pointerToken = strtok(input, " ");
 
     this->command = new char(strlen(pointerToken) + 1);
@@ -146,4 +143,13 @@ bool TS_Application::unitTest()
 
     applicationTest->setCommandWithAttributes(command);
     return applicationTest->isCommandValid();
+}
+
+/**
+ * Reset command and arguments pointer
+ */
+void TS_Application::resetPointers()
+{
+    this->command = nullptr;
+    this->arguments = nullptr;
 }
