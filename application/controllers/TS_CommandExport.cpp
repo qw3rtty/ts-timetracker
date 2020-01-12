@@ -75,7 +75,8 @@ std::ostringstream TS_CommandExport::getMessage()
 
     if (this->successfulExport)
     {
-        message << "Exported '" << TS_Helper::getSelectedProjectName() << "' successfully.";
+        message << "Exported '" << TS_Helper::getSelectedProjectName() << "' successfully to: ";
+        message << this->exportPath;
     }
     else
     {
@@ -102,11 +103,14 @@ std::string TS_CommandExport::createCsvHeadline()
 std::string TS_CommandExport::getExportPath()
 {
     std::ostringstream path;
-    path << this->arguments;
 
     if (this->arguments == nullptr)
     {
         path << TS_Helper::getProjectsPath();
+    }
+    else
+    {
+        path << this->arguments;
     }
     path << TS_Helper::getSelectedProjectName() << ".csv";
 
