@@ -11,22 +11,18 @@
  * @filesource
  */
 
-#include <stdio.h>
 #include <iostream>
-#include <cstring>
 #include <cassert>
 
-#include "../config/TS_ConfigReader.h"
-#include "../helpers/headers/TS_Helper.h"
-#include "../helpers/headers/TS_Info.h"
-#include "../application/controllers/headers/TS_Base.h"
-#include "../application/controllers/headers/TS_Application.h"
-#include "../application/controllers/headers/TS_Command.h"
-#include "../application/controllers/headers/TS_CommandHelp.h"
-#include "../application/controllers/headers/TS_CommandList.h"
-#include "../application/controllers/headers/TS_CommandRemove.h"
-#include "../application/controllers/headers/TS_CommandTimestamp.h"
-#include "../application/controllers/headers/TS_CommandTouch.h"
+#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
+#include "TS_Info.h"
+#include "TS_Application.h"
+#include "TS_CommandHelp.h"
+#include "TS_CommandList.h"
+#include "TS_CommandRemove.h"
+#include "TS_CommandTimestamp.h"
+#include "TS_CommandTouch.h"
 
 int main()
 {

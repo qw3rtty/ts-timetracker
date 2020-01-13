@@ -2,6 +2,7 @@
 .idea
 cmake*
 CMakeFiles*
+Testing*
 
 # excluded files
 **/cmake_install.cmake
@@ -9,5 +10,6 @@ CMakeFiles*
 **/CMakeCache.txt
 **/CMakeOutput.log
 **/ts-timetracker.cbp
+**/CTestTestfile.cmake
 ts-test
 ts-timetracker

@@ -26,3 +26,33 @@ include_directories(factories/headers)
 include_directories(factories)
 include_directories(helpers/headers)
 include_directories(helpers)
+
+# Testing section
+enable_testing()
+
+add_executable(ts-test tests/TS_UnitTest.cpp
+    application/controllers/TS_Application.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandExport.cpp
+    application/controllers/TS_CommandHelp.cpp
+    application/controllers/TS_CommandList.cpp
+    application/controllers/TS_CommandRemove.cpp
+    application/controllers/TS_CommandSave.cpp
+    application/controllers/TS_CommandTimestamp.cpp
+    application/controllers/TS_CommandTimestampStart.cpp
+    application/controllers/TS_CommandTimestampStop.cpp
+    application/controllers/TS_CommandTouch.cpp
+    application/controllers/TS_CommandUse.cpp
+    application/models/TS_Model.cpp
+    application/models/TS_ModelFilesystem.cpp
+    application/views/TS_View.cpp
+    application/views/TS_ViewTerminal.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+    helpers/TS_Info.cpp
+    libaries/VariadicTable.h
+    factories/TS_FactoryView.cpp
+    factories/TS_FactoryCommand.cpp
+)
+add_test(TS-UnitTest ts-test)
