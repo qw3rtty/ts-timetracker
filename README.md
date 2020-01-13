@@ -36,7 +36,6 @@ Possible config values:
 ## ToDo
 - [x] Create export of projects
 - [x] Add ctest
-- [ ] Implement GUI view
 
 ## Other
 If you got some problems, improvements or changes let me know.  
