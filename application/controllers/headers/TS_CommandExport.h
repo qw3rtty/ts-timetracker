@@ -32,6 +32,7 @@ private:
     std::string createCsvHeadline();
     std::string getExportPath();
     std::string getSelectedProjectPath();
+    std::string convertLineForExport(std::string line);
 
     std::string exportPath;
     std::string selectedProjectPath;

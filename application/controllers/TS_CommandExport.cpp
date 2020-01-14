@@ -45,7 +45,11 @@ bool TS_CommandExport::execute()
     std::ofstream exportFile(this->exportPath, std::ios::binary);
 
     exportFile << this->createCsvHeadline() << std::endl;
-    exportFile << projectFile.rdbuf();
+    std::string line;
+    while (std::getline(projectFile, line))
+    {
+        exportFile << this->convertLineForExport(line);
+    }
 
     projectFile.close();
     exportFile.close();
@@ -128,4 +132,34 @@ std::string TS_CommandExport::getSelectedProjectPath()
     projectToExport << TS_Helper::getSelectedProjectName();
 
     return projectToExport.str();
+}
+
+/**
+ * Converts given line for export
+ * @param   std::string line
+ * @return  std::string
+ */
+std::string TS_CommandExport::convertLineForExport(std::string line)
+{
+    unsigned counter = 0;
+    char delimiter = ';';
+    std::stringstream lineStream(line);
+    std::stringstream preparedLine;
+
+    while (std::getline(lineStream, line, delimiter))
+    {
+        if (counter < 2)
+        {
+            std::time_t timestamp = std::stoi(line);
+            preparedLine << TS_Helper::formatTimestamp(timestamp) << ";";
+            counter++;
+        }
+        else
+        {
+            preparedLine << line << std::endl;
+            counter = 0;
+        }
+    }
+
+    return preparedLine.str();
 }
