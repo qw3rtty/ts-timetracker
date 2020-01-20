@@ -48,6 +48,12 @@ void TS_ConfigReader::showConfig()
     auto configIterator = this->entries.begin();
     while ( (configIterator != this->entries.end()) )
     {
+        if (configIterator->first.empty())
+        {
+            configIterator++;
+            continue;
+        }
+
         std::cout << configIterator->first << " => " << configIterator->second;
         configIterator++;
 

@@ -36,6 +36,11 @@ bool TS_CommandExport::execute()
 {
     this->prepare();
 
+    if (this->isTestMode)
+    {
+        return true;
+    }
+
     if (this->exportPath.length() <= 0)
     {
         return false;
