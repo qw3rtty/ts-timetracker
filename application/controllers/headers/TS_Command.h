@@ -20,6 +20,7 @@ class TS_Command
 {
 public:
     explicit TS_Command(char *arguments);
+    ~TS_Command() = default;
     void setTestMode(bool testMode);
     virtual bool execute();
     virtual std::ostringstream getMessage();

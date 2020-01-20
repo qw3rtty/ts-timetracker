@@ -21,6 +21,7 @@ class TS_CommandTimestampStop : public TS_CommandTimestamp
 {
 public:
     explicit TS_CommandTimestampStop(char *arguments);
+    ~TS_CommandTimestampStop() = default;
     bool execute() override;
 
 private:

@@ -33,6 +33,14 @@ TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
 }
 
 /**
+ * Destructor
+ */
+TS_CommandList::~TS_CommandList()
+{
+    this->list.clear();
+}
+
+/**
  * @inherit
  */
 bool TS_CommandList::execute()

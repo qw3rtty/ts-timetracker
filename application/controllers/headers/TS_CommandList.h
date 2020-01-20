@@ -24,6 +24,7 @@ class TS_CommandList : public TS_Command
 {
 public:
     explicit TS_CommandList(char *arguments);
+    ~TS_CommandList();
     bool execute() override;
     std::ostringstream getMessage() override;
 

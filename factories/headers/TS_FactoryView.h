@@ -20,6 +20,7 @@ class TS_FactoryView
 {
 public:
     TS_FactoryView();
+    ~TS_FactoryView() = default;
     static TS_View* build();
 };
 

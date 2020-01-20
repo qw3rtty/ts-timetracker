@@ -21,6 +21,7 @@ class TS_CommandTimestampStart : public TS_CommandTimestamp
 {
 public:
     explicit TS_CommandTimestampStart(char *arguments);
+    ~TS_CommandTimestampStart() = default;
     bool execute() override;
 
 private:

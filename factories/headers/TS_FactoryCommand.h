@@ -20,6 +20,7 @@ class TS_FactoryCommand
 {
 public:
     TS_FactoryCommand();
+    ~TS_FactoryCommand() = default;
     static TS_Command* build(char *command, char *arguments);
 };
 

@@ -22,6 +22,7 @@ class TS_CommandRemove : public TS_Command
 {
 public:
     explicit TS_CommandRemove(char *arguments);
+    ~TS_CommandRemove() = default;
     bool execute() override;
     std::ostringstream getMessage() override;
 

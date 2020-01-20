@@ -21,6 +21,7 @@ class TS_CommandHelp : public TS_Command
 {
 public:
     explicit TS_CommandHelp(char *arguments);
+    ~TS_CommandHelp() = default;
     bool execute() override;
     std::ostringstream getMessage() override;
 

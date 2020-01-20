@@ -20,6 +20,7 @@ class TS_ViewTerminal : public TS_View
 {
 public:
     TS_ViewTerminal();
+    ~TS_ViewTerminal() = default;
     void render() override;
 };
 

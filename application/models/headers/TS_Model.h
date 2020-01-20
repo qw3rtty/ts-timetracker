@@ -19,6 +19,7 @@ class TS_Model
 {
 public:
     TS_Model();
+    ~TS_Model() = default;
 };
 
 

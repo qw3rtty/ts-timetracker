@@ -22,6 +22,7 @@ class TS_CommandTouch : public TS_Command
 {
 public:
     explicit TS_CommandTouch(char *arguments);
+    ~TS_CommandTouch() = default;
     bool execute() override;
     std::ostringstream getMessage() override;
 

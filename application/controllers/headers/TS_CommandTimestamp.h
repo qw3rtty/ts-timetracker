@@ -22,6 +22,7 @@ class TS_CommandTimestamp : public TS_Command
 {
 public:
     explicit TS_CommandTimestamp(char *arguments);
+    ~TS_CommandTimestamp() = default;
     bool execute() override;
     std::time_t getTimestamp();
     std::ostringstream getMessage() override;

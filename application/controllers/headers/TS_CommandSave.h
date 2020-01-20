@@ -21,6 +21,7 @@ class TS_CommandSave : public TS_Command
 {
 public:
     explicit TS_CommandSave(char *arguments);
+    ~TS_CommandSave() = default;
     bool execute() override;
     std::ostringstream getMessage() override;
 

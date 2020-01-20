@@ -20,6 +20,7 @@ class TS_Info
 {
 public:
     TS_Info();
+    ~TS_Info() = default;
     static void welcome();
     static void showInfo();
 };

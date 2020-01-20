@@ -32,6 +32,14 @@ TS_ModelFilesystem::TS_ModelFilesystem()
 }
 
 /**
+ * Destructor
+ */
+TS_ModelFilesystem::~TS_ModelFilesystem()
+{
+    this->projectList.clear();
+}
+
+/**
  * Set given project key
  * @param   key     - Project key of selected one to set
  */

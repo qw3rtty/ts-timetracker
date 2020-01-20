@@ -22,6 +22,7 @@ class TS_ConfigReader
 {
 public:
     TS_ConfigReader();
+    ~TS_ConfigReader();
     bool configLoaded;
     void showConfig();
     std::string getConfigEntry(const std::string& entry);

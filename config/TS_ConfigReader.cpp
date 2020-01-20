@@ -27,6 +27,14 @@ TS_ConfigReader::TS_ConfigReader()
 }
 
 /**
+ * Destructor
+ */
+TS_ConfigReader::~TS_ConfigReader()
+{
+    this->entries.clear();
+}
+
+/**
  * Show loaded config
  */
 void TS_ConfigReader::showConfig()

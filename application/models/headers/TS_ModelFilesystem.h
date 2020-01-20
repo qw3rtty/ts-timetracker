@@ -23,6 +23,7 @@ class TS_ModelFilesystem : public TS_Model
 {
 public:
     TS_ModelFilesystem();
+    ~TS_ModelFilesystem();
     void setSelectedProjectKey(int key);
     std::map<int, std::string> getProjectList();
     std::string getProjectName();

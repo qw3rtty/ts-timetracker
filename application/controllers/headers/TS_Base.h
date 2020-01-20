@@ -20,6 +20,7 @@ class TS_Base
 {
 public:
     TS_Base();
+    ~TS_Base() = default;
 };
 
 #endif //TS_TIMETRACKER_TS_BASE_H

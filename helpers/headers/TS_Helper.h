@@ -22,6 +22,7 @@ class TS_Helper
 {
 public:
     TS_Helper();
+    ~TS_Helper() = default;
     const char *color;
     const char *noColor;
     const char *tab;
