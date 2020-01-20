@@ -13,9 +13,8 @@
 
 #include <iostream>
 #include <fstream>
-#include <sstream>
 
-#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
 #include "TS_Application.h"
 #include "TS_CommandTouch.h"
 
@@ -62,8 +61,7 @@ bool TS_CommandTouch::execute()
  */
 bool TS_CommandTouch::prepare()
 {
-    TS_ConfigReader config;
-    this->storePath = config.getConfigEntry("projectsPath");
+    this->storePath = TS_Helper::getProjectsPath();
 
     return true;
 }

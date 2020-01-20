@@ -64,7 +64,11 @@ std::string TS_Helper::getProjectsPath()
         return std::string();
     }
 
-    return config.getConfigEntry("projectsPath");
+    std::stringstream path;
+    path << getenv("HOME") << "/";
+    path << config.getConfigEntry("projectsPath");
+
+    return path.str();
 }
 
 /**

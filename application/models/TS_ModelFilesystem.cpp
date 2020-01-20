@@ -12,7 +12,7 @@
  */
 
 #include "TS_ModelFilesystem.h"
-#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
 
 #include <string>
 #include <map>
@@ -124,8 +124,7 @@ void TS_ModelFilesystem::clearProjectListCache()
  */
 bool TS_ModelFilesystem::prepare()
 {
-    TS_ConfigReader configReader;
-    this->projectsPath = configReader.getConfigEntry("projectsPath");
+    this->projectsPath = TS_Helper::getProjectsPath();
 
     return true;
 }

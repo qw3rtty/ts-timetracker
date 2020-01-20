@@ -12,9 +12,8 @@
  */
 
 #include <iostream>
-#include <sstream>
 
-#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
 #include "TS_Application.h"
 #include "TS_CommandRemove.h"
 
@@ -57,8 +56,7 @@ bool TS_CommandRemove::execute()
  */
 bool TS_CommandRemove::prepare()
 {
-    TS_ConfigReader config;
-    this->storePath = config.getConfigEntry("projectsPath");
+    this->storePath = TS_Helper::getProjectsPath();
 
     return true;
 }
