@@ -29,6 +29,15 @@ TS_Application::TS_Application()
 }
 
 /**
+ * Destructor
+ */
+TS_Application::~TS_Application()
+{
+    delete this->command;
+    delete this->arguments;
+}
+
+/**
  * Getter for instance
  * @return TS_Application
  */
@@ -65,14 +74,14 @@ void TS_Application::setCommandWithAttributes(char *input)
     this->resetPointers();
     char *pointerToken = strtok(input, " ");
 
-    this->command = new char(strlen(pointerToken) + 1);
+    this->command = (char *) malloc(strlen(pointerToken) + 1);
     strcpy(this->command, pointerToken);
     pointerToken = strtok(nullptr, "");
 
     while ( (pointerToken != nullptr) )
     {
-        this->arguments = new char(strlen(pointerToken) + 1);
-        strcpy(this->arguments, pointerToken);
+        this->arguments = (char *) malloc(strlen(pointerToken) + 1);
+        this->arguments = strcpy(this->arguments, pointerToken);
         pointerToken = strtok(nullptr, "");
     }
 }
