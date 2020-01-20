@@ -3,6 +3,12 @@ project(ts-timetracker)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# Prepare filesystem for installation
+file(MAKE_DIRECTORY $ENV{HOME}/.config/ts-timetracker/)
+file(MAKE_DIRECTORY $ENV{HOME}/.config/ts-timetracker/projects/)
+configure_file(./.ts-timetracker.conf $ENV{HOME}/.config/ts-timetracker/ts-timetracker.conf)
+
+# Compile definitions
 add_executable(ts-timetracker main.cpp libaries/VariadicTable.h)
 
 set(TSConfigPath "$ENV{HOME}/.config/ts-timetracker/ts-timetracker.conf")
@@ -27,7 +33,7 @@ include_directories(factories)
 include_directories(helpers/headers)
 include_directories(helpers)
 
-# Testing section
+# Testing definitions
 enable_testing()
 
 add_executable(ts-test tests/TS_UnitTest.cpp
