@@ -7,20 +7,20 @@ Follow the steps below for installating:
 `$ git clone https://github.com/thomasschwarz96/ts-timetracker.git`  
 `$ cd ts-timetracker`  
 `$ cmake .`  
-`$ ./build.sh`  
-During the installing process you have to enter the location of your config file.  
-Possible configuration values see below.
+`$ make`  
 
 ## Unit tests
 Follow the steps below for unit testing after the installation guide:  
 `$ make test`  
-`$ ./ts-test`  
+`$ ./ts-test` or `$ ctest`  
 
 ## Configuration
-Name of the config file: **.ts-timetracker.conf**  
+Path of the config file: **~/.config/ts-timetracker/**  
+Name of the config file: **ts-timetracker.conf**  
+
 Possible config values:  
 - `timeFormat=%d.%m.%Y %T` format is used for displaying time
-- `projectsPath=/home/.ts-timetracker/` path is used for creating, saving and deleting projects
+- `projectsPath=.config/ts-timetracker/projects/` path is used for creating, saving and deleting projects
 - `storage=filesystem` indicates which model should used
 - `view=terminal` indicates which view should used
 
