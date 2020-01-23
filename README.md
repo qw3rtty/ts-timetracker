@@ -34,7 +34,7 @@ Possible config values:
 - For printing the table: https://github.com/friedmud/variadic_table
 
 ## ToDo
-- [ ] Create interface for models
+- [x] Create interface for models
 - [ ] Improve filesystem model
 
 ## Other
