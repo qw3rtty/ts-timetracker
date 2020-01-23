@@ -43,7 +43,7 @@ TS_ModelFilesystem::~TS_ModelFilesystem()
  * Set given project key
  * @param   key     - Project key of selected one to set
  */
-void TS_ModelFilesystem::setSelectedProjectKey(int key)
+void TS_ModelFilesystem::setProject(int key)
 {
     this->selectedProjectKey = key;
 }
@@ -84,7 +84,7 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
  * Get project by given key
  * @return  std::string     - Project name of selected one
  */
-std::string TS_ModelFilesystem::getProjectName()
+std::string TS_ModelFilesystem::getName()
 {
     for (auto & it : this->projectList)
     {
@@ -105,7 +105,7 @@ std::string TS_ModelFilesystem::getProjectName()
 bool TS_ModelFilesystem::save(const std::string& entry)
 {
     std::string file = this->projectsPath;
-    file.append(this->getProjectName());
+    file.append(this->getName());
 
     std::ofstream project(file, std::ios_base::app);
     if (project.is_open())
@@ -141,11 +141,11 @@ bool TS_ModelFilesystem::prepare()
  * Get all entries of current project
  * @return  std::vector<std::string>     - All tracked times of selected project
  */
-std::vector<std::string> TS_ModelFilesystem::getProjectTimes()
+std::vector<std::string> TS_ModelFilesystem::getTimes()
 {
     std::vector<std::string> entries;
     std::string line;
-    std::string projectName = this->getProjectName();
+    std::string projectName = this->getName();
     std::stringstream pathToProjectFile;
 
     pathToProjectFile << this->projectsPath << projectName;

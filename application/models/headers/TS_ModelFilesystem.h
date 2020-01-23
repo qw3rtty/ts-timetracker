@@ -14,22 +14,25 @@
 #ifndef TS_TIMETRACKER_TS_MODELFILESYSTEM_H
 #define TS_TIMETRACKER_TS_MODELFILESYSTEM_H
 
-#include "TS_Model.h"
+#include "TS_IModel.h"
 #include <string>
 #include <map>
 #include <vector>
 
-class TS_ModelFilesystem : public TS_Model
+class TS_ModelFilesystem : public TS_IModel
 {
 public:
     TS_ModelFilesystem();
-    ~TS_ModelFilesystem();
-    void setSelectedProjectKey(int key);
-    std::map<int, std::string> getProjectList();
-    std::string getProjectName();
-    bool save(const std::string& entry);
-    void clearProjectListCache();
-    std::vector<std::string> getProjectTimes();
+    ~TS_ModelFilesystem() override;
+
+    void setProject(int key) override;
+
+    std::vector<std::string> getTimes() override;
+    std::string getName() override;
+    std::map<int, std::string> getProjectList() override;
+
+    bool save(const std::string& entry) override;
+    void clearProjectListCache() override;
 
 private:
     bool prepare();

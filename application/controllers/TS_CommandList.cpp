@@ -131,7 +131,7 @@ void TS_CommandList::showTimes()
 {
     if (this->projectKey >= 0)
     {
-        this->printTimeTable(application->model.getProjectTimes());
+        this->printTimeTable(application->model.getTimes());
     }
     else
     {

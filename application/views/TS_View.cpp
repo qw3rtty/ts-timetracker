@@ -11,6 +11,7 @@
  * @filesource
  */
 
+#include <TS_ModelFilesystem.h>
 #include "TS_View.h"
 
 /**
@@ -18,14 +19,14 @@
  */
 TS_View::TS_View()
 {
-    this->model = TS_Model();
+    this->model = TS_ModelFilesystem();
 }
 
 /**
  * Set model of view
  * @param model
  */
-void TS_View::setModel(const TS_Model &newModel)
+void TS_View::setModel(const TS_ModelFilesystem &newModel)
 {
     this->model = newModel;
 }

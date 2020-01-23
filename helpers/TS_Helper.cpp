@@ -77,6 +77,6 @@ std::string TS_Helper::getProjectsPath()
  */
 std::string TS_Helper::getSelectedProjectName()
 {
-    application->model.setSelectedProjectKey( application->getChoosedProject() );
-    return application->model.getProjectName();
+    application->model.setProject(application->getChoosedProject());
+    return application->model.getName();
 }

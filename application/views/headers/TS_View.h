@@ -14,18 +14,18 @@
 #ifndef TS_TIMETRACKER_TS_VIEW_H
 #define TS_TIMETRACKER_TS_VIEW_H
 
-#include "TS_Model.h"
+#include "TS_ModelFilesystem.h"
 
 class TS_View
 {
 public:
     TS_View();
     ~TS_View() = default;
-    void setModel(const TS_Model &newModel);
+    void setModel(const TS_ModelFilesystem &newModel);
     virtual void render();
 
 private:
-    TS_Model model;
+    TS_ModelFilesystem model;
 };
 
 

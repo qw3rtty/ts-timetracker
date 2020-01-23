@@ -50,7 +50,6 @@ add_executable(ts-test tests/TS_UnitTest.cpp
     application/controllers/TS_CommandTimestampStop.cpp
     application/controllers/TS_CommandTouch.cpp
     application/controllers/TS_CommandUse.cpp
-    application/models/TS_Model.cpp
     application/models/TS_ModelFilesystem.cpp
     application/views/TS_View.cpp
     application/views/TS_ViewTerminal.cpp

@@ -39,7 +39,7 @@ bool TS_CommandUse::execute()
     application->setChoosedProject(std::stoi(this->arguments));
     if (application->getChoosedProject() >= 0)
     {
-        application->model.setSelectedProjectKey(application->getChoosedProject());
+        application->model.setProject(application->getChoosedProject());
     }
     else
     {
@@ -66,7 +66,7 @@ std::ostringstream TS_CommandUse::getMessage()
 
     if (application->getChoosedProject() >= 0)
     {
-        message << "You selected '" << application->model.getProjectName() << "'";
+        message << "You selected '" << application->model.getName() << "'";
     }
     else
     {
