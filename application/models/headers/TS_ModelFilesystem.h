@@ -28,6 +28,7 @@ public:
     void setProject(int key) override;
 
     std::vector<std::string> getTimes() override;
+    float getTimeAmount() override;
     std::string getName() override;
     std::map<int, std::string> getProjectList() override;
 

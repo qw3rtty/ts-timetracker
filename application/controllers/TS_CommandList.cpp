@@ -131,9 +131,8 @@ void TS_CommandList::showTimes()
 {
     if (this->projectKey >= 0)
     {
-        std::vector<std::string> times = application->model.getTimes();
-        this->printTimeTable(times);
-        this->printTrackedTimeAmount(times);
+        this->printTimeTable();
+        this->printTrackedTimeAmount();
     }
     else
     {
@@ -144,14 +143,14 @@ void TS_CommandList::showTimes()
 
 /**
  * Prints the time table
- * @param   times   - Time list for printing table
  */
-void TS_CommandList::printTimeTable(std::vector<std::string> times)
+void TS_CommandList::printTimeTable()
 {
     VariadicTable<std::string, std::string, std::string> table({
         "Start time", "End time", "Comment"
     });
 
+    auto times = application->model.getTimes();
     for (auto const& entry: times)
     {
         std::vector<std::string> row;
@@ -184,43 +183,11 @@ void TS_CommandList::printTimeTable(std::vector<std::string> times)
 
 /**
  * Print the complete amount of tracked times
- * @param times
  */
-void TS_CommandList::printTrackedTimeAmount(std::vector<std::string> times)
+void TS_CommandList::printTrackedTimeAmount()
 {
-    float amount = 0;
-
-    for (auto const& entry: times)
-    {
-        float lineAmount = 0;
-        unsigned counter = 0;
-        std::string token;
-        std::stringstream stream(entry);
-        char delimiter = ';';
-
-        while (std::getline(stream, token, delimiter))
-        {
-            try
-            {
-                auto tempTimestamp = (float) std::stoi(token);
-                if (counter == 0)
-                {
-                    lineAmount = tempTimestamp;
-                }
-                else
-                {
-                    lineAmount = tempTimestamp - lineAmount;
-                }
-            }
-            catch (const std::exception& e)
-            {
-                amount += lineAmount;
-            }
-            counter++;
-        }
-    }
-
-    std::cout << "Tracked time amount: " << std::fixed << std::setprecision(2) << amount / 3600 << "h" << std::endl;
+    std::cout << "Tracked time amount: " << std::fixed << std::setprecision(2)
+        << application->model.getTimeAmount() << "h" << std::endl;
 }
 
 /**

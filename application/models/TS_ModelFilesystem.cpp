@@ -27,6 +27,7 @@
  */
 TS_ModelFilesystem::TS_ModelFilesystem()
 {
+    this->amount = 0.0;
     this->selectedProjectKey = -1;
     this->prepare();
 }
@@ -46,6 +47,7 @@ TS_ModelFilesystem::~TS_ModelFilesystem()
 void TS_ModelFilesystem::setProject(int key)
 {
     this->selectedProjectKey = key;
+    this->amount = 0.0;
 }
 
 /**
@@ -161,4 +163,49 @@ std::vector<std::string> TS_ModelFilesystem::getTimes()
     projectFile.close();
 
     return entries;
+}
+
+/**
+ * Creates amount of all tracked entries
+ * @return  float       - Amount of project calculated to hours
+ */
+float TS_ModelFilesystem::getTimeAmount()
+{
+    if (this->amount > 0.0)
+    {
+        return this->amount / 3600;
+    }
+
+    auto times = this->getTimes();
+    for (auto const& entry: times)
+    {
+        float lineAmount = 0;
+        unsigned counter = 0;
+        std::string token;
+        std::stringstream stream(entry);
+        char delimiter = ';';
+
+        while (std::getline(stream, token, delimiter))
+        {
+            try
+            {
+                auto tempTimestamp = (float) std::stoi(token);
+                if (counter == 0)
+                {
+                    lineAmount = tempTimestamp;
+                }
+                else
+                {
+                    lineAmount = tempTimestamp - lineAmount;
+                }
+            }
+            catch (const std::exception& e)
+            {
+                this->amount += lineAmount;
+            }
+            counter++;
+        }
+    }
+
+    return this->amount / 3600;
 }
