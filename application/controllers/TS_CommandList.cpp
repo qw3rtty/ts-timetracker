@@ -131,7 +131,9 @@ void TS_CommandList::showTimes()
 {
     if (this->projectKey >= 0)
     {
-        this->printTimeTable(application->model.getTimes());
+        std::vector<std::string> times = application->model.getTimes();
+        this->printTimeTable(times);
+        this->printTrackedTimeAmount(times);
     }
     else
     {
@@ -165,19 +167,60 @@ void TS_CommandList::printTimeTable(std::vector<std::string> times)
         std::time_t startTime = std::stoi(row.at(1));
         std::time_t stopTime = std::stoi(row.at(0));
 
-        // TODO: find a better way here!!
-        //  Format dates to format of config
         std::string test[3] = {
             row.at(2),
             TS_Helper::formatTimestamp(startTime),
             TS_Helper::formatTimestamp(stopTime),
         };
+
+        // TODO: TS - find a better way here
         table.addRow(
             reinterpret_cast<const std::tuple<std::basic_string<char>, std::basic_string<char>, std::basic_string<char>> &>(test)
         );
     }
 
     table.print(std::cout);
+}
+
+/**
+ * Print the complete amount of tracked times
+ * @param times
+ */
+void TS_CommandList::printTrackedTimeAmount(std::vector<std::string> times)
+{
+    float amount = 0;
+
+    for (auto const& entry: times)
+    {
+        float lineAmount = 0;
+        unsigned counter = 0;
+        std::string token;
+        std::stringstream stream(entry);
+        char delimiter = ';';
+
+        while (std::getline(stream, token, delimiter))
+        {
+            try
+            {
+                auto tempTimestamp = (float) std::stoi(token);
+                if (counter == 0)
+                {
+                    lineAmount = tempTimestamp;
+                }
+                else
+                {
+                    lineAmount = tempTimestamp - lineAmount;
+                }
+            }
+            catch (const std::exception& e)
+            {
+                amount += lineAmount;
+            }
+            counter++;
+        }
+    }
+
+    std::cout << "Tracked time amount: " << std::fixed << std::setprecision(2) << amount / 3600 << "h" << std::endl;
 }
 
 /**

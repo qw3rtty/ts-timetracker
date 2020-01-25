@@ -41,6 +41,7 @@ private:
     void showConfig();
     void showTimes();
     void printTimeTable(std::vector<std::string> times);
+    void printTrackedTimeAmount(std::vector<std::string> times);
 };
 
 
