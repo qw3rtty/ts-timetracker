@@ -14,7 +14,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <iomanip>
 
+#include "TS_Application.h"
 #include "TS_Helper.h"
 #include "TS_Command.h"
 #include "TS_CommandExport.h"
@@ -55,6 +57,8 @@ bool TS_CommandExport::execute()
     {
         exportFile << this->convertLineForExport(line);
     }
+    
+    exportFile << this->createCsvAmountLine();
 
     projectFile.close();
     exportFile.close();
@@ -167,4 +171,20 @@ std::string TS_CommandExport::convertLineForExport(std::string line)
     }
 
     return preparedLine.str();
+}
+
+/**
+ * Creates amount line for export
+ * @return  std::string
+ */
+std::string TS_CommandExport::createCsvAmountLine()
+{
+    std::stringstream amountLine;
+
+    amountLine << ";;;" << std::endl; // Empty line / Spacer
+
+    amountLine << "Tracked time amount:;" << std::fixed << std::setprecision(2)
+        << application->model.getTimeAmount() << "h;;" << std::endl;
+
+    return amountLine.str();
 }

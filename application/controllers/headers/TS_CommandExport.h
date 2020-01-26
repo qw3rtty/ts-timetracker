@@ -31,6 +31,7 @@ protected:
 
 private:
     std::string createCsvHeadline();
+    std::string createCsvAmountLine();
     std::string getExportPath();
     std::string getSelectedProjectPath();
     std::string convertLineForExport(std::string line);
