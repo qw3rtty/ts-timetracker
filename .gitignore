@@ -1,6 +1,5 @@
 # excluded folders
 .idea
-cmake*
 CMakeFiles*
 Testing*
 
@@ -11,5 +10,6 @@ Testing*
 **/CMakeOutput.log
 **/ts-timetracker.cbp
 **/CTestTestfile.cmake
+install_manifest.txt
 ts-test
 ts-timetracker

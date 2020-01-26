@@ -61,3 +61,12 @@ add_executable(ts-test tests/TS_UnitTest.cpp
     factories/TS_FactoryCommand.cpp
 )
 add_test(TS-UnitTest ts-test)
+
+
+# Install definitons
+install(TARGETS ts-timetracker DESTINATION /usr/local/bin/)
+
+# Uninstall definitins
+add_custom_target(uninstall
+    "${CMAKE_COMMAND}" -P "cmake_uninstall.cmake"
+)
