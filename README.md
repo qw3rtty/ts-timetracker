@@ -3,16 +3,27 @@ Simple interactive command line timetracker.
 ![TS-Timetracker Screenshot](timetracker.png)  
 
 ## Installation
-Follow the steps below for installating:  
+Follow the steps below for installing:  
 `$ git clone https://github.com/thomasschwarz96/ts-timetracker.git`  
 `$ cd ts-timetracker`  
 `$ cmake .`  
 `$ make`  
+`$ sudo make install`  
+
+## Uninstall
+Follow the steps below for uninstalling:  
+`$ cd ts-timetracker`  should be the same directory where the repository was cloned into  
+`$ sudo make uninstall`   
+
+If there is an error during the uninstall process or you don't have the directory anymore following the steps below:  
+`$ sudo updatedb`  
+`$ locate ts-timetracker` or `$ locate ts-timetracker | grep /usr` if the output is to large  
+`$ sudo rm {PATH}/ts-timetracker` where {PATH} is the full path to the binary
 
 ## Unit tests
 Follow the steps below for unit testing after the installation guide:  
 `$ make test`  
-`$ ./ts-test` or `$ ctest`  
+`$ ctest`  
 
 ## Configuration
 Path of the config file: **~/.config/ts-timetracker/**  
