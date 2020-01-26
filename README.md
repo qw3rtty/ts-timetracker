@@ -40,7 +40,7 @@ I appreciate every single help!
 
 ## ToDo
 - [x] Create interface for models
-- [ ] Add tracked time amount to export
+- [x] Add tracked time amount to export
 - [ ] Improve filesystem model
 - [ ] Create multiple small unit tests
 
