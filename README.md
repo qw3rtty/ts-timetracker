@@ -3,17 +3,17 @@ Simple interactive command line timetracker.
 ![TS-Timetracker Screenshot](ts-timetracker.gif)  
 
 ## :page_facing_up: Table of Contents
-- [Installation](#installation)
-- [Uninstall](#uninstall)
-- [Unit tests](#unit-tests)
-- [Configuration](#configuration)
+- [Installation](#pager-installation)
+- [Uninstall](#pager-uninstall)
+- [Unit tests](#heavy_check_mark-unit-tests)
+- [Configuration](#wrench-configuration)
   - [Available Models](#available-models)
   - [Available Views](#available-views)
-- [Contributing](#contributing)
-- [Roadmap](#roadmap)
-- [Known bugs](#known-bugs)
-- [Libaries in usage](#libaries-in-usage)
-- [License](#license)
+- [Contributing](#memo-contributing)
+- [Roadmap](#car-roadmap)
+- [Known bugs](#bug-known-bugs)
+- [Libaries in usage](#books-libaries-in-usage)
+- [License](#scroll-license)
 
 ## :pager: Installation
 Follow the steps below for installing:  
