@@ -7,18 +7,18 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+**Describe the bug**  
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+**To Reproduce**  
 Steps to reproduce the behavior:
 
-**Expected behavior**
+**Expected behavior**  
 A clear and concise description of what you expected to happen:
 
-**Desktop (please complete the following information):**
+**Desktop (please complete the following information):**  
  - OS: [e.g. iOS]
  - Version [e.g. 22]
 
-**Additional context**
+**Additional context**  
 Add any other context about the problem here.
