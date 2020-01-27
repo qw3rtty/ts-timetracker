@@ -1,6 +1,6 @@
 # ts-timetracker
 Simple interactive command line timetracker.  
-![TS-Timetracker Screenshot](timetracker.png)  
+![TS-Timetracker Screenshot](ts-timetracker.gif)  
 
 ## :page_facing_up: Table of Contents
 - [Installation](#installation)
