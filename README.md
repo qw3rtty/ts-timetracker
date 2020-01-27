@@ -76,6 +76,7 @@ I appreciate every single help!
 
 ## :car: Roadmap
 - [x] Create interface for models
+- [ ] Create interface for views
 - [ ] Improve performance of filesystem model
 - [ ] Improve unit tests
 - [ ] Add more models for different databases 
