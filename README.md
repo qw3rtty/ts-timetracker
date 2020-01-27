@@ -68,11 +68,7 @@ Possible config values:
 - terminal: run's in the terminal, with and simple interactive command line interface
 
 ## :memo: Contributing
-Pull requests are welcome.  
-For major changes, please open an issue first to discuss what you would like to change.  
-
-Please make sure to update tests as appropriate.  
-I appreciate every single help!
+If you want to contribute check the [CONTRIBUTING.md](https://github.com/thomasschwarz96/ts-timetracker/blob/master/.github/CONTRIBUTING.md)
 
 ## :car: Roadmap
 - [x] Create interface for models
