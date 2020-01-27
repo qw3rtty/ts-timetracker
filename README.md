@@ -2,7 +2,7 @@
 Simple interactive command line timetracker.  
 ![TS-Timetracker Screenshot](timetracker.png)  
 
-## Table of Contents
+## :page_facing_up: Table of Contents
 - [Installation](#installation)
 - [Uninstall](#uninstall)
 - [Unit tests](#unit-tests)
@@ -15,7 +15,7 @@ Simple interactive command line timetracker.
 - [Libaries in usage](#libaries-in-usage)
 - [License](#license)
 
-## Installation
+## :pager: Installation
 Follow the steps below for installing:  
 ```bash
 $ git clone https://github.com/thomasschwarz96/ts-timetracker.git  
@@ -25,7 +25,7 @@ $ make
 $ sudo make install
 ```
 
-## Uninstall
+## :pager: Uninstall
 Follow the steps below for uninstalling:  
 ```bash
 $ cd ts-timetracker # should be the same directory where the repository was cloned into  
@@ -39,14 +39,14 @@ $ locate ts-timetracker # $ locate ts-timetracker | grep /usr - if the output is
 $ sudo rm {PATH}/ts-timetracker # where {PATH} is the full path to the binary  
 ```
 
-## Unit tests
+## :heavy_check_mark: Unit tests
 Follow the steps below for unit testing after the installation guide:  
 ```bash
 $ make test    
 $ ctest  
 ```
 
-## Configuration
+## :wrench: Configuration
 Default path of the config file: **~/.config/ts-timetracker/**  
 Name of the config file: **ts-timetracker.conf**  
 The config file will be generated automatically while installation.  
@@ -67,14 +67,15 @@ Possible config values:
 ##### Available Views:
 - terminal: run's in the terminal, with and simple interactive command line interface
 
-## Contributing
+## :memo: Contributing
 Pull requests are welcome.  
 For major changes, please open an issue first to discuss what you would like to change.  
 
 Please make sure to update tests as appropriate.  
 I appreciate every single help!
 
-## Roadmap
+## :car: Roadmap
+- [x] Create interface for models
 - [ ] Improve performance of filesystem model
 - [ ] Improve unit tests
 - [ ] Add more models for different databases 
@@ -85,11 +86,11 @@ I appreciate every single help!
   - [ ] XML
 - [ ] Remove dependency of library
 
-## Known bugs
+## :bug: Known bugs
 Currently are no bugs known/reported.
 
-## Libaries in usage
+## :books: Libaries in usage
 - For printing the table: https://github.com/friedmud/variadic_table
 
-## License
+## :scroll: License
 [MIT-License](https://choosealicense.com/licenses/mit/) © [Thomas Schwarz](https://github.com/thomasschwarz96)
