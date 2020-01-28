@@ -1,6 +1,7 @@
 # ts-timetracker
-Simple interactive command line timetracker.  
+**Simple interactive command line timetracker.**  
 ![TS-Timetracker Screenshot](ts-timetracker.gif)  
+This tool allows you to track your time for all your projects or needs. You can manage your projects and export it for your needs.  
 
 ## :page_facing_up: Table of Contents
 - [Installation](#pager-installation)
