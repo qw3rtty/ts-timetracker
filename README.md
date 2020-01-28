@@ -105,7 +105,8 @@ If you want to contribute check the [CONTRIBUTING.md](https://github.com/thomass
 - [ ] Remove dependency of library
 
 ## :bug: Known bugs
-Currently are no bugs known/reported.
+Currently are no bugs known/reported.  
+If you find any bugs, don't hesitate and open an issue :)
 
 ## :books: Libaries in usage
 - For printing the table: https://github.com/friedmud/variadic_table
