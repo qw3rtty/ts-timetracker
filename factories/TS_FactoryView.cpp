@@ -15,7 +15,7 @@
 
 #include "TS_ConfigReader.h"
 #include "TS_FactoryView.h"
-#include "TS_View.h"
+#include "TS_IView.h"
 #include "TS_ViewTerminal.h"
 
 /**
@@ -27,10 +27,10 @@ TS_FactoryView::TS_FactoryView() = default;
  * Factory for views
  * @return  TS_View  - View instance
  */
-TS_View* TS_FactoryView::build()
+TS_IView* TS_FactoryView::build()
 {
     TS_ConfigReader config;
-    TS_View *view;
+    TS_IView *view;
     std::string configView = config.getConfigEntry("view");
 
     // Right now we have only one view :D

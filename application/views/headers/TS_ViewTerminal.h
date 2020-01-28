@@ -14,13 +14,16 @@
 #ifndef TS_TIMETRACKER_TS_VIEWTERMINAL_H
 #define TS_TIMETRACKER_TS_VIEWTERMINAL_H
 
-#include "TS_View.h"
+#include "TS_IView.h"
+#include "TS_IModel.h"
 
-class TS_ViewTerminal : public TS_View
+class TS_ViewTerminal : public TS_IView
 {
 public:
     TS_ViewTerminal();
-    ~TS_ViewTerminal() = default;
+    ~TS_ViewTerminal() override = default;
+
+    void setModel(TS_IModel *newModel) override;
     void render() override;
 };
 

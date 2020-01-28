@@ -60,7 +60,7 @@ TS_Command* TS_Application::buildCommand()
  * Build's the necessary view
  * @return  TS_View      - Needed view for execution
  */
-TS_View* TS_Application::buildView()
+TS_IView* TS_Application::buildView()
 {
     return TS_FactoryView::build();
 }

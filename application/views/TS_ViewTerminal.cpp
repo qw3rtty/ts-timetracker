@@ -11,11 +11,10 @@
  * @filesource
  */
 
-#include "TS_View.h"
+#include "TS_IView.h"
 #include "TS_ViewTerminal.h"
 
 #include <iostream>
-#include <sstream>
 #include <cstring>
 
 #include "TS_ConfigReader.h"
@@ -27,8 +26,10 @@
 /**
  * @inherit
  */
-TS_ViewTerminal::TS_ViewTerminal() : TS_View()
-{}
+TS_ViewTerminal::TS_ViewTerminal() : TS_IView()
+{
+    this->model = new TS_ModelFilesystem();
+}
 
 /**
  * @inherit
@@ -81,4 +82,13 @@ void TS_ViewTerminal::render()
             std::cout << "Type 'help' to get more informations. \n";
         }
     }
+}
+
+/**
+ * Setter for model
+ * @param   TS_IModel*   newModel
+ */
+void TS_ViewTerminal::setModel(TS_IModel *newModel)
+{
+    this->model = newModel;
 }

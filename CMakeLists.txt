@@ -51,7 +51,6 @@ add_executable(ts-test tests/TS_UnitTest.cpp
     application/controllers/TS_CommandTouch.cpp
     application/controllers/TS_CommandUse.cpp
     application/models/TS_ModelFilesystem.cpp
-    application/views/TS_View.cpp
     application/views/TS_ViewTerminal.cpp
     config/TS_ConfigReader.cpp
     helpers/TS_Helper.cpp

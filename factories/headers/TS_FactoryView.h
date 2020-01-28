@@ -14,14 +14,14 @@
 #ifndef TS_TIMETRACKER_TS_FACTORYVIEW_H
 #define TS_TIMETRACKER_TS_FACTORYVIEW_H
 
-#include "TS_View.h"
+#include "TS_IView.h"
 
 class TS_FactoryView
 {
 public:
     TS_FactoryView();
     ~TS_FactoryView() = default;
-    static TS_View* build();
+    static TS_IView* build();
 };
 
 #endif //TS_TIMETRACKER_TS_FACTORYVIEW_H

@@ -1,1 +1,1 @@
-target_sources(ts-timetracker PRIVATE TS_View.cpp TS_ViewTerminal.cpp)
+target_sources(ts-timetracker PRIVATE TS_ViewTerminal.cpp)

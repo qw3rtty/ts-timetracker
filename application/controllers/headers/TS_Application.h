@@ -21,7 +21,7 @@
 
 #include "TS_Base.h"
 #include "TS_Command.h"
-#include "TS_View.h"
+#include "TS_IView.h"
 #include "TS_ModelFilesystem.h"
 
 class TS_Application : public TS_Base
@@ -38,7 +38,7 @@ private:
 public:
     static TS_Application *getInstance();
     TS_Command *buildCommand();
-    TS_View *buildView();
+    TS_IView *buildView();
     void setCommandWithAttributes(char *input);
     bool isCommandValid();
     void clearProjectList();
