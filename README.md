@@ -7,6 +7,7 @@ This tool allows you to track your time for all your projects or needs. You can 
 - [Installation](#pager-installation)
 - [Uninstall](#pager-uninstall)
 - [Unit tests](#heavy_check_mark-unit-tests)
+- [Usage](#clipboard-usage)
 - [Configuration](#wrench-configuration)
   - [Available Models](#available-models)
   - [Available Views](#available-views)
@@ -46,6 +47,25 @@ Follow the steps below for unit testing after the installation guide:
 $ make test    
 $ ctest  
 ```
+
+## :clipboard: Usage
+```bash
+$ ts-timetracker
+```
+That's it. Now the interactive command line starts and you can start to track your times on your projects or for your needs.  
+Here are all commands you can use:
+
+| COMMAND              | DESCRIPTION                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| help                 | Show's the help menu                                                      |
+| touch &lt;name&gt;   | Create's a new project with entered name                                  |
+| rm &lt;name&gt;      | Delete's entered project                                                  |
+| ls &lt;item&gt;      | List selected items (use 'projects', 'config' or 'times')                 |
+| use &lt;n&gt;        | Set project to track time on, a number from 'list' command                |
+| start                | Start's timetracking                                                      |
+| stop                 | Stop's timetracking                                                       |
+| save &lt;comment&gt; | Save new timetrack on selected project with entered comment               |
+| export &lt;p&gt;     | Export selected project to given path (selected project by 'use' command) |
 
 ## :wrench: Configuration
 Default path of the config file: **~/.config/ts-timetracker/**  
