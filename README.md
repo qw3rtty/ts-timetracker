@@ -1,4 +1,4 @@
-# ts-timetracker
+# TS-Timetracker
 **Simple interactive command line timetracker.**  
 ![TS-Timetracker Screenshot](ts-timetracker.gif)  
 This tool allows you to track your time for all your projects or needs. You can manage your projects and export it for your needs.  
@@ -53,6 +53,7 @@ $ ctest
 $ ts-timetracker
 ```
 That's it. Now the interactive command line starts and you can start to track your times on your projects or for your needs.  
+To Exit, just type '**exit**' or press <kbd>Ctrl</kbd> + <kbd>c</kbd>.  
 Here are all commands you can use:
 
 | COMMAND              | DESCRIPTION                                                               |
