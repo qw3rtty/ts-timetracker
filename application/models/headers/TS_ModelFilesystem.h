@@ -35,10 +35,15 @@ public:
     bool save(const std::string& entry) override;
     void clearProjectListCache() override;
 
+protected:
+    bool reset() override;
+    void loadProjectList() override;
+    float convertAmountToHours() override;
+
 private:
     bool prepare();
-    int selectedProjectKey;
-    std::string projectsPath;
+    int selectedProjectKey = -1;
+    std::string projectsPath = "";
     std::map<int, std::string> projectList;
 };
 

@@ -27,8 +27,6 @@
  */
 TS_ModelFilesystem::TS_ModelFilesystem()
 {
-    this->amount = 0.0;
-    this->selectedProjectKey = -1;
     this->prepare();
 }
 
@@ -41,26 +39,54 @@ TS_ModelFilesystem::~TS_ModelFilesystem()
 }
 
 /**
+ * Reset the model
+ * @return  bool    - true on success, false on failure
+ */
+bool TS_ModelFilesystem::reset()
+{
+    return this->prepare();
+}
+
+/**
+ * Prepare model
+ * @return  bool
+ */
+bool TS_ModelFilesystem::prepare()
+{
+    this->amount = 0.0;
+    this->selectedProjectKey = -1;
+    this->projectList.clear();
+
+    this->projectsPath = TS_Helper::getProjectsPath();
+    this->loadProjectList();
+
+    return true;
+}
+
+/**
+ * Clear project list cache
+ */
+void TS_ModelFilesystem::clearProjectListCache()
+{
+    this->projectList.clear();
+    this->loadProjectList();
+}
+
+/**
  * Set given project key
  * @param   key     - Project key of selected one to set
  */
 void TS_ModelFilesystem::setProject(int key)
 {
+    this->reset();
     this->selectedProjectKey = key;
-    this->amount = 0.0;
 }
 
 /**
- * Get projects list
- * @return  std::map<int, std::string>  - List of all available projects
+ * Load projects into local cache
  */
-std::map<int, std::string> TS_ModelFilesystem::getProjectList()
+void TS_ModelFilesystem::loadProjectList()
 {
-    if (!this->projectList.empty())
-    {
-        return this->projectList;
-    }
-
     DIR *directory;
     struct dirent *entry;
     unsigned int counter = 0;
@@ -77,6 +103,18 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
             this->projectList.insert(std::make_pair(counter++, entry->d_name));
         }
         closedir(directory);
+    }
+}
+
+/**
+ * Get projects list
+ * @return  std::map<int, std::string>  - List of all available projects
+ */
+std::map<int, std::string> TS_ModelFilesystem::getProjectList()
+{
+    if (this->projectList.empty())
+    {
+        this->loadProjectList();
     }
 
     return this->projectList;
@@ -121,25 +159,6 @@ bool TS_ModelFilesystem::save(const std::string& entry)
 }
 
 /**
- * Clear project list cache
- */
-void TS_ModelFilesystem::clearProjectListCache()
-{
-    this->projectList.clear();
-}
-
-/**
- * Prepare model
- * @return  bool
- */
-bool TS_ModelFilesystem::prepare()
-{
-    this->projectsPath = TS_Helper::getProjectsPath();
-
-    return true;
-}
-
-/**
  * Get all entries of current project
  * @return  std::vector<std::string>     - All tracked times of selected project
  */
@@ -166,6 +185,16 @@ std::vector<std::string> TS_ModelFilesystem::getTimes()
 }
 
 /**
+ * Convert amount to hours
+ * -> amount stored in seconds
+ * @return  float
+ */
+float TS_ModelFilesystem::convertAmountToHours()
+{
+    return this->amount / 3600;
+}
+
+/**
  * Creates amount of all tracked entries
  * @return  float       - Amount of project calculated to hours
  */
@@ -173,7 +202,7 @@ float TS_ModelFilesystem::getTimeAmount()
 {
     if (this->amount > 0.0)
     {
-        return this->amount / 3600;
+        return this->convertAmountToHours();
     }
 
     auto times = this->getTimes();
@@ -207,5 +236,5 @@ float TS_ModelFilesystem::getTimeAmount()
         }
     }
 
-    return this->amount / 3600;
+    return this->convertAmountToHours();
 }

@@ -35,6 +35,10 @@ public:
 
 protected:
     float amount = 0;
+
+    virtual bool reset() = 0;
+    virtual void loadProjectList() = 0;
+    virtual float convertAmountToHours() = 0;
 };
 
 
