@@ -13,3 +13,4 @@ Testing*
 install_manifest.txt
 ts-test
 ts-timetracker
+ts-unittest-*

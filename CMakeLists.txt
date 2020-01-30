@@ -36,6 +36,7 @@ include_directories(helpers)
 # Testing definitions
 enable_testing()
 
+# Complete Test
 add_executable(ts-test tests/TS_UnitTest.cpp
     application/controllers/TS_Application.cpp
     application/controllers/TS_Base.cpp
@@ -60,6 +61,13 @@ add_executable(ts-test tests/TS_UnitTest.cpp
     factories/TS_FactoryCommand.cpp
 )
 add_test(TS-UnitTest ts-test)
+
+# Config reader test
+add_executable(ts-unittest-config tests/TS_UnitTest_Config.cpp
+    config/TS_ConfigReader.cpp
+)
+add_test(TS-UnitTest-Config ts-unittest-config)
+
 
 
 # Install definitons
