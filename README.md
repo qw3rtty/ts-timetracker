@@ -97,9 +97,9 @@ If you want to contribute check the [CONTRIBUTING.md](https://github.com/thomass
 - [x] Create interface for views
 - [x] Improve performance of filesystem model
 - [ ] Improve unit tests
-- [ ] Add more models for different databases 
-  - [ ] SQLite
-  - [ ] MySQL
+- [ ] Add more models for different databases(?)  
+  - [ ] SQLite(?)  
+  - [ ] MySQL(?)  
 - [ ] Add more formats for exporting projects
   - [ ] Plaintext
   - [ ] XML
