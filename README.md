@@ -75,7 +75,7 @@ The config file will be generated automatically while installation.
 
 Possible config values:  
 
-| OPTION       | POSSIBLE VALUES / EXAMPLES       | DESCRIPTION                                             |
+| OPTION       | DEFAULT VALUES                   | DESCRIPTION                                             |
 | ------------ | -------------------------------- | ------------------------------------------------------- |
 | timeFormat   | %d.%m.%Y %T                      | format is used for displaying time                      |  
 | projectsPath | .config/ts-timetracker/projects/ | path is used for creating, saving and deleting projects |  
