@@ -84,9 +84,13 @@ Possible config values:
 
 
 ##### Available Models:
+The key **storage** indicates which model should be used.  
+Following list shows all available models:  
 - filesystem: save's the data into files, location is configured by "projectsPath"
 
 ##### Available Views:
+The key **view** indicates which view should be used.  
+Following list shows all available views:  
 - terminal: run's in the terminal, with and simple interactive command line interface
 
 ## :memo: Contributing
