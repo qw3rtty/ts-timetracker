@@ -53,25 +53,6 @@ std::string TS_Helper::formatTimestamp(std::time_t timestamp)
 }
 
 /**
- * Get path to projects of configuration
- * @return  std::string
- */
-std::string TS_Helper::getProjectsPath()
-{
-    TS_ConfigReader config;
-    if (!config.configLoaded)
-    {
-        return std::string();
-    }
-
-    std::stringstream path;
-    path << getenv("HOME") << "/";
-    path << config.getConfigEntry("projectsPath");
-
-    return path.str();
-}
-
-/**
  * Get selected project name
  * @return  std::string
  */

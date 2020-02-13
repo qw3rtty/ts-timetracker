@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <sstream>
 
 #include "TS_ConfigReader.h"
 
@@ -26,6 +27,13 @@ int main()
     assert(config->getConfigEntry("timeFormat") == "%d.%m.%Y %T");
     assert(config->getConfigEntry("storage") == "filesystem");
     std::cout << "TS_ConfigReader getConfigEntry() passed" << " \u2713" << std::endl;
+
+    std::stringstream standardProjectPath;
+    standardProjectPath << getenv("HOME") << "/";
+    standardProjectPath << ".config/ts-timetracker/projects/";
+
+    assert(TS_ConfigReader::getProjectsPath() == standardProjectPath.str());
+    std::cout << "TS_ConfigReader::getProjectsPath() passed" << " \u2713" << std::endl;
 
     return 0;
 }

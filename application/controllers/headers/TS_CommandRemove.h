@@ -16,6 +16,8 @@
 
 #include <string>
 #include <sstream>
+
+#include "TS_ConfigReader.h"
 #include "TS_Command.h"
 
 class TS_CommandRemove : public TS_Command

@@ -56,7 +56,7 @@ bool TS_CommandRemove::execute()
  */
 bool TS_CommandRemove::prepare()
 {
-    this->storePath = TS_Helper::getProjectsPath();
+    this->storePath = TS_ConfigReader::getProjectsPath();
 
     return true;
 }

@@ -12,7 +12,7 @@
  */
 
 #include "TS_ModelFilesystem.h"
-#include "TS_Helper.h"
+#include "TS_ConfigReader.h"
 
 #include <string>
 #include <map>
@@ -57,7 +57,7 @@ bool TS_ModelFilesystem::prepare()
     this->selectedProjectKey = -1;
     this->projectList.clear();
 
-    this->projectsPath = TS_Helper::getProjectsPath();
+    this->projectsPath = TS_ConfigReader::getProjectsPath();
     this->loadProjectList();
 
     return true;

@@ -27,6 +27,8 @@ public:
     void showConfig();
     std::string getConfigEntry(const std::string& entry);
 
+    static std::string getProjectsPath();
+
 private:
     std::string filename;
     std::map <std::string, std::string> entries;

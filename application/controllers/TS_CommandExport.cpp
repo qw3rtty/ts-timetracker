@@ -17,6 +17,7 @@
 #include <iomanip>
 
 #include "TS_Application.h"
+#include "TS_ConfigReader.h"
 #include "TS_Helper.h"
 #include "TS_Command.h"
 #include "TS_CommandExport.h"
@@ -119,7 +120,7 @@ std::string TS_CommandExport::getExportPath()
 
     if (this->arguments == nullptr)
     {
-        path << TS_Helper::getProjectsPath();
+        path << TS_ConfigReader::getProjectsPath();
     }
     else
     {
@@ -137,7 +138,7 @@ std::string TS_CommandExport::getExportPath()
 std::string TS_CommandExport::getSelectedProjectPath()
 {
     std::ostringstream projectToExport;
-    projectToExport << TS_Helper::getProjectsPath();
+    projectToExport << TS_ConfigReader::getProjectsPath();
     projectToExport << TS_Helper::getSelectedProjectName();
 
     return projectToExport.str();

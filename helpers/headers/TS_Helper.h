@@ -29,7 +29,6 @@ public:
     const char *doubleTab;
 
     static std::string formatTimestamp(std::time_t timestamp);
-    static std::string getProjectsPath();
     static std::string getSelectedProjectName();
 };
 

@@ -16,6 +16,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 
 /**
  * Constructor
@@ -114,4 +115,23 @@ bool TS_ConfigReader::loadConfig()
     file.close();
 
     return true;
+}
+
+/**
+ * Get path to projects of configuration
+ * @return  std::string
+ */
+std::string TS_ConfigReader::getProjectsPath()
+{
+    TS_ConfigReader config;
+    if (!config.configLoaded)
+    {
+        return std::string();
+    }
+
+    std::stringstream path;
+    path << getenv("HOME") << "/";
+    path << config.getConfigEntry("projectsPath");
+
+    return path.str();
 }
