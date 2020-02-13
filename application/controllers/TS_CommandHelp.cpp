@@ -13,7 +13,6 @@
 
 #include <iostream>
 
-#include "TS_Helper.h"
 #include "TS_Command.h"
 #include "TS_CommandHelp.h"
 
@@ -46,18 +45,16 @@ bool TS_CommandHelp::prepare()
 std::ostringstream TS_CommandHelp::getMessage()
 {
     std::ostringstream message;
-
-    TS_Helper helper;
     message << "Available commands:" << std::endl;
-    message << "- help:" << helper.doubleTab << "Show's the help menu" << std::endl;
-    message << "- touch <name>:" << helper.tab << "Create's a new project" << std::endl;
-    message << "- rm <name>:" << helper.tab << "Delete's entered project" << std::endl;
-    message << "- ls <item>:" << helper.tab << "List selected items (use 'projects', 'config' or 'times')" << std::endl;
-    message << "- use <n>:" << helper.tab << "Set project to track time on, a number from 'list' command" << std::endl;
-    message << "- start:" << helper.tab << "Start's timetracking" << std::endl;
-    message << "- stop:" << helper.doubleTab << "Stop's timetracking" << std::endl;
-    message << "- save:" << helper.doubleTab << "Save new timetrack depending on settings" << std::endl;
-    message << "- export <p>:" << helper.tab << "Export selected project to given path (selected by 'use' command)";
+    message << "- help:" << "\t\t" << "Show's the help menu" << std::endl;
+    message << "- touch <name>:" << "\t" << "Create's a new project" << std::endl;
+    message << "- rm <name>:" << "\t" << "Delete's entered project" << std::endl;
+    message << "- ls <item>:" << "\t" << "List selected items (use 'projects', 'config' or 'times')" << std::endl;
+    message << "- use <n>:" << "\t" << "Set project to track time on, a number from 'list' command" << std::endl;
+    message << "- start:" << "\t" << "Start's timetracking" << std::endl;
+    message << "- stop:" << "\t\t" << "Stop's timetracking" << std::endl;
+    message << "- save:" << "\t\t" << "Save new timetrack depending on settings" << std::endl;
+    message << "- export <p>:" << "\t" << "Export selected project to given path (selected by 'use' command)";
 
     return message;
 }

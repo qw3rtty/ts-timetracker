@@ -62,11 +62,20 @@ add_executable(ts-test tests/TS_UnitTest.cpp
 )
 add_test(TS-UnitTest ts-test)
 
+
 # Config reader test
 add_executable(ts-unittest-config tests/TS_UnitTest_Config.cpp
     config/TS_ConfigReader.cpp
 )
 add_test(TS-UnitTest-Config ts-unittest-config)
+
+
+# Help command test
+add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandHelp.cpp
+)
+add_test(TS-UnitTest-CmdHelp ts-unittest-cmd-help)
 
 
 
