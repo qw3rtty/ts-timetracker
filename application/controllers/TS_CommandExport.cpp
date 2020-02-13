@@ -89,7 +89,7 @@ std::ostringstream TS_CommandExport::getMessage()
 
     if (this->successfulExport)
     {
-        message << "Exported '" << TS_Helper::getSelectedProjectName() << "' successfully to: ";
+        message << "Exported '" << application->getSelectedProjectName() << "' successfully to: ";
         message << this->exportPath;
     }
     else
@@ -126,7 +126,7 @@ std::string TS_CommandExport::getExportPath()
     {
         path << this->arguments;
     }
-    path << TS_Helper::getSelectedProjectName() << ".csv";
+    path << application->getSelectedProjectName() << ".csv";
 
     return path.str();
 }
@@ -139,7 +139,7 @@ std::string TS_CommandExport::getSelectedProjectPath()
 {
     std::ostringstream projectToExport;
     projectToExport << TS_ConfigReader::getProjectsPath();
-    projectToExport << TS_Helper::getSelectedProjectName();
+    projectToExport << application->getSelectedProjectName();
 
     return projectToExport.str();
 }

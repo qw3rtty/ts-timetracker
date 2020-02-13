@@ -13,9 +13,7 @@
 
 #include <ctime>
 #include <string>
-#include <ostream>
 
-#include "TS_Application.h"
 #include "TS_Helper.h"
 #include "TS_ConfigReader.h"
 
@@ -50,14 +48,4 @@ std::string TS_Helper::formatTimestamp(std::time_t timestamp)
     std::strftime(date, 80, format.c_str(), std::localtime(&timestamp));
 
     return date;
-}
-
-/**
- * Get selected project name
- * @return  std::string
- */
-std::string TS_Helper::getSelectedProjectName()
-{
-    application->model.setProject(application->getChoosedProject());
-    return application->model.getName();
 }

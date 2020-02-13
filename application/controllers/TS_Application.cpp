@@ -140,6 +140,17 @@ void TS_Application::clearProjectList()
     this->model.clearProjectListCache();
 }
 
+
+/**
+ * Get selected project name
+ * @return  std::string
+ */
+std::string TS_Application::getSelectedProjectName()
+{
+    return this->model.getName();
+}
+
+
 /**
  * Unit test
  * @return  bool    - true is test was successful, false else

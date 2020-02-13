@@ -50,6 +50,8 @@ public:
     std::time_t startTimestamp{};
     std::time_t endTimestamp{};
 
+    std::string getSelectedProjectName();
+
     bool unitTest();
 };
 
