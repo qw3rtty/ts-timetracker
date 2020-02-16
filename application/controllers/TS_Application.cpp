@@ -16,14 +16,14 @@
 #include <map>
 
 #include "TS_Application.h"
-#include "TS_FactoryCommand.h"
-#include "TS_FactoryView.h"
 
 /**
  * Constructor
  */
 TS_Application::TS_Application()
 {
+    this->command = {};
+    this->arguments = {};
     this->choosedProject = -1;
     this->model.getProjectList();
 }
@@ -47,23 +47,6 @@ TS_Application *TS_Application::getInstance()
     return instance;
 }
 
-/**
- * Build's the necessary command
- * @return  TS_Command      - Needed command for execution
- */
-TS_Command* TS_Application::buildCommand()
-{
-    return TS_FactoryCommand::build(this->command, this->arguments);
-}
-
-/**
- * Build's the necessary view
- * @return  TS_View      - Needed view for execution
- */
-TS_IView* TS_Application::buildView()
-{
-    return TS_FactoryView::build();
-}
 
 /**
  * Set entered command with attributes of user
@@ -152,24 +135,28 @@ std::string TS_Application::getSelectedProjectName()
 
 
 /**
- * Unit test
- * @return  bool    - true is test was successful, false else
- */
-bool TS_Application::unitTest()
-{
-    char command[100] = "help";
-    TS_Application *applicationTest;
-    applicationTest = this->getInstance();
-
-    applicationTest->setCommandWithAttributes(command);
-    return applicationTest->isCommandValid();
-}
-
-/**
  * Reset command and arguments pointer
  */
 void TS_Application::resetPointers()
 {
     this->command = nullptr;
     this->arguments = nullptr;
+}
+
+/**
+ * Get entered command
+ * @return  char*   - The command
+ */
+char *TS_Application::getCommand()
+{
+    return this->command;
+}
+
+/**
+ * Get entered arguments
+ * @return  char*   - The arguments
+ */
+char *TS_Application::getArguments()
+{
+    return this->arguments;
 }

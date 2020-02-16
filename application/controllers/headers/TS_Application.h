@@ -37,8 +37,8 @@ private:
 
 public:
     static TS_Application *getInstance();
-    TS_Command *buildCommand();
-    TS_IView *buildView();
+    char *getCommand();
+    char* getArguments();
     void setCommandWithAttributes(char *input);
     bool isCommandValid();
     void clearProjectList();
@@ -51,8 +51,6 @@ public:
     std::time_t endTimestamp{};
 
     std::string getSelectedProjectName();
-
-    bool unitTest();
 };
 
 #define application TS_Application::getInstance()

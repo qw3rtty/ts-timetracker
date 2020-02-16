@@ -21,6 +21,7 @@
 #include "TS_Helper.h"
 #include "TS_Info.h"
 #include "TS_Command.h"
+#include "TS_FactoryCommand.h"
 #include "TS_Application.h"
 
 /**
@@ -69,7 +70,10 @@ void TS_ViewTerminal::render()
         application->setCommandWithAttributes(input);
         if (application->isCommandValid())
         {
-            TS_Command *command = application->buildCommand();
+            TS_Command *command = TS_FactoryCommand::build(
+                application->getCommand(),
+                application->getArguments()
+            );
             if (command != nullptr)
             {
                 command->execute();
