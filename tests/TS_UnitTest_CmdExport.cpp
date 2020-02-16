@@ -1,7 +1,7 @@
 /**
- * TS-UnitTest Command Help
+ * TS-UnitTest Command Export
  *
- * Unit test for the Help command.
+ * Unit test for the Export command.
  *
  * @package     TS-TimeTracker
  * @author      Thomas Schwarz
@@ -14,14 +14,17 @@
 #include <iostream>
 #include <cassert>
 
-#include "TS_CommandHelp.h"
+#include "TS_Application.h"
+#include "TS_ConfigReader.h"
+#include "TS_Helper.h"
+#include "TS_CommandExport.h"
 
 int main()
 {
-    TS_CommandHelp* cmd = new TS_CommandHelp(NULL);
+    TS_CommandExport* cmd = new TS_CommandExport(NULL);
 
     assert(cmd->execute());
-    std::cout << "TS_CommandHelp passed" << " \u2713" << std::endl;
+    std::cout << "TS_CommandExport passed" << " \u2713" << std::endl;
 
     return 0;
 }

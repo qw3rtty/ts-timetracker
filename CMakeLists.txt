@@ -47,6 +47,18 @@ add_executable(ts-unittest-config tests/TS_UnitTest_Config.cpp
 )
 add_test(Test-Config ts-unittest-config)
 
+# Export command test
+add_executable(ts-unittest-cmd-export tests/TS_UnitTest_CmdExport.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Application.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandExport.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+)
+add_test(Test-CmdExport ts-unittest-cmd-export)
+
 # Help command test
 add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
     application/controllers/TS_Command.cpp
