@@ -45,7 +45,6 @@ $ sudo rm {PATH}/ts-timetracker # where {PATH} is the full path to the binary
 Follow the steps below for unit testing after the installation guide:  
 ```bash
 $ make test    
-$ ctest  
 ```
 
 ## :clipboard: Usage
@@ -82,6 +81,7 @@ Possible config values:
 | storage      | filesystem                       | indicates which model should used                       |  
 | view         | terminal                         | indicates which view should used                        |  
 
+Feel free to change your config values to your needs!  
 
 ##### Available Models:
 The key **storage** indicates which model should be used.  
