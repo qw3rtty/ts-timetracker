@@ -25,3 +25,4 @@ Please make sure to update tests as appropriate.
 
 # Code
 It is important to apply the principles of clean code.  
+If you got some questions, let me know. Just write a comment on the issue and i will help as soon as possible.  
