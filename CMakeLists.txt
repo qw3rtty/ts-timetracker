@@ -66,6 +66,20 @@ add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
 )
 add_test(Test-CmdHelp ts-unittest-cmd-help)
 
+# Timestamp command test
+add_executable(ts-unittest-cmd-timestamp tests/TS_UnitTest_CmdTimestamp.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Application.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandTimestamp.cpp
+    application/controllers/TS_CommandTimestampStart.cpp
+    application/controllers/TS_CommandTimestampStop.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+)
+add_test(Test-CmdTimestamp ts-unittest-cmd-timestamp)
+
 
 
 # Install definitons
