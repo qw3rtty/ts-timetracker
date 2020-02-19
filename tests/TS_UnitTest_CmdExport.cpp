@@ -20,6 +20,7 @@
 int main()
 {
     TS_CommandExport* cmd = new TS_CommandExport(nullptr);
+    cmd->setTestMode(true);
 
     assert(cmd->execute());
     std::cout << "TS_CommandExport passed" << " \u2713" << std::endl;
