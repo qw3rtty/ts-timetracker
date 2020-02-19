@@ -14,14 +14,12 @@
 #include <iostream>
 #include <cassert>
 
-#include "TS_Application.h"
-#include "TS_ConfigReader.h"
 #include "TS_Helper.h"
 #include "TS_CommandExport.h"
 
 int main()
 {
-    TS_CommandExport* cmd = new TS_CommandExport(NULL);
+    TS_CommandExport* cmd = new TS_CommandExport(nullptr);
 
     assert(cmd->execute());
     std::cout << "TS_CommandExport passed" << " \u2713" << std::endl;

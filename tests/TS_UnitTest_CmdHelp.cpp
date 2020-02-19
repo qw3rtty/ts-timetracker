@@ -18,7 +18,7 @@
 
 int main()
 {
-    TS_CommandHelp* cmd = new TS_CommandHelp(NULL);
+    TS_CommandHelp* cmd = new TS_CommandHelp(nullptr);
 
     assert(cmd->execute());
     std::cout << "TS_CommandHelp passed" << " \u2713" << std::endl;
