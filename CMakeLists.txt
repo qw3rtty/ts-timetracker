@@ -116,6 +116,18 @@ add_executable(ts-unittest-cmd-remove tests/TS_UnitTest_CmdRemove.cpp
         )
 add_test(Test-CmdRemove ts-unittest-cmd-remove)
 
+# Save command test
+add_executable(ts-unittest-cmd-save tests/TS_UnitTest_CmdSave.cpp
+        application/controllers/TS_Base.cpp
+        application/controllers/TS_Application.cpp
+        application/controllers/TS_Command.cpp
+        application/controllers/TS_CommandSave.cpp
+        application/models/TS_ModelFilesystem.cpp
+        config/TS_ConfigReader.cpp
+        helpers/TS_Helper.cpp
+        )
+add_test(Test-CmdSave ts-unittest-cmd-save)
+
 
 # Install definitons
 install(TARGETS ts-timetracker DESTINATION /usr/local/bin/)
