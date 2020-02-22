@@ -12,7 +12,6 @@
  */
 
 #include <iostream>
-#include <sstream>
 
 #include "TS_Application.h"
 #include "TS_Command.h"
