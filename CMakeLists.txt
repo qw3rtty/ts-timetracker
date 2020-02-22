@@ -80,6 +80,17 @@ add_executable(ts-unittest-cmd-timestamp tests/TS_UnitTest_CmdTimestamp.cpp
 )
 add_test(Test-CmdTimestamp ts-unittest-cmd-timestamp)
 
+# Use command test
+add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Application.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandUse.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+)
+add_test(Test-CmdUse ts-unittest-cmd-use)
 
 
 # Install definitons
