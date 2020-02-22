@@ -92,6 +92,18 @@ add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
 )
 add_test(Test-CmdUse ts-unittest-cmd-use)
 
+# Touch command test
+add_executable(ts-unittest-cmd-touch tests/TS_UnitTest_CmdTouch.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Application.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandTouch.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+)
+add_test(Test-CmdTouch ts-unittest-cmd-touch)
+
 
 # Install definitons
 install(TARGETS ts-timetracker DESTINATION /usr/local/bin/)
