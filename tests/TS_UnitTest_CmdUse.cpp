@@ -19,8 +19,10 @@
 
 int main()
 {
-    TS_CommandUse* cmd = new TS_CommandUse(nullptr);
-    cmd->setTestMode(true);
+    char project[] = "0";
+    char* arguments = project;
+
+    TS_CommandUse* cmd = new TS_CommandUse(arguments);
 
     assert(cmd->execute());
     std::cout << "TS_CommandUse passed" << " \u2713" << std::endl;

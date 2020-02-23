@@ -19,8 +19,10 @@
 
 int main()
 {
-    TS_CommandRemove* cmd = new TS_CommandRemove(nullptr);
-    cmd->setTestMode(true);
+    char name[] = "__timetracker";
+    char* arguments = name;
+
+    TS_CommandRemove* cmd = new TS_CommandRemove(arguments);
 
     assert(cmd->execute());
     std::cout << "TS_CommandRemove passed" << " \u2713" << std::endl;

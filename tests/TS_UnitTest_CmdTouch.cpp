@@ -19,8 +19,10 @@
 
 int main()
 {
-    TS_CommandTouch* cmd = new TS_CommandTouch(nullptr);
-    cmd->setTestMode(true);
+    char name[] = "__timetracker";
+    char* arguments = name;
+
+    TS_CommandTouch* cmd = new TS_CommandTouch(arguments);
 
     assert(cmd->execute());
     std::cout << "TS_CommandTouch passed" << " \u2713" << std::endl;

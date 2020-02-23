@@ -13,14 +13,19 @@
 
 #include <iostream>
 #include <cassert>
+#include <string>
 
-#include "TS_Helper.h"
+#include <cstring>
+#include <cstdlib>
+
 #include "TS_CommandExport.h"
 
 int main()
 {
-    TS_CommandExport* cmd = new TS_CommandExport(nullptr);
-    cmd->setTestMode(true);
+    char* arguments = getenv("HOME");
+    strcat(arguments, "/Downloads/");
+
+    TS_CommandExport* cmd = new TS_CommandExport(arguments);
 
     assert(cmd->execute());
     std::cout << "TS_CommandExport passed" << " \u2713" << std::endl;
