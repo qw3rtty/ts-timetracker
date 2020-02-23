@@ -47,6 +47,37 @@ add_executable(ts-unittest-config tests/TS_UnitTest_Config.cpp
 )
 add_test(Test-Config ts-unittest-config)
 
+# Help command test
+add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandHelp.cpp
+)
+add_test(Test-CmdHelp ts-unittest-cmd-help)
+
+# Touch command test
+add_executable(ts-unittest-cmd-touch tests/TS_UnitTest_CmdTouch.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Application.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandTouch.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+)
+add_test(Test-CmdTouch ts-unittest-cmd-touch)
+
+# Use command test
+add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Application.cpp
+    application/controllers/TS_Command.cpp
+    application/controllers/TS_CommandUse.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+)
+add_test(Test-CmdUse ts-unittest-cmd-use)
+
 # Export command test
 add_executable(ts-unittest-cmd-export tests/TS_UnitTest_CmdExport.cpp
     application/controllers/TS_Base.cpp
@@ -59,12 +90,17 @@ add_executable(ts-unittest-cmd-export tests/TS_UnitTest_CmdExport.cpp
 )
 add_test(Test-CmdExport ts-unittest-cmd-export)
 
-# Help command test
-add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
+# Remove command test
+add_executable(ts-unittest-cmd-remove tests/TS_UnitTest_CmdRemove.cpp
+    application/controllers/TS_Base.cpp
+    application/controllers/TS_Application.cpp
     application/controllers/TS_Command.cpp
-    application/controllers/TS_CommandHelp.cpp
+    application/controllers/TS_CommandRemove.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
 )
-add_test(Test-CmdHelp ts-unittest-cmd-help)
+add_test(Test-CmdRemove ts-unittest-cmd-remove)
 
 # Timestamp command test
 add_executable(ts-unittest-cmd-timestamp tests/TS_UnitTest_CmdTimestamp.cpp
@@ -79,42 +115,6 @@ add_executable(ts-unittest-cmd-timestamp tests/TS_UnitTest_CmdTimestamp.cpp
     helpers/TS_Helper.cpp
 )
 add_test(Test-CmdTimestamp ts-unittest-cmd-timestamp)
-
-# Use command test
-add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
-    application/controllers/TS_Base.cpp
-    application/controllers/TS_Application.cpp
-    application/controllers/TS_Command.cpp
-    application/controllers/TS_CommandUse.cpp
-    application/models/TS_ModelFilesystem.cpp
-    config/TS_ConfigReader.cpp
-    helpers/TS_Helper.cpp
-)
-add_test(Test-CmdUse ts-unittest-cmd-use)
-
-# Touch command test
-add_executable(ts-unittest-cmd-touch tests/TS_UnitTest_CmdTouch.cpp
-    application/controllers/TS_Base.cpp
-    application/controllers/TS_Application.cpp
-    application/controllers/TS_Command.cpp
-    application/controllers/TS_CommandTouch.cpp
-    application/models/TS_ModelFilesystem.cpp
-    config/TS_ConfigReader.cpp
-    helpers/TS_Helper.cpp
-)
-add_test(Test-CmdTouch ts-unittest-cmd-touch)
-
-# Remove command test
-add_executable(ts-unittest-cmd-remove tests/TS_UnitTest_CmdRemove.cpp
-        application/controllers/TS_Base.cpp
-        application/controllers/TS_Application.cpp
-        application/controllers/TS_Command.cpp
-        application/controllers/TS_CommandRemove.cpp
-        application/models/TS_ModelFilesystem.cpp
-        config/TS_ConfigReader.cpp
-        helpers/TS_Helper.cpp
-        )
-add_test(Test-CmdRemove ts-unittest-cmd-remove)
 
 # Save command test
 add_executable(ts-unittest-cmd-save tests/TS_UnitTest_CmdSave.cpp
