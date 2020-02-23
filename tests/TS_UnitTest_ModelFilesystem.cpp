@@ -13,17 +13,8 @@
 
 #include <iostream>
 #include <cassert>
-
 #include <string>
-#include <map>
-#include <iterator>
-#include <cstring>
-#include <fstream>
-#include <dirent.h>
-#include <sstream>
 
-#include "TS_Helper.h"
-#include "TS_ConfigReader.h"
 #include "TS_ModelFilesystem.h"
 
 int main()
