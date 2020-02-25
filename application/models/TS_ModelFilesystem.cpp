@@ -126,6 +126,11 @@ std::map<int, std::string> TS_ModelFilesystem::getProjectList()
  */
 std::string TS_ModelFilesystem::getName()
 {
+    if (this->selectedProjectKey == nullptr)
+    {
+        return "";
+    }
+
     for (auto & it : this->projectList)
     {
         if (it.second == this->selectedProjectKey)
