@@ -61,7 +61,7 @@ Here are all commands you can use:
 | touch &lt;name&gt;   | Create's a new project with entered name                                  |
 | rm &lt;name&gt;      | Delete's entered project                                                  |
 | ls &lt;item&gt;      | List selected items (use 'projects', 'config' or 'times')                 |
-| use &lt;n&gt;        | Set project to track time on, a number from 'list' command                |
+| use &lt;name&gt;     | Set project to track time on, a name from 'list' command                  |
 | start                | Start's timetracking                                                      |
 | stop                 | Stop's timetracking                                                       |
 | save &lt;comment&gt; | Save new timetrack on selected project with entered comment               |
