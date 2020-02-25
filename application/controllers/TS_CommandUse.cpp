@@ -36,14 +36,14 @@ bool TS_CommandUse::execute()
         return true;
     }
 
-    application->setChoosedProject(std::stoi(this->arguments));
-    if (application->getChoosedProject() >= 0)
+    application->setSelectedProject(this->arguments);
+    if (application->getSelectedProject() != nullptr)
     {
-        application->model.setProject(application->getChoosedProject());
+        application->model.setProject(application->getSelectedProject());
     }
     else
     {
-        application->setChoosedProject(-1);
+        application->setSelectedProject(nullptr);
     }
 
     return true;
@@ -64,7 +64,7 @@ std::ostringstream TS_CommandUse::getMessage()
 {
     std::ostringstream message;
 
-    if (application->getChoosedProject() >= 0)
+    if (application->getSelectedProject() != nullptr)
     {
         message << "You selected '" << application->model.getName() << "'";
     }

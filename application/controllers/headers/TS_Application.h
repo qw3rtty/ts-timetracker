@@ -31,19 +31,19 @@ private:
     ~TS_Application();
     void resetPointers();
     const char commandList[10][15] = {"help", "touch", "rm", "ls", "use", "start", "stop", "save", "export"};
-    char *arguments;
-    char *command;
-    int choosedProject;
+    char* arguments;
+    char* command;
+    char* selectedProject;
 
 public:
     static TS_Application *getInstance();
-    char *getCommand();
+    char* getCommand();
     char* getArguments();
-    void setCommandWithAttributes(char *input);
+    void setCommandWithAttributes(char* input);
     bool isCommandValid();
     void clearProjectList();
-    void setChoosedProject(int projectNumber);
-    int getChoosedProject();
+    void setSelectedProject(char* projectName);
+    char* getSelectedProject();
 
     std::map<int, std::string> getProjectList();
     TS_ModelFilesystem model;

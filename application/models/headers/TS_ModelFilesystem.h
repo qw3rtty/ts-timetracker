@@ -25,7 +25,7 @@ public:
     TS_ModelFilesystem();
     ~TS_ModelFilesystem() override;
 
-    void setProject(int key) override;
+    void setProject(char* project) override;
 
     std::vector<std::string> getTimes() override;
     float getTimeAmount() override;
@@ -42,7 +42,7 @@ protected:
 
 private:
     bool prepare();
-    int selectedProjectKey = -1;
+    char* selectedProjectKey = nullptr;
     std::string projectsPath = "";
     std::map<int, std::string> projectList;
 };

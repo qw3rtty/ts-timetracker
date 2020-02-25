@@ -23,7 +23,7 @@ class TS_IModel
 public:
     virtual ~TS_IModel() = default;
 
-    virtual void setProject(int key) = 0;
+    virtual void setProject(char* project) = 0;
 
     virtual std::vector<std::string> getTimes() = 0;
     virtual float getTimeAmount() = 0;

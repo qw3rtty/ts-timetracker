@@ -24,7 +24,7 @@ TS_Application::TS_Application()
 {
     this->command = {};
     this->arguments = {};
-    this->choosedProject = -1;
+    this->selectedProject = nullptr;
     this->model.getProjectList();
 }
 
@@ -90,20 +90,20 @@ bool TS_Application::isCommandValid()
 }
 
 /**
- * Set choosed project
+ * Set selected project
  */
-void TS_Application::setChoosedProject(int projectNumber)
+void TS_Application::setSelectedProject(char* projectName)
 {
-    this->choosedProject = projectNumber;
+    this->selectedProject = projectName;
 }
 
 /**
- * Get choosed project by user
- * @return  int - Choosed project number
+ * Get selected project by user
+ * @return  int - Selected project number
  */
-int TS_Application::getChoosedProject()
+char* TS_Application::getSelectedProject()
 {
-    return this->choosedProject;
+    return this->selectedProject;
 }
 
 /**

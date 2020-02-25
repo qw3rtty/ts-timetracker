@@ -29,7 +29,7 @@
  */
 TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
 {
-    this->projectKey = -1;
+    this->projectKey = nullptr;
 }
 
 /**
@@ -60,7 +60,7 @@ bool TS_CommandList::execute()
  */
 bool TS_CommandList::prepare()
 {
-    this->setProjectKey(application->getChoosedProject());
+    this->setProjectKey(application->getSelectedProject());
     this->setProjectList(application->getProjectList());
 
     return true;
@@ -77,11 +77,11 @@ void TS_CommandList::setProjectList(std::map<int, std::string> list)
 
 /**
  * Set given project key
- * @param   int     - Project key to set
+ * @param   char*     - Project to set
  */
-void TS_CommandList::setProjectKey(int key)
+void TS_CommandList::setProjectKey(char* project)
 {
-    this->projectKey = key;
+    this->projectKey = project;
 }
 
 /**
@@ -94,7 +94,7 @@ void TS_CommandList::showProjects()
     while ( (listIterator != this->list.end()) )
     {
         std::cout << listIterator->first << " => " << listIterator->second;
-        if (listIterator->first == this->projectKey)
+        if (this->projectKey != nullptr && listIterator->second == this->projectKey)
         {
             std::cout << helper.color << " [selected]" << helper.noColor;
         }
@@ -129,7 +129,7 @@ void TS_CommandList::showConfig()
  */
 void TS_CommandList::showTimes()
 {
-    if (this->projectKey >= 0)
+    if (this->projectKey != nullptr)
     {
         this->printTimeTable();
         this->printTrackedTimeAmount();

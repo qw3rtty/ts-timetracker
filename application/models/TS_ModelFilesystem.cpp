@@ -54,7 +54,7 @@ bool TS_ModelFilesystem::reset()
 bool TS_ModelFilesystem::prepare()
 {
     this->amount = 0.0;
-    this->selectedProjectKey = -1;
+    this->selectedProjectKey = nullptr;
     this->projectList.clear();
 
     this->projectsPath = TS_ConfigReader::getProjectsPath();
@@ -73,13 +73,13 @@ void TS_ModelFilesystem::clearProjectListCache()
 }
 
 /**
- * Set given project key
- * @param   key     - Project key of selected one to set
+ * Set given project
+ * @param   project     - Project name of selected one to set
  */
-void TS_ModelFilesystem::setProject(int key)
+void TS_ModelFilesystem::setProject(char* project)
 {
     this->reset();
-    this->selectedProjectKey = key;
+    this->selectedProjectKey = project;
 }
 
 /**
@@ -128,7 +128,7 @@ std::string TS_ModelFilesystem::getName()
 {
     for (auto & it : this->projectList)
     {
-        if (it.first == this->selectedProjectKey)
+        if (it.second == this->selectedProjectKey)
         {
             return it.second;
         }

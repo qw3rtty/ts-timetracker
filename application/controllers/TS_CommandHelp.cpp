@@ -50,7 +50,7 @@ std::ostringstream TS_CommandHelp::getMessage()
     message << "- touch <name>:" << "\t" << "Create's a new project" << std::endl;
     message << "- rm <name>:" << "\t" << "Delete's entered project" << std::endl;
     message << "- ls <item>:" << "\t" << "List selected items (use 'projects', 'config' or 'times')" << std::endl;
-    message << "- use <n>:" << "\t" << "Set project to track time on, a number from 'list' command" << std::endl;
+    message << "- use <name>:" << "\t" << "Set project to track time on, a name from 'list' command" << std::endl;
     message << "- start:" << "\t" << "Start's timetracking" << std::endl;
     message << "- stop:" << "\t\t" << "Stop's timetracking" << std::endl;
     message << "- save:" << "\t\t" << "Save new timetrack depending on settings" << std::endl;

@@ -32,11 +32,11 @@ protected:
     bool prepare() override;
 
 private:
-    int projectKey;
+    char* projectKey;
     std::map<int, std::string> list;
 
     void setProjectList(std::map<int, std::string> list);
-    void setProjectKey(int key);
+    void setProjectKey(char* project);
     void showProjects();
     void showConfig();
     void showTimes();

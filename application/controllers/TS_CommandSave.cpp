@@ -37,7 +37,7 @@ bool TS_CommandSave::execute()
         return true;
     }
 
-    if (application->getChoosedProject() >= 0)
+    if (application->getSelectedProject() != nullptr)
     {
         std::stringstream entryBuffer;
         entryBuffer << application->startTimestamp
@@ -66,7 +66,7 @@ std::ostringstream TS_CommandSave::getMessage()
 {
     std::ostringstream message;
 
-    if (application->getChoosedProject() >= 0)
+    if (application->getSelectedProject() != nullptr)
     {
         if (this->successfullySaved)
         {

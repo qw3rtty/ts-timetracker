@@ -19,8 +19,11 @@
 
 int main()
 {
+    char name[] = "github";
+    char* arguments = name;
+
     TS_ModelFilesystem* model = new TS_ModelFilesystem();
-    model->setProject(0);
+    model->setProject(arguments);
 
     assert(model->getName() != "");
 
