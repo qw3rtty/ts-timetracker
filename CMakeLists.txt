@@ -66,6 +66,14 @@ add_executable(ts-unittest-cmd-touch tests/TS_UnitTest_CmdTouch.cpp
 )
 add_test(Test-CmdTouch ts-unittest-cmd-touch)
 
+# Model filesystem test
+add_executable(ts-unittest-model-filesystem tests/TS_UnitTest_ModelFilesystem.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
+    helpers/TS_Helper.cpp
+)
+add_test(Test-ModelFilesystem ts-unittest-model-filesystem)
+
 # Use command test
 add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
     application/controllers/TS_Base.cpp
@@ -127,14 +135,6 @@ add_executable(ts-unittest-cmd-save tests/TS_UnitTest_CmdSave.cpp
         helpers/TS_Helper.cpp
         )
 add_test(Test-CmdSave ts-unittest-cmd-save)
-
-# Model filesystem test
-add_executable(ts-unittest-model-filesystem tests/TS_UnitTest_ModelFilesystem.cpp
-    application/models/TS_ModelFilesystem.cpp
-    config/TS_ConfigReader.cpp
-    helpers/TS_Helper.cpp
-)
-add_test(Test-ModelFilesystem ts-unittest-model-filesystem)
 
 
 # Install definitons

@@ -19,13 +19,14 @@
 
 int main()
 {
-    char name[] = "github";
+    char name[] = "__timetracker";
     char* arguments = name;
 
     TS_ModelFilesystem* model = new TS_ModelFilesystem();
     model->setProject(arguments);
 
     assert(model->getName() != "");
+    assert(model->getTimeAmount() == 0);
 
     std::cout << "TS_ModelFilesystem passed" << " \u2713" << std::endl;
 
