@@ -15,11 +15,12 @@
 #define TS_TIMETRACKER_TS_COMMAND_H
 
 #include <sstream>
+#include "TS_IModel.h"
 
 class TS_Command
 {
 public:
-    explicit TS_Command(char *arguments);
+    explicit TS_Command(char *arguments, TS_IModel* model);
     ~TS_Command() = default;
     void setTestMode(bool testMode);
     virtual bool execute();
@@ -28,6 +29,7 @@ public:
 protected:
     virtual bool prepare();
     char *arguments;
+    TS_IModel* model;
     bool isTestMode;
 };
 

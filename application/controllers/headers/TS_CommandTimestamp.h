@@ -16,12 +16,13 @@
 
 #include <ctime>
 #include <sstream>
+#include "TS_IModel.h"
 #include "TS_Command.h"
 
 class TS_CommandTimestamp : public TS_Command
 {
 public:
-    explicit TS_CommandTimestamp(char *arguments);
+    explicit TS_CommandTimestamp(char *arguments, TS_IModel* model);
     ~TS_CommandTimestamp() = default;
     bool execute() override;
     std::time_t getTimestamp();

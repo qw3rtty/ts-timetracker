@@ -51,6 +51,8 @@ add_test(Test-Config ts-unittest-config)
 add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
     application/controllers/TS_Command.cpp
     application/controllers/TS_CommandHelp.cpp
+    application/models/TS_ModelFilesystem.cpp
+    config/TS_ConfigReader.cpp
 )
 add_test(Test-CmdHelp ts-unittest-cmd-help)
 

@@ -15,21 +15,24 @@
 #include <cassert>
 
 #include "TS_Helper.h"
+#include "TS_ModelFilesystem.h"
 #include "TS_CommandTimestamp.h"
 #include "TS_CommandTimestampStart.h"
 #include "TS_CommandTimestampStop.h"
 
 int main()
 {
-    TS_CommandTimestamp* timestamp = new TS_CommandTimestamp(nullptr);
+    TS_ModelFilesystem* model = new TS_ModelFilesystem();
+
+    TS_CommandTimestamp* timestamp = new TS_CommandTimestamp(nullptr, model);
     assert(timestamp->execute());
     std::cout << "TS_CommandTimestamp passed" << " \u2713" << std::endl;
 
-    TS_CommandTimestampStart* timestampStart = new TS_CommandTimestampStart(nullptr);
+    TS_CommandTimestampStart* timestampStart = new TS_CommandTimestampStart(nullptr, model);
     assert(timestampStart->execute());
     std::cout << "TS_CommandTimestampStart passed" << " \u2713" << std::endl;
 
-    TS_CommandTimestampStop* timestampStop = new TS_CommandTimestampStop(nullptr);
+    TS_CommandTimestampStop* timestampStop = new TS_CommandTimestampStop(nullptr, model);
     assert(timestampStop->execute());
     std::cout << "TS_CommandTimestampStop passed" << " \u2713" << std::endl;
 

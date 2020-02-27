@@ -15,14 +15,16 @@
 #include <cassert>
 
 #include "TS_Helper.h"
+#include "TS_ModelFilesystem.h"
 #include "TS_CommandRemove.h"
 
 int main()
 {
     char name[] = "__timetracker";
     char* arguments = name;
+    TS_ModelFilesystem* model = new TS_ModelFilesystem();
 
-    TS_CommandRemove* cmd = new TS_CommandRemove(arguments);
+    TS_CommandRemove* cmd = new TS_CommandRemove(arguments, model);
 
     assert(cmd->execute());
     std::cout << "TS_CommandRemove passed" << " \u2713" << std::endl;

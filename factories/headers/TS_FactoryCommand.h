@@ -14,6 +14,7 @@
 #ifndef TS_TIMETRACKER_TS_FACTORYCOMMAND_H
 #define TS_TIMETRACKER_TS_FACTORYCOMMAND_H
 
+#include "TS_IModel.h"
 #include "TS_Command.h"
 
 class TS_FactoryCommand
@@ -21,7 +22,7 @@ class TS_FactoryCommand
 public:
     TS_FactoryCommand();
     ~TS_FactoryCommand() = default;
-    static TS_Command* build(char *command, char *arguments);
+    static TS_Command* build(char *command, char *arguments, TS_IModel* model);
 };
 
 #endif //TS_TIMETRACKER_TS_HELPER_H

@@ -15,14 +15,16 @@
 #include <cassert>
 
 #include "TS_Helper.h"
+#include "TS_ModelFilesystem.h"
 #include "TS_CommandTouch.h"
 
 int main()
 {
     char name[] = "__timetracker";
     char* arguments = name;
+    TS_ModelFilesystem* model = new TS_ModelFilesystem();
 
-    TS_CommandTouch* cmd = new TS_CommandTouch(arguments);
+    TS_CommandTouch* cmd = new TS_CommandTouch(arguments, model);
 
     assert(cmd->execute());
     std::cout << "TS_CommandTouch passed" << " \u2713" << std::endl;

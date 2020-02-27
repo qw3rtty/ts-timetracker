@@ -14,11 +14,13 @@
 #include <iostream>
 #include <cassert>
 
+#include "TS_ModelFilesystem.h"
 #include "TS_CommandHelp.h"
 
 int main()
 {
-    TS_CommandHelp* cmd = new TS_CommandHelp(nullptr);
+    TS_ModelFilesystem* model = new TS_ModelFilesystem();
+    TS_CommandHelp* cmd = new TS_CommandHelp(nullptr, model);
 
     assert(cmd->execute());
     std::cout << "TS_CommandHelp passed" << " \u2713" << std::endl;

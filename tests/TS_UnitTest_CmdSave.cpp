@@ -15,11 +15,14 @@
 #include <cassert>
 
 #include "TS_Helper.h"
+#include "TS_ModelFilesystem.h"
 #include "TS_CommandSave.h"
 
 int main()
 {
-    TS_CommandSave* cmd = new TS_CommandSave(nullptr);
+    TS_ModelFilesystem* model = new TS_ModelFilesystem();
+
+    TS_CommandSave* cmd = new TS_CommandSave(nullptr, model);
     cmd->setTestMode(true);
 
     assert(cmd->execute());

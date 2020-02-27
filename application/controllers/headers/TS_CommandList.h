@@ -14,6 +14,7 @@
 #ifndef TS_TIMETRACKER_TS_COMMANDLIST_H
 #define TS_TIMETRACKER_TS_COMMANDLIST_H
 
+#include "TS_IModel.h"
 #include "TS_Command.h"
 #include <string>
 #include <map>
@@ -23,7 +24,7 @@
 class TS_CommandList : public TS_Command
 {
 public:
-    explicit TS_CommandList(char *arguments);
+    explicit TS_CommandList(char *arguments, TS_IModel* model);
     ~TS_CommandList();
     bool execute() override;
     std::ostringstream getMessage() override;

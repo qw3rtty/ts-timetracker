@@ -15,12 +15,13 @@
 #define TS_TIMETRACKER_TS_COMMANDHELP_H
 
 #include <sstream>
+#include "TS_IModel.h"
 #include "TS_Command.h"
 
 class TS_CommandHelp : public TS_Command
 {
 public:
-    explicit TS_CommandHelp(char *arguments);
+    explicit TS_CommandHelp(char *arguments, TS_IModel* model);
     ~TS_CommandHelp() = default;
     bool execute() override;
     std::ostringstream getMessage() override;

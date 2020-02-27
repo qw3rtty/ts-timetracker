@@ -18,14 +18,16 @@
 #include <cstring>
 #include <cstdlib>
 
+#include "TS_ModelFilesystem.h"
 #include "TS_CommandExport.h"
 
 int main()
 {
     char* arguments = getenv("HOME");
     strcat(arguments, "/Downloads/");
+    TS_ModelFilesystem* model = new TS_ModelFilesystem();
 
-    TS_CommandExport* cmd = new TS_CommandExport(arguments);
+    TS_CommandExport* cmd = new TS_CommandExport(arguments, model);
 
     assert(cmd->execute());
     std::cout << "TS_CommandExport passed" << " \u2713" << std::endl;

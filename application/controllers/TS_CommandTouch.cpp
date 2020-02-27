@@ -16,12 +16,13 @@
 
 #include "TS_ConfigReader.h"
 #include "TS_Application.h"
+#include "TS_IModel.h"
 #include "TS_CommandTouch.h"
 
 /**
  * @inherit
  */
-TS_CommandTouch::TS_CommandTouch(char *arguments) : TS_Command(arguments)
+TS_CommandTouch::TS_CommandTouch(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {
     this->touchedSuccessful = false;
 }

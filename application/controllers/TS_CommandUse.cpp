@@ -15,13 +15,14 @@
 #include <string>
 
 #include "TS_Application.h"
+#include "TS_IModel.h"
 #include "TS_Command.h"
 #include "TS_CommandUse.h"
 
 /**
  * @inherit
  */
-TS_CommandUse::TS_CommandUse(char *arguments) : TS_Command(arguments)
+TS_CommandUse::TS_CommandUse(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {}
 
 /**

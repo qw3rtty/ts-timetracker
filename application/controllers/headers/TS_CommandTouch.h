@@ -16,12 +16,13 @@
 
 #include <string>
 #include <sstream>
+#include "TS_IModel.h"
 #include "TS_Command.h"
 
 class TS_CommandTouch : public TS_Command
 {
 public:
-    explicit TS_CommandTouch(char *arguments);
+    explicit TS_CommandTouch(char *arguments, TS_IModel* model);
     ~TS_CommandTouch() = default;
     bool execute() override;
     std::ostringstream getMessage() override;

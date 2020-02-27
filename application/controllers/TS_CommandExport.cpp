@@ -19,13 +19,14 @@
 #include "TS_Application.h"
 #include "TS_ConfigReader.h"
 #include "TS_Helper.h"
+#include "TS_IModel.h"
 #include "TS_Command.h"
 #include "TS_CommandExport.h"
 
 /**
  * @inherit
  */
-TS_CommandExport::TS_CommandExport(char *arguments) : TS_Command(arguments)
+TS_CommandExport::TS_CommandExport(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {
     this->successfulExport = false;
     this->exportPath = "";

@@ -18,12 +18,13 @@
 #include <sstream>
 
 #include "TS_ConfigReader.h"
+#include "TS_IModel.h"
 #include "TS_Command.h"
 
 class TS_CommandRemove : public TS_Command
 {
 public:
-    explicit TS_CommandRemove(char *arguments);
+    explicit TS_CommandRemove(char *arguments, TS_IModel* model);
     ~TS_CommandRemove() = default;
     bool execute() override;
     std::ostringstream getMessage() override;

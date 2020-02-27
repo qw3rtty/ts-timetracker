@@ -11,16 +11,18 @@
  * @filesource
  */
 
-#include <sstream>
 #include "TS_Command.h"
+#include "TS_IModel.h"
 
 /**
  * Constructor
- * @param   char*   - Arguments entered by user
+ * @param   char*           - Arguments entered by user
+ * @param   TS_IModel*      - Model which is configured
  */
-TS_Command::TS_Command(char *arguments)
+TS_Command::TS_Command(char *arguments, TS_IModel* model)
 {
     this->arguments = arguments;
+    this->model = model;
     this->isTestMode = false;
 }
 

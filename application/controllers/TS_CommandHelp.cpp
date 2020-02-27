@@ -13,13 +13,14 @@
 
 #include <iostream>
 
+#include "TS_IModel.h"
 #include "TS_Command.h"
 #include "TS_CommandHelp.h"
 
 /**
  * @inherit
  */
-TS_CommandHelp::TS_CommandHelp(char *arguments) : TS_Command(arguments)
+TS_CommandHelp::TS_CommandHelp(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {}
 
 /**

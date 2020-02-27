@@ -15,12 +15,13 @@
 
 #include "TS_Helper.h"
 #include "TS_Application.h"
+#include "TS_IModel.h"
 #include "TS_CommandRemove.h"
 
 /**
  * @inherit
  */
-TS_CommandRemove::TS_CommandRemove(char *arguments) : TS_Command(arguments)
+TS_CommandRemove::TS_CommandRemove(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {
     this->successfullyRemoved = -1;
 }

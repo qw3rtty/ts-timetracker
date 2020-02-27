@@ -16,12 +16,13 @@
 
 #include <string>
 #include <sstream>
+#include "TS_IModel.h"
 #include "TS_Command.h"
 
 class TS_CommandExport : public TS_Command
 {
 public:
-    explicit TS_CommandExport(char *arguments);
+    explicit TS_CommandExport(char *arguments, TS_IModel* model);
     ~TS_CommandExport() = default;
     bool execute() override;
     std::ostringstream getMessage() override;

@@ -21,13 +21,14 @@
 #include "TS_ConfigReader.h"
 #include "TS_Helper.h"
 #include "TS_Application.h"
+#include "TS_IModel.h"
 #include "TS_CommandList.h"
 #include "../../libaries/VariadicTable.h"
 
 /**
  * @inherit
  */
-TS_CommandList::TS_CommandList(char *arguments) : TS_Command(arguments)
+TS_CommandList::TS_CommandList(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {
     this->projectKey = nullptr;
 }

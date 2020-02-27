@@ -15,12 +15,13 @@
 #define TS_TIMETRACKER_TS_COMMANDTIMESTAMPSTART_H
 
 #include <ctime>
+#include "TS_IModel.h"
 #include "TS_CommandTimestamp.h"
 
 class TS_CommandTimestampStart : public TS_CommandTimestamp
 {
 public:
-    explicit TS_CommandTimestampStart(char *arguments);
+    explicit TS_CommandTimestampStart(char *arguments, TS_IModel* model);
     ~TS_CommandTimestampStart() = default;
     bool execute() override;
 

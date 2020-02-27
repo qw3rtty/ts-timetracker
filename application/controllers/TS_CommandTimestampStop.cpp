@@ -15,13 +15,15 @@
 
 #include "TS_Helper.h"
 #include "TS_Application.h"
+#include "TS_IModel.h"
 #include "TS_CommandTimestamp.h"
 #include "TS_CommandTimestampStop.h"
 
 /**
  * @inherit
  */
-TS_CommandTimestampStop::TS_CommandTimestampStop(char *arguments) : TS_CommandTimestamp(arguments)
+TS_CommandTimestampStop::TS_CommandTimestampStop(char *arguments, TS_IModel* model)
+: TS_CommandTimestamp(arguments, model)
 {}
 
 /**

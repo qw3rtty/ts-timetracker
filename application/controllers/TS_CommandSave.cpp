@@ -14,13 +14,14 @@
 #include <iostream>
 
 #include "TS_Application.h"
+#include "TS_IModel.h"
 #include "TS_Command.h"
 #include "TS_CommandSave.h"
 
 /**
  * @inherit
  */
-TS_CommandSave::TS_CommandSave(char *arguments) : TS_Command(arguments)
+TS_CommandSave::TS_CommandSave(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {
     this->successfullySaved = false;
 }
