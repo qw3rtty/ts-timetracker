@@ -41,7 +41,7 @@ bool TS_CommandSave::execute()
     if (this->model->getSelectedProject() != nullptr)
     {
         std::stringstream entryBuffer;
-        entryBuffer << application->startTimestamp
+        entryBuffer << application->startTimestamp // TODO: add timestamps to model
             << ";" << application->endTimestamp
             << ";" << this->arguments;
 
