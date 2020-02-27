@@ -243,3 +243,12 @@ float TS_ModelFilesystem::getTimeAmount()
 
     return this->convertAmountToHours();
 }
+
+/**
+ * Get selected project by user
+ * @return  char* - Selected project number
+ */
+char *TS_ModelFilesystem::getSelectedProject()
+{
+    return this->selectedProjectKey;
+}

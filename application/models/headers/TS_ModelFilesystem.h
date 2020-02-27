@@ -30,6 +30,7 @@ public:
     std::vector<std::string> getTimes() override;
     float getTimeAmount() override;
     std::string getName() override;
+    char* getSelectedProject() override;
     std::map<int, std::string> getProjectList() override;
 
     bool save(const std::string& entry) override;
@@ -42,7 +43,6 @@ protected:
 
 private:
     bool prepare();
-    char* selectedProjectKey = nullptr;
     std::string projectsPath = "";
     std::map<int, std::string> projectList;
 };

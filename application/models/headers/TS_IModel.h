@@ -28,6 +28,7 @@ public:
     virtual std::vector<std::string> getTimes() = 0;
     virtual float getTimeAmount() = 0;
     virtual std::string getName() = 0;
+    virtual char* getSelectedProject() = 0;
     virtual std::map<int, std::string> getProjectList() = 0;
 
     virtual bool save(const std::string& entry) = 0;
@@ -35,6 +36,7 @@ public:
 
 protected:
     float amount = 0;
+    char* selectedProjectKey = nullptr;
 
     virtual bool reset() = 0;
     virtual void loadProjectList() = 0;
