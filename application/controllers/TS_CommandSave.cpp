@@ -38,14 +38,14 @@ bool TS_CommandSave::execute()
         return true;
     }
 
-    if (application->getSelectedProject() != nullptr)
+    if (this->model->getSelectedProject() != nullptr)
     {
         std::stringstream entryBuffer;
         entryBuffer << application->startTimestamp
             << ";" << application->endTimestamp
             << ";" << this->arguments;
 
-        this->successfullySaved = application->model.save(entryBuffer.str());
+        this->successfullySaved = this->model->save(entryBuffer.str());
     }
 
     return true;
@@ -67,7 +67,7 @@ std::ostringstream TS_CommandSave::getMessage()
 {
     std::ostringstream message;
 
-    if (application->getSelectedProject() != nullptr)
+    if (this->model->getSelectedProject() != nullptr)
     {
         if (this->successfullySaved)
         {
