@@ -72,6 +72,8 @@ void TS_ViewTerminal::render()
         if (application->isCommandValid())
         {
             TS_ModelFilesystem* model = new TS_ModelFilesystem();
+            model->setProject(application->getSelectedProject());
+
             TS_Command *command = TS_FactoryCommand::build(
                 application->getCommand(),
                 application->getArguments(),
