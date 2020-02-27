@@ -15,7 +15,6 @@
 #include <fstream>
 
 #include "TS_ConfigReader.h"
-#include "TS_Application.h"
 #include "TS_IModel.h"
 #include "TS_CommandTouch.h"
 
@@ -51,7 +50,7 @@ bool TS_CommandTouch::execute()
     std::ofstream newProject(newProjectPath.str());
     newProject.close();
 
-    application->clearProjectList();
+    this->model->clearProjectListCache();
     this->touchedSuccessful = true;
 
     return true;
