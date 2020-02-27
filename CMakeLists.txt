@@ -102,7 +102,6 @@ add_test(Test-CmdExport ts-unittest-cmd-export)
 # Remove command test
 add_executable(ts-unittest-cmd-remove tests/TS_UnitTest_CmdRemove.cpp
     application/controllers/TS_Base.cpp
-    application/controllers/TS_Application.cpp
     application/controllers/TS_Command.cpp
     application/controllers/TS_CommandRemove.cpp
     application/models/TS_ModelFilesystem.cpp

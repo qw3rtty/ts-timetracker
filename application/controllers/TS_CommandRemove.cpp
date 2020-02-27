@@ -14,7 +14,6 @@
 #include <iostream>
 
 #include "TS_Helper.h"
-#include "TS_Application.h"
 #include "TS_IModel.h"
 #include "TS_CommandRemove.h"
 
@@ -47,7 +46,7 @@ bool TS_CommandRemove::execute()
     deleteProjectPath << this->storePath << this->arguments;
 
     this->successfullyRemoved = std::remove(deleteProjectPath.str().c_str());
-    application->clearProjectList();
+    this->model->clearProjectListCache();
 
     return true;
 }
