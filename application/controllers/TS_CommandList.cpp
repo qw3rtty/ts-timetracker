@@ -20,7 +20,6 @@
 
 #include "TS_ConfigReader.h"
 #include "TS_Helper.h"
-#include "TS_Application.h"
 #include "TS_IModel.h"
 #include "TS_CommandList.h"
 #include "../../libaries/VariadicTable.h"
@@ -61,8 +60,8 @@ bool TS_CommandList::execute()
  */
 bool TS_CommandList::prepare()
 {
-    this->setProjectKey(application->getSelectedProject());
-    this->setProjectList(application->getProjectList());
+    this->setProjectKey(this->model->getSelectedProject());
+    this->setProjectList(this->model->getProjectList());
 
     return true;
 }
@@ -151,7 +150,7 @@ void TS_CommandList::printTimeTable()
         "Start time", "End time", "Comment"
     });
 
-    auto times = application->model.getTimes();
+    auto times = this->model->getTimes();
     for (auto const& entry: times)
     {
         std::vector<std::string> row;
@@ -188,7 +187,7 @@ void TS_CommandList::printTimeTable()
 void TS_CommandList::printTrackedTimeAmount()
 {
     std::cout << "Tracked time amount: " << std::fixed << std::setprecision(2)
-        << application->model.getTimeAmount() << "h" << std::endl;
+        << this->model->getTimeAmount() << "h" << std::endl;
 }
 
 /**
