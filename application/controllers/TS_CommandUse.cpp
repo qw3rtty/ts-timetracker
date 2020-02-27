@@ -38,11 +38,8 @@ bool TS_CommandUse::execute()
     }
 
     application->setSelectedProject(this->arguments);
-    if (application->getSelectedProject() != nullptr)
-    {
-        application->model.setProject(application->getSelectedProject());
-    }
-    else
+    this->model->setProject(this->arguments);
+    if (this->model->getSelectedProject() == nullptr)
     {
         application->setSelectedProject(nullptr);
     }
@@ -65,9 +62,9 @@ std::ostringstream TS_CommandUse::getMessage()
 {
     std::ostringstream message;
 
-    if (application->getSelectedProject() != nullptr)
+    if (this->model->getSelectedProject() != nullptr)
     {
-        message << "You selected '" << application->model.getName() << "'";
+        message << "You selected '" << this->model->getName() << "'";
     }
     else
     {
