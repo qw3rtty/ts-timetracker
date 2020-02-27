@@ -16,7 +16,6 @@
 #include <fstream>
 #include <iomanip>
 
-#include "TS_Application.h"
 #include "TS_ConfigReader.h"
 #include "TS_Helper.h"
 #include "TS_IModel.h"
@@ -90,7 +89,7 @@ std::ostringstream TS_CommandExport::getMessage()
 
     if (this->successfulExport)
     {
-        message << "Exported '" << application->getSelectedProjectName() << "' successfully to: ";
+        message << "Exported '" << this->model->getName() << "' successfully to: ";
         message << this->exportPath;
     }
     else
@@ -127,7 +126,7 @@ std::string TS_CommandExport::getExportPath()
     {
         path << this->arguments;
     }
-    path << application->getSelectedProjectName() << ".csv";
+    path << this->model->getName() << ".csv";
 
     return path.str();
 }
@@ -140,7 +139,7 @@ std::string TS_CommandExport::getSelectedProjectPath()
 {
     std::ostringstream projectToExport;
     projectToExport << TS_ConfigReader::getProjectsPath();
-    projectToExport << application->getSelectedProjectName();
+    projectToExport << this->model->getName();
 
     return projectToExport.str();
 }
@@ -186,7 +185,7 @@ std::string TS_CommandExport::createCsvAmountLine()
     amountLine << ";;;" << std::endl; // Empty line / Spacer
 
     amountLine << "Tracked time amount:;" << std::fixed << std::setprecision(2)
-        << application->model.getTimeAmount() << "h;;" << std::endl;
+        << this->model->getTimeAmount() << "h;;" << std::endl;
 
     return amountLine.str();
 }

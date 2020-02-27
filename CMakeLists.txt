@@ -91,7 +91,6 @@ add_test(Test-CmdUse ts-unittest-cmd-use)
 # Export command test
 add_executable(ts-unittest-cmd-export tests/TS_UnitTest_CmdExport.cpp
     application/controllers/TS_Base.cpp
-    application/controllers/TS_Application.cpp
     application/controllers/TS_Command.cpp
     application/controllers/TS_CommandExport.cpp
     application/models/TS_ModelFilesystem.cpp
