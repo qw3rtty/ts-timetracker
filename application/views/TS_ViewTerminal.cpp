@@ -72,7 +72,6 @@ void TS_ViewTerminal::render()
         application->setCommandWithAttributes(input);
         if (application->isCommandValid())
         {
-            model->setProject(application->getSelectedProject());
             TS_Command *command = TS_FactoryCommand::build(
                 application->getCommand(),
                 application->getArguments(),

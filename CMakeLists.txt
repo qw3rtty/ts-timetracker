@@ -78,7 +78,6 @@ add_test(Test-ModelFilesystem ts-unittest-model-filesystem)
 # Use command test
 add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
     application/controllers/TS_Base.cpp
-    application/controllers/TS_Application.cpp
     application/controllers/TS_Command.cpp
     application/controllers/TS_CommandUse.cpp
     application/models/TS_ModelFilesystem.cpp

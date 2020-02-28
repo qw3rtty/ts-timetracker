@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 
-#include "TS_Application.h"
+#include "TS_Helper.h"
 #include "TS_IModel.h"
 #include "TS_Command.h"
 #include "TS_CommandUse.h"
@@ -37,11 +37,13 @@ bool TS_CommandUse::execute()
         return true;
     }
 
-    application->setSelectedProject(this->arguments);
     this->model->setProject(this->arguments);
+
+    // TODO: add check for valid project selection!!
     if (this->model->getSelectedProject() == nullptr)
     {
-        application->setSelectedProject(nullptr);
+        this->model->setProject(nullptr);
+        return false;
     }
 
     return true;
@@ -60,11 +62,12 @@ bool TS_CommandUse::prepare()
  */
 std::ostringstream TS_CommandUse::getMessage()
 {
+    TS_Helper* helper = new TS_Helper();
     std::ostringstream message;
 
     if (this->model->getSelectedProject() != nullptr)
     {
-        message << "You selected '" << this->model->getName() << "'";
+        message << "You selected [" << helper->color << this->model->getName() << helper->noColor << "]";
     }
     else
     {
