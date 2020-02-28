@@ -14,7 +14,6 @@
 #include <iostream>
 
 #include "TS_Helper.h"
-#include "TS_Application.h"
 #include "TS_IModel.h"
 #include "TS_CommandTimestamp.h"
 #include "TS_CommandTimestampStart.h"
@@ -45,7 +44,7 @@ bool TS_CommandTimestampStart::execute()
 {
     TS_CommandTimestamp::execute();
 
-    application->startTimestamp = this->getTimestamp();
+    this->model->startTimestamp = this->getTimestamp();
 
     return true;
 }

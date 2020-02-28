@@ -13,7 +13,6 @@
 
 #include <iostream>
 
-#include "TS_Application.h"
 #include "TS_IModel.h"
 #include "TS_Command.h"
 #include "TS_CommandSave.h"
@@ -41,8 +40,8 @@ bool TS_CommandSave::execute()
     if (this->model->getSelectedProject() != nullptr)
     {
         std::stringstream entryBuffer;
-        entryBuffer << application->startTimestamp // TODO: add timestamps to model
-            << ";" << application->endTimestamp
+        entryBuffer << this->model->startTimestamp
+            << ";" << this->model->endTimestamp
             << ";" << this->arguments;
 
         this->successfullySaved = this->model->save(entryBuffer.str());

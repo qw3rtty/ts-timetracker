@@ -17,11 +17,15 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <ctime>
 
 class TS_IModel
 {
 public:
     virtual ~TS_IModel() = default;
+
+    std::time_t startTimestamp{};
+    std::time_t endTimestamp{};
 
     virtual void setProject(char* project) = 0;
 

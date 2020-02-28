@@ -112,7 +112,6 @@ add_test(Test-CmdRemove ts-unittest-cmd-remove)
 # Timestamp command test
 add_executable(ts-unittest-cmd-timestamp tests/TS_UnitTest_CmdTimestamp.cpp
     application/controllers/TS_Base.cpp
-    application/controllers/TS_Application.cpp
     application/controllers/TS_Command.cpp
     application/controllers/TS_CommandTimestamp.cpp
     application/controllers/TS_CommandTimestampStart.cpp
