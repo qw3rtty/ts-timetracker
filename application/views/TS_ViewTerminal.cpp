@@ -52,7 +52,8 @@ void TS_ViewTerminal::render()
     }
     TS_Info::showInfo();
 
-    /* In a never ending loop */
+    TS_ModelFilesystem* model = new TS_ModelFilesystem();
+    // Interactive shell
     while (true)
     {
         /* Output our prompt */
@@ -71,9 +72,7 @@ void TS_ViewTerminal::render()
         application->setCommandWithAttributes(input);
         if (application->isCommandValid())
         {
-            TS_ModelFilesystem* model = new TS_ModelFilesystem();
             model->setProject(application->getSelectedProject());
-
             TS_Command *command = TS_FactoryCommand::build(
                 application->getCommand(),
                 application->getArguments(),
