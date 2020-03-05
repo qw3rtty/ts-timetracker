@@ -43,6 +43,7 @@ protected:
 
 private:
     bool prepare();
+    bool isValidProject(char* project);
     std::string projectsPath = "";
     std::map<int, std::string> projectList;
 };
