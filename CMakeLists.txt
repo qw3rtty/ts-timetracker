@@ -140,5 +140,5 @@ install(TARGETS ts-timetracker DESTINATION /usr/local/bin/)
 
 # Uninstall definitins
 add_custom_target(uninstall
-    "${CMAKE_COMMAND}" -P "cmake_uninstall.cmake"
+    "${CMAKE_COMMAND}" -P "CMake/cmake_uninstall.cmake"
 )
