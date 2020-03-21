@@ -15,7 +15,7 @@ This tool allows you to track your time for all your projects or needs. You can 
 - [Roadmap](#car-roadmap)
 - [Known bugs](#bug-known-bugs)
 - [Libaries in usage](#books-libaries-in-usage)
-- [Supported by](#supported-by)
+- [Supported by](#heart_eyes-supported-by)
 - [License](#scroll-license)
 
 ## :pager: Installation
