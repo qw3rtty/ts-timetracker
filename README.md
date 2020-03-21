@@ -15,6 +15,7 @@ This tool allows you to track your time for all your projects or needs. You can 
 - [Roadmap](#car-roadmap)
 - [Known bugs](#bug-known-bugs)
 - [Libaries in usage](#books-libaries-in-usage)
+- [Supported by](#supported-by)
 - [License](#scroll-license)
 
 ## :pager: Installation
@@ -116,6 +117,10 @@ If you find any bugs, don't hesitate and open an issue :)
 
 ## :books: Libaries in usage
 - For printing the table: https://github.com/friedmud/variadic_table
+
+## :heart_eyes: Supported by
+I can proudly say, that I get support from:  
+![Supported by JetBrains](jetbrains.svg | width=200)
 
 ## :scroll: License
 [MIT-License](https://choosealicense.com/licenses/mit/) © [Thomas Schwarz](https://github.com/thomasschwarz96)
