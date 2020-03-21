@@ -48,9 +48,10 @@ std::ostringstream TS_CommandHelp::getMessage()
     std::ostringstream message;
     message << "Available commands:" << std::endl;
     message << "- help:" << "\t\t" << "Show's the help menu" << std::endl;
+    message << "- config:" << "\t" << "Show's the config options" << std::endl;
     message << "- touch <name>:" << "\t" << "Create's a new project" << std::endl;
     message << "- rm <name>:" << "\t" << "Delete's entered project" << std::endl;
-    message << "- ls <item>:" << "\t" << "List selected items (use 'projects', 'config' or 'times')" << std::endl;
+    message << "- ls <item>:" << "\t" << "List selected items (use 'projects' or 'times')" << std::endl;
     message << "- use <name>:" << "\t" << "Set project to track time on, a name from 'list' command" << std::endl;
     message << "- start:" << "\t" << "Start's timetracking" << std::endl;
     message << "- stop:" << "\t\t" << "Stop's timetracking" << std::endl;

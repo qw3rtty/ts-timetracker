@@ -18,7 +18,6 @@
 #include <map>
 #include <utility>
 
-#include "TS_ConfigReader.h"
 #include "TS_Helper.h"
 #include "TS_IModel.h"
 #include "TS_CommandList.h"
@@ -108,23 +107,6 @@ void TS_CommandList::showProjects()
 }
 
 /**
- * Show all settings in config
- */
-void TS_CommandList::showConfig()
-{
-    TS_ConfigReader config;
-    if (!config.configLoaded)
-    {
-        return;
-    }
-
-    if (!this->isTestMode)
-    {
-        config.showConfig();
-    }
-}
-
-/**
  * Show all tracked times
  */
 void TS_CommandList::showTimes()
@@ -204,10 +186,6 @@ std::ostringstream TS_CommandList::getMessage()
     else if (strcmp(this->arguments, "projects") == 0)
     {
         this->showProjects();
-    }
-    else if (strcmp(this->arguments, "config") == 0)
-    {
-        this->showConfig();
     }
     else if (strcmp(this->arguments, "times") == 0)
     {

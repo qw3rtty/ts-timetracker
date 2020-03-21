@@ -39,7 +39,6 @@ private:
     void setProjectList(std::map<int, std::string> list);
     void setProjectKey(char* project);
     void showProjects();
-    void showConfig();
     void showTimes();
     void printTimeTable();
     void printTrackedTimeAmount();

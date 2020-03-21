@@ -18,6 +18,7 @@
 #include "TS_CommandExport.h"
 #include "TS_CommandHelp.h"
 #include "TS_CommandList.h"
+#include "TS_CommandConfig.h"
 #include "TS_CommandRemove.h"
 #include "TS_CommandSave.h"
 #include "TS_CommandTimestampStart.h"
@@ -55,6 +56,10 @@ TS_Command* TS_FactoryCommand::build(char *command, char *arguments, TS_IModel* 
     else if (strcmp(command, "ls") == 0)
     {
         cmd = new TS_CommandList(arguments, model);
+    }
+    else if (strcmp(command, "config") == 0)
+    {
+        cmd = new TS_CommandConfig(arguments, model);
     }
     else if (strcmp(command, "use") == 0)
     {
