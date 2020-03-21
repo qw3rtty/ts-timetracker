@@ -47,8 +47,6 @@ public:
 
     std::map<int, std::string> getProjectList();
     TS_ModelFilesystem model;
-    std::time_t startTimestamp{};
-    std::time_t endTimestamp{};
 
     std::string getSelectedProjectName();
 };
