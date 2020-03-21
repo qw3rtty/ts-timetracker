@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 # Prepare filesystem for installation
 file(MAKE_DIRECTORY $ENV{HOME}/.config/ts-timetracker/)
 file(MAKE_DIRECTORY $ENV{HOME}/.config/ts-timetracker/projects/)
-configure_file(./.ts-timetracker.conf $ENV{HOME}/.config/ts-timetracker/ts-timetracker.conf)
+configure_file(./config/ts-timetracker.conf $ENV{HOME}/.config/ts-timetracker/ts-timetracker.conf)
 
 
 
