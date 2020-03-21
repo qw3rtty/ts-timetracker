@@ -63,7 +63,7 @@ void TS_ViewTerminal::render()
         std::cin.getline(input, sizeof(input));
 
         // Check if user want to exit
-        if (strcmp(input, "exit") == 0)
+        if (strcmp(input, "exit") == 0 || strcmp(input, "q") == 0)
         {
             std::cout << "Goodbye!" << std::endl;
             return;
