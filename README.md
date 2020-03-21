@@ -1,6 +1,6 @@
 # TS-Timetracker
 **Simple interactive command line timetracker.**  
-![TS-Timetracker Screenshot](ts-timetracker.gif)  
+![TS-Timetracker Screenshot](assets/ts-timetracker.gif)  
 This tool allows you to track your time for all your projects or needs. You can manage your projects and export it for your needs.  
 
 ## :page_facing_up: Table of Contents
@@ -122,7 +122,7 @@ If you find any bugs, don't hesitate and open an issue :)
 ## :heart_eyes: Supported by
 I can proudly say, that I get support from:  
 
-[![Supported by JetBrains](jetbrains.svg)](https://www.jetbrains.com/?from=ts-timetracker)
+[![Supported by JetBrains](assets/jetbrains.svg)](https://www.jetbrains.com/?from=ts-timetracker)
 
 ## :scroll: License
 [MIT-License](https://choosealicense.com/licenses/mit/) © [Thomas Schwarz](https://github.com/thomasschwarz96)
