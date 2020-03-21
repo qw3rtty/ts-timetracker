@@ -120,7 +120,8 @@ If you find any bugs, don't hesitate and open an issue :)
 
 ## :heart_eyes: Supported by
 I can proudly say, that I get support from:  
-![Supported by JetBrains](jetbrains.svg | width=200)
+
+[![Supported by JetBrains](jetbrains.svg)](https://www.jetbrains.com/?from=ts-timetracker)
 
 ## :scroll: License
 [MIT-License](https://choosealicense.com/licenses/mit/) © [Thomas Schwarz](https://github.com/thomasschwarz96)
