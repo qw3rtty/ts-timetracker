@@ -79,7 +79,31 @@ void TS_ModelFilesystem::clearProjectListCache()
 void TS_ModelFilesystem::setProject(char* project)
 {
     this->reset();
-    this->selectedProjectKey = project;
+
+    if (this->isValidProject(project))
+    {
+        this->selectedProjectKey = project;
+    }
+}
+
+/**
+ * Check if given project exists.
+ * @param   project     - Name of project which should be checked
+ * @return              - true if project exists, false if not
+ */
+bool TS_ModelFilesystem::isValidProject(char *project)
+{
+    bool isValid = false;
+    for (auto & it : this->projectList)
+    {
+        if (it.second == project)
+        {
+            isValid = true;
+            break;
+        }
+    }
+
+    return isValid;
 }
 
 /**

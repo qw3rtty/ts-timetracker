@@ -20,7 +20,7 @@
 
 int main()
 {
-    char project[] = "0";
+    char project[] = "__timetracker";
     char* arguments = project;
     TS_ModelFilesystem* model = new TS_ModelFilesystem();
 

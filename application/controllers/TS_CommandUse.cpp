@@ -38,15 +38,7 @@ bool TS_CommandUse::execute()
     }
 
     this->model->setProject(this->arguments);
-
-    // TODO: add check for valid project selection!!
-    if (this->model->getSelectedProject() == nullptr)
-    {
-        this->model->setProject(nullptr);
-        return false;
-    }
-
-    return true;
+    return this->model->getSelectedProject() != nullptr;
 }
 
 /**
