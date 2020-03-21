@@ -46,7 +46,7 @@ enable_testing()
 add_executable(ts-unittest-config tests/TS_UnitTest_Config.cpp
     src/config/TS_ConfigReader.cpp
 )
-add_test(Test-Config ts-unittest-config)
+add_test(Test-Config bin/ts-unittest-config)
 
 # Help command test
 add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
@@ -55,7 +55,7 @@ add_executable(ts-unittest-cmd-help tests/TS_UnitTest_CmdHelp.cpp
     src/application/models/TS_ModelFilesystem.cpp
     src/config/TS_ConfigReader.cpp
 )
-add_test(Test-CmdHelp ts-unittest-cmd-help)
+add_test(Test-CmdHelp bin/ts-unittest-cmd-help)
 
 # Touch command test
 add_executable(ts-unittest-cmd-touch tests/TS_UnitTest_CmdTouch.cpp
@@ -66,7 +66,7 @@ add_executable(ts-unittest-cmd-touch tests/TS_UnitTest_CmdTouch.cpp
     src/config/TS_ConfigReader.cpp
     src/helpers/TS_Helper.cpp
 )
-add_test(Test-CmdTouch ts-unittest-cmd-touch)
+add_test(Test-CmdTouch bin/ts-unittest-cmd-touch)
 
 # Model filesystem test
 add_executable(ts-unittest-model-filesystem tests/TS_UnitTest_ModelFilesystem.cpp
@@ -74,7 +74,7 @@ add_executable(ts-unittest-model-filesystem tests/TS_UnitTest_ModelFilesystem.cp
     src/config/TS_ConfigReader.cpp
     src/helpers/TS_Helper.cpp
 )
-add_test(Test-ModelFilesystem ts-unittest-model-filesystem)
+add_test(Test-ModelFilesystem bin/ts-unittest-model-filesystem)
 
 # Use command test
 add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
@@ -85,7 +85,7 @@ add_executable(ts-unittest-cmd-use tests/TS_UnitTest_CmdUse.cpp
     src/config/TS_ConfigReader.cpp
     src/helpers/TS_Helper.cpp
 )
-add_test(Test-CmdUse ts-unittest-cmd-use)
+add_test(Test-CmdUse bin/ts-unittest-cmd-use)
 
 # Export command test
 add_executable(ts-unittest-cmd-export tests/TS_UnitTest_CmdExport.cpp
@@ -96,7 +96,7 @@ add_executable(ts-unittest-cmd-export tests/TS_UnitTest_CmdExport.cpp
     src/config/TS_ConfigReader.cpp
     src/helpers/TS_Helper.cpp
 )
-add_test(Test-CmdExport ts-unittest-cmd-export)
+add_test(Test-CmdExport bin/ts-unittest-cmd-export)
 
 # Remove command test
 add_executable(ts-unittest-cmd-remove tests/TS_UnitTest_CmdRemove.cpp
@@ -107,7 +107,7 @@ add_executable(ts-unittest-cmd-remove tests/TS_UnitTest_CmdRemove.cpp
     src/config/TS_ConfigReader.cpp
     src/helpers/TS_Helper.cpp
 )
-add_test(Test-CmdRemove ts-unittest-cmd-remove)
+add_test(Test-CmdRemove bin/ts-unittest-cmd-remove)
 
 # Timestamp command test
 add_executable(ts-unittest-cmd-timestamp tests/TS_UnitTest_CmdTimestamp.cpp
@@ -120,7 +120,7 @@ add_executable(ts-unittest-cmd-timestamp tests/TS_UnitTest_CmdTimestamp.cpp
     src/config/TS_ConfigReader.cpp
     src/helpers/TS_Helper.cpp
 )
-add_test(Test-CmdTimestamp ts-unittest-cmd-timestamp)
+add_test(Test-CmdTimestamp bin/ts-unittest-cmd-timestamp)
 
 # Save command test
 add_executable(ts-unittest-cmd-save tests/TS_UnitTest_CmdSave.cpp
@@ -132,7 +132,7 @@ add_executable(ts-unittest-cmd-save tests/TS_UnitTest_CmdSave.cpp
     src/config/TS_ConfigReader.cpp
     src/helpers/TS_Helper.cpp
 )
-add_test(Test-CmdSave ts-unittest-cmd-save)
+add_test(Test-CmdSave bin/ts-unittest-cmd-save)
 
 
 # Install definitons
