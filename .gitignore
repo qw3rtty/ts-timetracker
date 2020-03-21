@@ -1,5 +1,6 @@
 # excluded folders
 .idea
+bin
 CMakeFiles*
 Testing*
 
