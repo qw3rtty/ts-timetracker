@@ -27,17 +27,13 @@
  * @inherit
  */
 TS_CommandList::TS_CommandList(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
-{
-    this->projectKey = nullptr;
-}
+{}
 
 /**
  * Destructor
  */
 TS_CommandList::~TS_CommandList()
-{
-    this->list.clear();
-}
+{}
 
 /**
  * @inherit
@@ -60,18 +56,8 @@ bool TS_CommandList::execute()
 bool TS_CommandList::prepare()
 {
     this->setProjectKey(this->model->getSelectedProject());
-    this->setProjectList(this->model->getProjectList());
 
     return true;
-}
-
-/**
- * Set given project list
- * @param   list    - Project list to set
- */
-void TS_CommandList::setProjectList(std::map<int, std::string> list)
-{
-    this->list = std::move(list);
 }
 
 /**
@@ -81,29 +67,6 @@ void TS_CommandList::setProjectList(std::map<int, std::string> list)
 void TS_CommandList::setProjectKey(char* project)
 {
     this->projectKey = project;
-}
-
-/**
- * Show all projects
- */
-void TS_CommandList::showProjects()
-{
-    TS_Helper helper;
-    auto listIterator = this->list.begin();
-    while ( (listIterator != this->list.end()) )
-    {
-        std::cout << listIterator->first << " => " << listIterator->second;
-        if (this->projectKey != nullptr && listIterator->second == this->projectKey)
-        {
-            std::cout << helper.color << " [selected]" << helper.noColor;
-        }
-
-        listIterator++;
-        if (listIterator != this->list.end())
-        {
-            std::cout << std::endl;
-        }
-    }
 }
 
 /**
@@ -182,10 +145,6 @@ std::ostringstream TS_CommandList::getMessage()
     if (this->arguments == nullptr)
     {
         message << "You entered no argument!";
-    }
-    else if (strcmp(this->arguments, "projects") == 0)
-    {
-        this->showProjects();
     }
     else if (strcmp(this->arguments, "times") == 0)
     {
