@@ -60,9 +60,10 @@ Here are all commands you can use:
 | -------------------- | ------------------------------------------------------------------------- |
 | help                 | Show's the help menu                                                      |
 | config               | Show's the config options                                                 |
+| projects             | Show's all available projects                                             |
 | touch &lt;name&gt;   | Create's a new project with entered name                                  |
 | rm &lt;name&gt;      | Delete's entered project                                                  |
-| ls &lt;item&gt;      | List selected items (use 'projects' or 'times')                           |
+| ls &lt;item&gt;      | List selected items (use 'times')                                         |
 | use &lt;name&gt;     | Set project to track time on, a name from 'list' command                  |
 | start                | Start's timetracking                                                      |
 | stop                 | Stop's timetracking                                                       |
