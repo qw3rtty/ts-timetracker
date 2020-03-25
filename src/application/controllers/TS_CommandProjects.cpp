@@ -84,7 +84,7 @@ void TS_CommandProjects::showProjects()
         std::cout << listIterator->first << " => " << listIterator->second;
         if (this->projectKey != nullptr && listIterator->second == this->projectKey)
         {
-            std::cout << helper.color << " [selected]" << helper.noColor;
+            std::cout << " [" << helper.color << "selected" << helper.noColor << "]";
         }
 
         listIterator++;
