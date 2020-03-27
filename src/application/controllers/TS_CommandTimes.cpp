@@ -1,7 +1,7 @@
 /**
- * TS-CommandList
+ * TS-CommandTimes
  *
- * List projects command
+ * List tracked times
  *
  * @package     TS-TimeTracker
  * @author      Thomas Schwarz
@@ -13,7 +13,6 @@
 
 #include <iostream>
 #include <string>
-#include <cstring>
 #include <vector>
 #include <map>
 
