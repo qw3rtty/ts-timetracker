@@ -16,44 +16,36 @@
 #include <cstring>
 #include <vector>
 #include <map>
-#include <utility>
 
 #include "TS_Helper.h"
 #include "TS_IModel.h"
-#include "TS_CommandList.h"
+#include "TS_CommandTimes.h"
 #include "../../libaries/VariadicTable.h"
 
 /**
  * @inherit
  */
-TS_CommandList::TS_CommandList(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
+TS_CommandTimes::TS_CommandTimes(char *arguments, TS_IModel* model) : TS_Command(arguments, model)
 {}
 
 /**
  * Destructor
  */
-TS_CommandList::~TS_CommandList()
+TS_CommandTimes::~TS_CommandTimes()
 {}
 
 /**
  * @inherit
  */
-bool TS_CommandList::execute()
+bool TS_CommandTimes::execute()
 {
-    this->prepare();
-
-    if (this->isTestMode)
-    {
-        return true;
-    }
-
-    return this->arguments != nullptr;
+    return this->prepare();
 }
 
 /**
  * @inherit
  */
-bool TS_CommandList::prepare()
+bool TS_CommandTimes::prepare()
 {
     this->setProjectKey(this->model->getSelectedProject());
 
@@ -64,7 +56,7 @@ bool TS_CommandList::prepare()
  * Set given project key
  * @param   char*     - Project to set
  */
-void TS_CommandList::setProjectKey(char* project)
+void TS_CommandTimes::setProjectKey(char* project)
 {
     this->projectKey = project;
 }
@@ -72,7 +64,7 @@ void TS_CommandList::setProjectKey(char* project)
 /**
  * Show all tracked times
  */
-void TS_CommandList::showTimes()
+void TS_CommandTimes::showTimes()
 {
     if (this->projectKey != nullptr)
     {
@@ -89,7 +81,7 @@ void TS_CommandList::showTimes()
 /**
  * Prints the time table
  */
-void TS_CommandList::printTimeTable()
+void TS_CommandTimes::printTimeTable()
 {
     VariadicTable<std::string, std::string, std::string> table({
         "Start time", "End time", "Comment"
@@ -129,7 +121,7 @@ void TS_CommandList::printTimeTable()
 /**
  * Print the complete amount of tracked times
  */
-void TS_CommandList::printTrackedTimeAmount()
+void TS_CommandTimes::printTrackedTimeAmount()
 {
     std::cout << "Tracked time amount: " << std::fixed << std::setprecision(2)
         << this->model->getTimeAmount() << "h" << std::endl;
@@ -138,22 +130,10 @@ void TS_CommandList::printTrackedTimeAmount()
 /**
  * @inherit
  */
-std::ostringstream TS_CommandList::getMessage()
+std::ostringstream TS_CommandTimes::getMessage()
 {
     std::ostringstream message;
-
-    if (this->arguments == nullptr)
-    {
-        message << "You entered no argument!";
-    }
-    else if (strcmp(this->arguments, "times") == 0)
-    {
-        this->showTimes();
-    }
-    else
-    {
-        message << "You entered an invalid argument!";
-    }
+    this->showTimes();
 
     return message;
 }

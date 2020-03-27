@@ -11,8 +11,8 @@
  * @filesource
  */
 
-#ifndef TS_TIMETRACKER_TS_COMMANDLIST_H
-#define TS_TIMETRACKER_TS_COMMANDLIST_H
+#ifndef TS_TIMETRACKER_TS_COMMANDTIMES_H
+#define TS_TIMETRACKER_TS_COMMANDTIMES_H
 
 #include "TS_IModel.h"
 #include "TS_Command.h"
@@ -21,11 +21,11 @@
 #include <vector>
 #include <sstream>
 
-class TS_CommandList : public TS_Command
+class TS_CommandTimes : public TS_Command
 {
 public:
-    explicit TS_CommandList(char *arguments, TS_IModel* model);
-    ~TS_CommandList();
+    explicit TS_CommandTimes(char *arguments, TS_IModel* model);
+    ~TS_CommandTimes();
     bool execute() override;
     std::ostringstream getMessage() override;
 
@@ -42,4 +42,4 @@ private:
 };
 
 
-#endif //TS_TIMETRACKER_TS_COMMANDLIST_H
+#endif //TS_TIMETRACKER_TS_COMMANDTIMES_H

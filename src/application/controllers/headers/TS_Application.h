@@ -30,7 +30,7 @@ private:
     TS_Application();
     ~TS_Application();
     void resetPointers();
-    const char commandList[16][15] = {"help", "touch", "rm", "ls", "config", "projects", "use", "start", "stop", "save", "export"};
+    const char commandList[16][15] = {"help", "touch", "rm", "config", "projects", "times", "use", "start", "stop", "save", "export"};
     char* arguments;
     char* command;
     char* selectedProject;

@@ -17,7 +17,7 @@
 #include "TS_IModel.h"
 #include "TS_CommandExport.h"
 #include "TS_CommandHelp.h"
-#include "TS_CommandList.h"
+#include "TS_CommandTimes.h"
 #include "TS_CommandConfig.h"
 #include "TS_CommandProjects.h"
 #include "TS_CommandRemove.h"
@@ -54,9 +54,9 @@ TS_Command* TS_FactoryCommand::build(char *command, char *arguments, TS_IModel* 
     {
         cmd = new TS_CommandRemove(arguments, model);
     }
-    else if (strcmp(command, "ls") == 0)
+    else if (strcmp(command, "times") == 0)
     {
-        cmd = new TS_CommandList(arguments, model);
+        cmd = new TS_CommandTimes(arguments, model);
     }
     else if (strcmp(command, "config") == 0)
     {
