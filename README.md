@@ -21,7 +21,7 @@ This tool allows you to track your time for all your projects or needs. You can 
 ## :pager: Installation
 Follow the steps below for installing:  
 ```bash
-$ git clone https://github.com/thomasschwarz96/ts-timetracker.git  
+$ git clone https://github.com/tomschwarz/ts-timetracker.git  
 $ cd ts-timetracker  
 $ cmake .  
 $ make  
@@ -97,7 +97,7 @@ Following list shows all available views:
 - terminal: run's in the terminal, with and simple interactive command line interface
 
 ## :memo: Contributing
-If you want to contribute check the [CONTRIBUTING.md](https://github.com/thomasschwarz96/ts-timetracker/blob/master/.github/CONTRIBUTING.md)
+If you want to contribute check the [CONTRIBUTING.md](https://github.com/tomschwarz/ts-timetracker/blob/master/.github/CONTRIBUTING.md)
 
 ## :car: Roadmap
 - [x] Create interface for models
@@ -126,4 +126,4 @@ I can proudly say, that I get support from:
 [![Supported by JetBrains](assets/jetbrains.svg)](https://www.jetbrains.com/?from=ts-timetracker)
 
 ## :scroll: License
-[MIT-License](https://choosealicense.com/licenses/mit/) © [Thomas Schwarz](https://github.com/thomasschwarz96)
+[MIT-License](https://choosealicense.com/licenses/mit/) © [Tom Schwarz](https://github.com/tomschwarz)
